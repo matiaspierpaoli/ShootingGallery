@@ -55,6 +55,15 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""03237d84-6479-488b-918e-e2bd075154df"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -189,6 +198,28 @@ namespace Inputs
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0fc3786c-3191-41a8-9550-2c765c4ac35e"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a989029-c116-488d-b0f1-d02c0529a271"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -228,6 +259,7 @@ namespace Inputs
             m_World_Move = m_World.FindAction("Move", throwIfNotFound: true);
             m_World_Jump = m_World.FindAction("Jump", throwIfNotFound: true);
             m_World_Sprint = m_World.FindAction("Sprint", throwIfNotFound: true);
+            m_World_Look = m_World.FindAction("Look", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -293,6 +325,7 @@ namespace Inputs
         private readonly InputAction m_World_Move;
         private readonly InputAction m_World_Jump;
         private readonly InputAction m_World_Sprint;
+        private readonly InputAction m_World_Look;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -300,6 +333,7 @@ namespace Inputs
             public InputAction @Move => m_Wrapper.m_World_Move;
             public InputAction @Jump => m_Wrapper.m_World_Jump;
             public InputAction @Sprint => m_Wrapper.m_World_Sprint;
+            public InputAction @Look => m_Wrapper.m_World_Look;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -318,6 +352,9 @@ namespace Inputs
                     @Sprint.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnSprint;
                     @Sprint.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnSprint;
                     @Sprint.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnSprint;
+                    @Look.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
+                    @Look.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
+                    @Look.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -331,6 +368,9 @@ namespace Inputs
                     @Sprint.started += instance.OnSprint;
                     @Sprint.performed += instance.OnSprint;
                     @Sprint.canceled += instance.OnSprint;
+                    @Look.started += instance.OnLook;
+                    @Look.performed += instance.OnLook;
+                    @Look.canceled += instance.OnLook;
                 }
             }
         }
@@ -373,6 +413,7 @@ namespace Inputs
             void OnMove(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnSprint(InputAction.CallbackContext context);
+            void OnLook(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

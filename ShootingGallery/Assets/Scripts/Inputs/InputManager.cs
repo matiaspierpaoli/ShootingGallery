@@ -5,6 +5,7 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] private CharacterMovement _characterMovement;
     [SerializeField] private PlayerLook _playerLook;
+    [SerializeField] private Gun _gun;
 
     public void OnMove(InputValue context)
     {
@@ -16,6 +17,11 @@ public class InputManager : MonoBehaviour
     {
         var movementInput = context.Get<Vector2>();
         _playerLook.ProcessLook(movementInput);
+    }
+
+    public void OnShoot()
+    {
+        _gun.Shoot();
     }
 
 }

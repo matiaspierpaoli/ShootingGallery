@@ -64,6 +64,15 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Value"",
+                    ""id"": ""51f23f12-f2e2-425f-9317-1f07d104676a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -220,6 +229,17 @@ namespace Inputs
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""682289e4-d16c-456d-8c43-6b27f2b27f7a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -260,6 +280,7 @@ namespace Inputs
             m_World_Jump = m_World.FindAction("Jump", throwIfNotFound: true);
             m_World_Sprint = m_World.FindAction("Sprint", throwIfNotFound: true);
             m_World_Look = m_World.FindAction("Look", throwIfNotFound: true);
+            m_World_Shoot = m_World.FindAction("Shoot", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -326,6 +347,7 @@ namespace Inputs
         private readonly InputAction m_World_Jump;
         private readonly InputAction m_World_Sprint;
         private readonly InputAction m_World_Look;
+        private readonly InputAction m_World_Shoot;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -334,6 +356,7 @@ namespace Inputs
             public InputAction @Jump => m_Wrapper.m_World_Jump;
             public InputAction @Sprint => m_Wrapper.m_World_Sprint;
             public InputAction @Look => m_Wrapper.m_World_Look;
+            public InputAction @Shoot => m_Wrapper.m_World_Shoot;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -355,6 +378,9 @@ namespace Inputs
                     @Look.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
                     @Look.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
                     @Look.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
+                    @Shoot.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
+                    @Shoot.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
+                    @Shoot.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -371,6 +397,9 @@ namespace Inputs
                     @Look.started += instance.OnLook;
                     @Look.performed += instance.OnLook;
                     @Look.canceled += instance.OnLook;
+                    @Shoot.started += instance.OnShoot;
+                    @Shoot.performed += instance.OnShoot;
+                    @Shoot.canceled += instance.OnShoot;
                 }
             }
         }
@@ -414,6 +443,7 @@ namespace Inputs
             void OnJump(InputAction.CallbackContext context);
             void OnSprint(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
+            void OnShoot(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

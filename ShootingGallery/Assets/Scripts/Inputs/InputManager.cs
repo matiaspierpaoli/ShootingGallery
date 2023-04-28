@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
     public void OnShoot()
     {
-        _gun.Shoot();
+        //_gun.Shoot();
     }
 
 }

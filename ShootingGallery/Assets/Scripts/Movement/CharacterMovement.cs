@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 orientationRight;  
     private Vector3 moveDir;
 
+    private Vector2 _movementDirection;
 
     private void OnValidate()
     {
@@ -49,12 +50,13 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        moveDir = orientationForward * _movementDirection.y + orientationRight * _movementDirection.x;
         rigidBody.AddForce(moveDir.normalized * speed * 10f, ForceMode.Force);
     }
 
-    public void ProcessMove(Vector2 movementInput)
+    public void ProcessMove(Vector2 movementDirection)
     {
-        moveDir = orientationForward * movementInput.y + orientationRight * movementInput.x;
+        _movementDirection = movementDirection;
     }
 
     private void SpeedControl()

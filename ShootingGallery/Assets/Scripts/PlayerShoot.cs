@@ -7,9 +7,14 @@ public class PlayerShoot : MonoBehaviour
 {
     public static Action shootInput;
 
-
+    private void Update()
+    {
+        
+    }
     //public void Shoot()
     //{
     //    Debug.Log("Shooting working");
     //}
+
+
 }

@@ -73,6 +73,15 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d900530-a5ed-41a9-adee-a15303f64cd4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +249,17 @@ namespace Inputs
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f4cc687-205e-45f1-b725-ca414af2c559"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -281,6 +301,7 @@ namespace Inputs
             m_World_Sprint = m_World.FindAction("Sprint", throwIfNotFound: true);
             m_World_Look = m_World.FindAction("Look", throwIfNotFound: true);
             m_World_Shoot = m_World.FindAction("Shoot", throwIfNotFound: true);
+            m_World_Reload = m_World.FindAction("Reload", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -348,6 +369,7 @@ namespace Inputs
         private readonly InputAction m_World_Sprint;
         private readonly InputAction m_World_Look;
         private readonly InputAction m_World_Shoot;
+        private readonly InputAction m_World_Reload;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -357,6 +379,7 @@ namespace Inputs
             public InputAction @Sprint => m_Wrapper.m_World_Sprint;
             public InputAction @Look => m_Wrapper.m_World_Look;
             public InputAction @Shoot => m_Wrapper.m_World_Shoot;
+            public InputAction @Reload => m_Wrapper.m_World_Reload;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -381,6 +404,9 @@ namespace Inputs
                     @Shoot.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
                     @Shoot.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
                     @Shoot.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
+                    @Reload.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnReload;
+                    @Reload.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnReload;
+                    @Reload.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnReload;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -400,6 +426,9 @@ namespace Inputs
                     @Shoot.started += instance.OnShoot;
                     @Shoot.performed += instance.OnShoot;
                     @Shoot.canceled += instance.OnShoot;
+                    @Reload.started += instance.OnReload;
+                    @Reload.performed += instance.OnReload;
+                    @Reload.canceled += instance.OnReload;
                 }
             }
         }
@@ -444,6 +473,7 @@ namespace Inputs
             void OnSprint(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnShoot(InputAction.CallbackContext context);
+            void OnReload(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

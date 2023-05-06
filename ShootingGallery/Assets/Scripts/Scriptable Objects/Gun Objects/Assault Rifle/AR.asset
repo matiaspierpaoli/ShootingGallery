@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Asault Rifle
   damage: 20
   maxDistance: 200
-  currentAmmo: 30
+  currentAmmo: 22
   magSize: 30
-  fireRate: 600
+  fireRate: 0.1
   reloadTime: 1.5
   reloading: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BulletController : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Button otherButton = collision.gameObject.GetComponent<Button>();
+
+        if (otherButton != null)
+            otherButton.onClick.Invoke();
+
         Debug.Log("Instanced bullet hit");
         Destroy(gameObject);
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -57,11 +58,18 @@ public class Gun : MonoBehaviour
         while (true)
         {
             if (GameObject.FindGameObjectWithTag("InstanceBulletGun"))
+            {
                 CreateBullet();
+
+
+            }
             else if (GameObject.FindGameObjectWithTag("RaycastGun"))
             {
                 if (RaycastShoot())
+                {
                     Debug.Log("Raycast hit");
+
+                }
             }
 
             _gunData.currentAmmo--;
@@ -80,6 +88,13 @@ public class Gun : MonoBehaviour
 
         if (Physics.Raycast(_cameraTransform.position, shootDir, out hit, _gunData.maxDistance))
         {
+            Button button = hit.collider.GetComponent<Button>();
+
+            if (button != null)
+            {
+                button.onClick.Invoke();
+            }
+
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
 
             if (damageable != null)

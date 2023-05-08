@@ -60,9 +60,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeWeapon",
+                    "name": "ChangeWeapon1",
                     "type": "Button",
                     "id": "17254c3c-b5d0-42c6-96ca-61b895e4253c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ChangeWeapon2",
+                    "type": "Button",
+                    "id": "10ef0e9f-e3cf-4797-b4fb-60eaadb3380d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeWeapon3",
+                    "type": "Button",
+                    "id": "3ff4ab5a-422a-4572-a22c-bc5cfd6f5a47",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -253,18 +271,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeWeapon",
+                    "action": "ChangeWeapon1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "4b93bd49-b457-4547-9f00-fa4f5da2d11f",
+                    "id": "1cb62eff-c1f4-4bab-8229-949cef490ae6",
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeWeapon",
+                    "action": "ChangeWeapon2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36baf84d-fd90-4af2-8840-69f9c0040504",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

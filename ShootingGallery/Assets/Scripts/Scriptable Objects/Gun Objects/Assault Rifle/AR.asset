@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: AR
   m_EditorClassIdentifier: 
   name: Asault Rifle
+  availiable: 1
   damage: 20
   maxDistance: 200
-  currentAmmo: 22
+  currentAmmo: 20
   magSize: 30
   fireRate: 0.1
-  reloadTime: 1.5
+  reloadTime: 5.5
   reloading: 0

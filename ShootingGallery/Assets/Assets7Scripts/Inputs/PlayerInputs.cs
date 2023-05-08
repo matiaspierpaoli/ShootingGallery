@@ -84,9 +84,27 @@ namespace Inputs
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ChangeWeapon"",
+                    ""name"": ""ChangeWeapon1"",
                     ""type"": ""Button"",
                     ""id"": ""17254c3c-b5d0-42c6-96ca-61b895e4253c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChangeWeapon2"",
+                    ""type"": ""Button"",
+                    ""id"": ""10ef0e9f-e3cf-4797-b4fb-60eaadb3380d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeWeapon3"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ff4ab5a-422a-4572-a22c-bc5cfd6f5a47"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -277,18 +295,29 @@ namespace Inputs
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ChangeWeapon"",
+                    ""action"": ""ChangeWeapon1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4b93bd49-b457-4547-9f00-fa4f5da2d11f"",
+                    ""id"": ""1cb62eff-c1f4-4bab-8229-949cef490ae6"",
                     ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ChangeWeapon"",
+                    ""action"": ""ChangeWeapon2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36baf84d-fd90-4af2-8840-69f9c0040504"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeWeapon3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -333,7 +362,9 @@ namespace Inputs
             m_World_Look = m_World.FindAction("Look", throwIfNotFound: true);
             m_World_Shoot = m_World.FindAction("Shoot", throwIfNotFound: true);
             m_World_Reload = m_World.FindAction("Reload", throwIfNotFound: true);
-            m_World_ChangeWeapon = m_World.FindAction("ChangeWeapon", throwIfNotFound: true);
+            m_World_ChangeWeapon1 = m_World.FindAction("ChangeWeapon1", throwIfNotFound: true);
+            m_World_ChangeWeapon2 = m_World.FindAction("ChangeWeapon2", throwIfNotFound: true);
+            m_World_ChangeWeapon3 = m_World.FindAction("ChangeWeapon3", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -402,7 +433,9 @@ namespace Inputs
         private readonly InputAction m_World_Look;
         private readonly InputAction m_World_Shoot;
         private readonly InputAction m_World_Reload;
-        private readonly InputAction m_World_ChangeWeapon;
+        private readonly InputAction m_World_ChangeWeapon1;
+        private readonly InputAction m_World_ChangeWeapon2;
+        private readonly InputAction m_World_ChangeWeapon3;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -413,7 +446,9 @@ namespace Inputs
             public InputAction @Look => m_Wrapper.m_World_Look;
             public InputAction @Shoot => m_Wrapper.m_World_Shoot;
             public InputAction @Reload => m_Wrapper.m_World_Reload;
-            public InputAction @ChangeWeapon => m_Wrapper.m_World_ChangeWeapon;
+            public InputAction @ChangeWeapon1 => m_Wrapper.m_World_ChangeWeapon1;
+            public InputAction @ChangeWeapon2 => m_Wrapper.m_World_ChangeWeapon2;
+            public InputAction @ChangeWeapon3 => m_Wrapper.m_World_ChangeWeapon3;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -441,9 +476,15 @@ namespace Inputs
                     @Reload.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnReload;
                     @Reload.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnReload;
                     @Reload.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnReload;
-                    @ChangeWeapon.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon;
-                    @ChangeWeapon.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon;
-                    @ChangeWeapon.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon;
+                    @ChangeWeapon1.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon1;
+                    @ChangeWeapon1.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon1;
+                    @ChangeWeapon1.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon1;
+                    @ChangeWeapon2.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon2;
+                    @ChangeWeapon2.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon2;
+                    @ChangeWeapon2.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon2;
+                    @ChangeWeapon3.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon3;
+                    @ChangeWeapon3.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon3;
+                    @ChangeWeapon3.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon3;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -466,9 +507,15 @@ namespace Inputs
                     @Reload.started += instance.OnReload;
                     @Reload.performed += instance.OnReload;
                     @Reload.canceled += instance.OnReload;
-                    @ChangeWeapon.started += instance.OnChangeWeapon;
-                    @ChangeWeapon.performed += instance.OnChangeWeapon;
-                    @ChangeWeapon.canceled += instance.OnChangeWeapon;
+                    @ChangeWeapon1.started += instance.OnChangeWeapon1;
+                    @ChangeWeapon1.performed += instance.OnChangeWeapon1;
+                    @ChangeWeapon1.canceled += instance.OnChangeWeapon1;
+                    @ChangeWeapon2.started += instance.OnChangeWeapon2;
+                    @ChangeWeapon2.performed += instance.OnChangeWeapon2;
+                    @ChangeWeapon2.canceled += instance.OnChangeWeapon2;
+                    @ChangeWeapon3.started += instance.OnChangeWeapon3;
+                    @ChangeWeapon3.performed += instance.OnChangeWeapon3;
+                    @ChangeWeapon3.canceled += instance.OnChangeWeapon3;
                 }
             }
         }
@@ -514,7 +561,9 @@ namespace Inputs
             void OnLook(InputAction.CallbackContext context);
             void OnShoot(InputAction.CallbackContext context);
             void OnReload(InputAction.CallbackContext context);
-            void OnChangeWeapon(InputAction.CallbackContext context);
+            void OnChangeWeapon1(InputAction.CallbackContext context);
+            void OnChangeWeapon2(InputAction.CallbackContext context);
+            void OnChangeWeapon3(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

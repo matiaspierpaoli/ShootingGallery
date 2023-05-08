@@ -13,14 +13,12 @@ public class Gun : MonoBehaviour
 
 
     public InputActionReference holdShootingActionReference;
-    public float interval;
 
     private Coroutine shootingCoroutine;
 
-    private void Start()
+    private void Awake()
     {
-        interval = _gunData.fireRate;
-        _gunData.currentAmmo = _gunData.magSize;
+        ResetWeaponsStats();
     }
 
     private void OnEnable()
@@ -76,11 +74,11 @@ public class Gun : MonoBehaviour
             if (_gunData.currentAmmo <= 0)
                 _gunData.currentAmmo = 0;
 
-            yield return new WaitForSeconds(interval);
+            yield return new WaitForSeconds(_gunData.fireRate);
         }
     }
 
-    private bool RaycastShoot()
+    private bool RaycastShoot() 
     {
         RaycastHit hit;
 
@@ -93,6 +91,7 @@ public class Gun : MonoBehaviour
             if (button != null)
             {
                 button.onClick.Invoke();
+                Debug.Log("Button hit");
             }
 
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
@@ -147,8 +146,16 @@ public class Gun : MonoBehaviour
 
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;
+    }
 
+    private void ResetWeaponsStats()
+    {
+        _gunData.currentAmmo = _gunData.magSize;
 
+        if (_gunData.name == "Asault Rifle" || _gunData.name == "Sniper Rifle")
+            _gunData.availiable = false;
+        else
+            _gunData.availiable = true;
     }
 
 }

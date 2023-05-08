@@ -18,9 +18,12 @@ public class BulletController : MonoBehaviour
         Button otherButton = collision.gameObject.GetComponent<Button>();
 
         if (otherButton != null)
+        {
             otherButton.onClick.Invoke();
+            Debug.Log("Button hit");
 
-        Debug.Log("Instanced bullet hit");
+        }
+
         Destroy(gameObject);
     }
 }

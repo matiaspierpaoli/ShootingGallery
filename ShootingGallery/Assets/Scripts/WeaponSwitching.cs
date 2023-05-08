@@ -9,15 +9,10 @@ public class WeaponSwitching : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform[] weapons;
 
-
-    InputAction changeWeaponAction;
-
-    private Dictionary<int, string> weaponBindings = new Dictionary<int, string>
-    {
-        {1, "Keyboard/1"}, // Map binding for "1" key to value of 1
-        {2, "Keyboard/2"}, // Map binding for "2" key to value of 2
-        {3, "Gamepad/buttonSouth"} // Map binding for gamepad button to value of 3
-    };
+    [Header("Scriptable Objects")]
+    [SerializeField] private GunData pistol;
+    [SerializeField] private GunData ak;
+    [SerializeField] private GunData sniper;
 
     [Header("Settings")]
     [SerializeField] private float switchTime;
@@ -29,52 +24,29 @@ public class WeaponSwitching : MonoBehaviour
     void Start()
     {
         SetWeapon();
-        selectedWeapon = 1;
+
+        selectedWeapon = 0;
         SelectFromIndex(selectedWeapon);
 
         timeSinceLastSwitch = 0f;
     }
 
-    public void OnChangeWeapon(InputValue value)
+    public void OnChangeWeapon1(InputValue value)
     {
-        //int input = (int)value.Get<float>();
+        if (pistol.availiable)
+            selectedWeapon = 0;
+    }
 
-        //// Check if the input is coming from one of the two bindings for the changeWeaponAction
-        //if (changeWeaponAction.bindings[0].isComposite || changeWeaponAction.bindings[1].isComposite)
-        //{
-        //    // Check if the input is coming from the "Weapon 1" binding
-        //    if (value.GetBindingIndex() == changeWeaponAction.bindings[0].effectivePath[0])
-        //    {
-        //        selectedWeapon = 1;
-        //        Debug.Log("Switched to weapon 1");
-        //    }
-        //    // Check if the input is coming from the "Weapon 2" binding
-        //    else if (value.GetBindingIndex() == changeWeaponAction.bindings[1].effectivePath[0])
-        //    {
-        //        selectedWeapon = 2;
-        //        Debug.Log("Switched to weapon 2");
-        //    }
-        //}
-        //// If the input is not coming from a composite binding, just switch to weapon 1
-        //else
-        //{
-        //    selectedWeapon = 1;
-        //    Debug.Log("Switched to weapon 1");
-        
+    public void OnChangeWeapon2(InputValue value)
+    {
+        if (ak.availiable)
+            selectedWeapon = 1;
+    }
 
-
-        //if (input == 1)
-        //{
-        //    selectedWeapon = 0;
-        //    Debug.Log("Switched to weapon 1");
-        //}
-        //else if (input == 2)
-        //{
-        //    selectedWeapon = 1;
-        //    Debug.Log("Switched to weapon 2");
-        //}
-
-        SelectFromIndex(selectedWeapon);
+    public void OnChangeWeapon3(InputValue value)
+    {
+        if (sniper.availiable)
+            selectedWeapon = 2;
     }
 
     private void SetWeapon()
@@ -90,11 +62,8 @@ public class WeaponSwitching : MonoBehaviour
     private void Update()
     {
         timeSinceLastSwitch += Time.deltaTime;
-    }
 
-    public void SelectFromGameObject(GameObject weapon)
-    {
-        weapon.gameObject.SetActive(true);
+        SelectFromIndex(selectedWeapon);
     }
 
     public void SelectFromIndex(int weaponIndex)
@@ -114,6 +83,9 @@ public class WeaponSwitching : MonoBehaviour
         //Debug.Log("Selected new weapon");
     }
 
-
+    public void AcquireWeapon(GunData weapon)
+    {
+        weapon.availiable = true;
+    }
 
 }

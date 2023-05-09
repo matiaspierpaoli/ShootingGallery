@@ -36,10 +36,13 @@ public class Gun : MonoBehaviour
     #region Shooting
     private void OnHoldStarted(InputAction.CallbackContext context)
     {
-        if (shootingCoroutine == null)
-        {
-            shootingCoroutine = StartCoroutine(ShootCoroutiune());
-        }
+        //if (_gunData.currentAmmo != 0)
+        //{
+            if (shootingCoroutine == null)
+            {
+                shootingCoroutine = StartCoroutine(ShootCoroutiune());
+            }
+        //}
     }
 
     private void OnHoldCanceled(InputAction.CallbackContext context)

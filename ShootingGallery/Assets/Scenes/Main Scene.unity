@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons: []
+  _playerData: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
   pistol: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   ak: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniper: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}

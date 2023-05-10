@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class EnemyLinearMovement : MonoBehaviour
 {
-    [SerializeField] private Transform pointA;
-    [SerializeField] private Transform pointB;
-    [SerializeField] float timeToReachPos;
+    private Transform pointA;
+    private Transform pointB;
+    private float timeToReachPos;
 
     private bool isMoving = true;
 
     private float internalTimer = 0;
+
+    public void SetPointA(Transform pointA)
+    {
+        this.pointA = pointA;
+    }
+
+    public void SetPointB(Transform pointB)
+    {
+        this.pointB = pointB;
+    }
+
+    public void SetTimeToReachPos(float timeToReachPos)
+    {
+        this.timeToReachPos = timeToReachPos;
+    }
 
     private void Update()
     {

@@ -36,13 +36,13 @@ public class Gun : MonoBehaviour
     #region Shooting
     private void OnHoldStarted(InputAction.CallbackContext context)
     {
-        //if (_gunData.currentAmmo != 0)
-        //{
+        if (_gunData.currentAmmo != 0)
+        {
             if (shootingCoroutine == null)
             {
                 shootingCoroutine = StartCoroutine(ShootCoroutiune());
             }
-        //}
+        }
     }
 
     private void OnHoldCanceled(InputAction.CallbackContext context)
@@ -60,15 +60,14 @@ public class Gun : MonoBehaviour
         {
             if (GameObject.FindGameObjectWithTag("InstanceBulletGun"))
             {
-                CreateBullet();
-
-
+                if (_gunData.currentAmmo > 0)
+                    CreateBullet();
             }
             else if (GameObject.FindGameObjectWithTag("RaycastGun"))
             {
                 if (RaycastShoot())
                 {
-                    Debug.Log("Raycast hit");
+                    //Debug.Log("Raycast hit");
 
                 }
             }
@@ -102,6 +101,7 @@ public class Gun : MonoBehaviour
             if (damageable != null)
             {
                 damageable.Damage(_gunData.damage, hit.point, hit.normal);
+                Debug.Log("Target hit");
             }
 
             return true;
@@ -159,6 +159,8 @@ public class Gun : MonoBehaviour
             _gunData.availiable = false;
         else
             _gunData.availiable = true;
+
+        _gunData.reloading = false;
     }
 
 }

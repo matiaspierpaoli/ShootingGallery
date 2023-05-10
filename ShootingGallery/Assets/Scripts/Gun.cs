@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
 
     private void Awake()
     {
-        ResetWeaponsStats();
+        ResetWeaponStats();
     }
 
     private void OnEnable()
@@ -151,7 +151,7 @@ public class Gun : MonoBehaviour
         _gunData.reloading = false;
     }
 
-    private void ResetWeaponsStats()
+    private void ResetWeaponStats()
     {
         _gunData.currentAmmo = _gunData.magSize;
 

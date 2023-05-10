@@ -19,4 +19,7 @@ public class GunData : ScriptableObject
     public float fireRate;
     public float reloadTime;
     [HideInInspector] public bool reloading;
+
+    [Header("Store")]
+    public int cost;
 }

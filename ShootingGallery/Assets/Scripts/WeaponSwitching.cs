@@ -8,6 +8,7 @@ public class WeaponSwitching : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform[] weapons;
+    [SerializeField] private PlayerData _playerData;
 
     [Header("Scriptable Objects")]
     [SerializeField] private GunData pistol;
@@ -75,17 +76,15 @@ public class WeaponSwitching : MonoBehaviour
 
         timeSinceLastSwitch = 0f;
 
-        OnWeaponSelected();
-    }
-
-    private void OnWeaponSelected()
-    {
-        //Debug.Log("Selected new weapon");
     }
 
     public void AcquireWeapon(GunData weapon)
     {
-        weapon.availiable = true;
+        if (_playerData.points >= weapon.cost)
+        {
+            weapon.availiable = true;
+            _playerData.points -= weapon.cost;
+        }
     }
 
 }

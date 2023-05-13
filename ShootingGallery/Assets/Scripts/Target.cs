@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class Target : MonoBehaviour, IDamageable
 {
-    private GameObject _player;
-    private GameObject _enemySpawner;
-    private float health = 100f;
-
-    private void Start()
-    {
-        _player = GameObject.FindGameObjectWithTag("Player");
-        _enemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner");
-    }
+    [SerializeField] private PlayerStatsController _player;
+    [SerializeField] private float maxHealth;
+    private float currentHealth = 100f;
+    private float timeToRespawn = 5f;
 
     public void Damage(float damage, Vector3 hitPos, Vector3 hitNormal)
     {
-        health -= damage;
-        if (health <= 0)
+        currentHealth -= damage;
+        if (currentHealth <= 0)
         {
-            _player.GetComponent<PlayerStatsController>().AddPoints(1);
-            _enemySpawner.GetComponent<EnemySpawner>().EnemyDestroyed(gameObject);           
+            _player.AddPoints(1);
+
+            gameObject.SetActive(false);
+            Invoke("Respawn", timeToRespawn);
         }
+    }
+
+    private void Respawn()
+    {
+        gameObject.SetActive(true);
+
+        currentHealth = maxHealth;
     }
 }

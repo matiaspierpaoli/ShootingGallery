@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7919302763866654982}
   - component: {fileID: 5333375412554333644}
   - component: {fileID: 6756069110804499461}
-  - component: {fileID: 6756069110804499460}
+  - component: {fileID: -8250478658166684929}
+  - component: {fileID: 2132034006128641544}
   m_Layer: 0
-  m_Name: target
+  m_Name: RandomMovementTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +100,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3369316746193770658, guid: 18411daa8993b264bb2bf39894fbe111, type: 3}
---- !u!114 &6756069110804499460
+--- !u!114 &-8250478658166684929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,3 +112,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ecac293f8edc644b69cf8a09e95573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2132034006128641544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837519291875187737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf751134cb4a0d942b09f81accb69293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []

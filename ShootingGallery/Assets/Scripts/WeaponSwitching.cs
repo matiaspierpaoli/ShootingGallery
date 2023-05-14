@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 public class WeaponSwitching : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform[] weapons;
+    private Transform[] weapons;
     [SerializeField] private PlayerData _playerData;
 
     [Header("Scriptable Objects")]
@@ -86,5 +88,4 @@ public class WeaponSwitching : MonoBehaviour
             _playerData.points -= weapon.cost;
         }
     }
-
 }

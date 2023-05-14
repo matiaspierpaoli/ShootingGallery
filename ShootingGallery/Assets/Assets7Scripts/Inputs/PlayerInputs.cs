@@ -109,6 +109,15 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e911b99-e8a0-42de-a376-29a55d6b7c00"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -320,6 +329,17 @@ namespace Inputs
                     ""action"": ""ChangeWeapon3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a22b55b4-7ce3-4fed-bf5f-bb20f9ed477e"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -365,6 +385,7 @@ namespace Inputs
             m_World_ChangeWeapon1 = m_World.FindAction("ChangeWeapon1", throwIfNotFound: true);
             m_World_ChangeWeapon2 = m_World.FindAction("ChangeWeapon2", throwIfNotFound: true);
             m_World_ChangeWeapon3 = m_World.FindAction("ChangeWeapon3", throwIfNotFound: true);
+            m_World_Pause = m_World.FindAction("Pause", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -436,6 +457,7 @@ namespace Inputs
         private readonly InputAction m_World_ChangeWeapon1;
         private readonly InputAction m_World_ChangeWeapon2;
         private readonly InputAction m_World_ChangeWeapon3;
+        private readonly InputAction m_World_Pause;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -449,6 +471,7 @@ namespace Inputs
             public InputAction @ChangeWeapon1 => m_Wrapper.m_World_ChangeWeapon1;
             public InputAction @ChangeWeapon2 => m_Wrapper.m_World_ChangeWeapon2;
             public InputAction @ChangeWeapon3 => m_Wrapper.m_World_ChangeWeapon3;
+            public InputAction @Pause => m_Wrapper.m_World_Pause;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -485,6 +508,9 @@ namespace Inputs
                     @ChangeWeapon3.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon3;
                     @ChangeWeapon3.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon3;
                     @ChangeWeapon3.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnChangeWeapon3;
+                    @Pause.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnPause;
+                    @Pause.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnPause;
+                    @Pause.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnPause;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -516,6 +542,9 @@ namespace Inputs
                     @ChangeWeapon3.started += instance.OnChangeWeapon3;
                     @ChangeWeapon3.performed += instance.OnChangeWeapon3;
                     @ChangeWeapon3.canceled += instance.OnChangeWeapon3;
+                    @Pause.started += instance.OnPause;
+                    @Pause.performed += instance.OnPause;
+                    @Pause.canceled += instance.OnPause;
                 }
             }
         }
@@ -564,6 +593,7 @@ namespace Inputs
             void OnChangeWeapon1(InputAction.CallbackContext context);
             void OnChangeWeapon2(InputAction.CallbackContext context);
             void OnChangeWeapon3(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

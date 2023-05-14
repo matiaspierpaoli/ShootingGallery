@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ecac293f8edc644b69cf8a09e95573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _gameManager: {fileID: 0}
+  maxHealth: 0
 --- !u!114 &8065925249338129985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e173cd36c4759045af774abcd896319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  timeToReachPos: 0

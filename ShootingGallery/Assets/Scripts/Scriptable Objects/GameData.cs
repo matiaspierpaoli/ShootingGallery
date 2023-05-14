@@ -6,4 +6,11 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public bool tutorial;
+    public float currentTime;
+    public float currentEnemiesDefeated;
+    public float maxTime;
+    public float maxEnemiesToDefeat;
+    public bool victory;
+    public bool defeat;
+
 }

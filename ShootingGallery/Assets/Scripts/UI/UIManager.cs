@@ -8,8 +8,12 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text pointsText;
     [SerializeField] private TMP_Text bulletsText;
+    [SerializeField] private TMP_Text victoryText;
+    [SerializeField] private TMP_Text defeatText;
     [SerializeField] private PlayerData playerData;
 
+    [SerializeField] private GameObject mainMenuButton;
+ 
     [SerializeField] private GameObject[] weapons;
 
     [SerializeField] private GunData pistolData;
@@ -19,6 +23,11 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        victoryText.enabled = false;
+        defeatText.enabled = false;
+
+        mainMenuButton.SetActive(false);
+
         GetCurrentPointsText();
         GetCurrentAmmoText();
     }
@@ -28,6 +37,21 @@ public class UIManager : MonoBehaviour
     {
         GetCurrentPointsText();
         GetCurrentAmmoText();
+    }
+
+    public void EnableVictoryText()
+    {
+        victoryText.enabled = true;
+    }
+
+    public void EnableDefeatText()
+    {
+        defeatText.enabled = true;
+    }
+
+    public void EnableMainMenuButton()
+    {
+        mainMenuButton.SetActive(true);
     }
 
     void GetCurrentPointsText()

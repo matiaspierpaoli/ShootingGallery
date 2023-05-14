@@ -342,8 +342,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824880911}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1531361757}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: SetTutorialData
         m_Mode: 1
         m_Arguments:
@@ -1108,7 +1108,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1824880910
+--- !u!1 &1531361756
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1116,37 +1116,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1824880912}
-  - component: {fileID: 1824880911}
+  - component: {fileID: 1531361758}
+  - component: {fileID: 1531361757}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1824880911
+--- !u!114 &1531361757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824880910}
+  m_GameObject: {fileID: 1531361756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f643c637af59614daa2ba739ffa1a97, type: 3}
+  m_Script: {fileID: 11500000, guid: b84bcfd94e639b04a8188c07dfd098e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
---- !u!4 &1824880912
+--- !u!4 &1531361758
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824880910}
+  m_GameObject: {fileID: 1531361756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 493.8951, y: 275.68112, z: 173.12614}
+  m_LocalPosition: {x: 378, y: 296, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1249,8 +1249,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1824880911}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1531361757}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: SetLevelData
         m_Mode: 1
         m_Arguments:

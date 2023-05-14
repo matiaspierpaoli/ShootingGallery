@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   tutorial: 0
+  currentTime: 5.0010595
+  currentEnemiesDefeated: 0
+  maxTime: 5
+  maxEnemiesToDefeat: 2
+  victory: 0
+  defeat: 1

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    [SerializeField] private GameData _gameData;
+
     [SerializeField] private GunData _gunData;
     [SerializeField] private Transform _cameraTransform;
 
@@ -131,6 +133,7 @@ public class Gun : MonoBehaviour
 
     public void OnReload(InputValue context)
     {
+        Debug.Log("Reload started");
         StartReload();
     }
 
@@ -147,6 +150,7 @@ public class Gun : MonoBehaviour
         _gunData.reloading = true;
         yield return new WaitForSeconds(_gunData.reloadTime);
 
+        Debug.Log("Reload finished");
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;
     }
@@ -154,13 +158,25 @@ public class Gun : MonoBehaviour
     private void ResetWeaponStats()
     {
         _gunData.currentAmmo = _gunData.magSize;
+        _gunData.reloading = false;
 
+        if (_gameData.tutorial)
+            ActivateAllWeapons();
+        else
+            ActivateOnlyFirstWeapon();
+    }
+
+    private void ActivateOnlyFirstWeapon()
+    {
         if (_gunData.name == "Asault Rifle" || _gunData.name == "Sniper Rifle")
             _gunData.availiable = false;
         else
             _gunData.availiable = true;
+    }
 
-        _gunData.reloading = false;
+    private void ActivateAllWeapons()
+    {
+        _gunData.availiable = true;
     }
 
 }

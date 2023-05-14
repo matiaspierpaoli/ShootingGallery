@@ -17,6 +17,7 @@ public class Target : MonoBehaviour, IDamageable
             _player.AddPoints(1);
 
             gameObject.SetActive(false);
+            Debug.Log("Enemy eliminated");
             Invoke("Respawn", timeToRespawn);
         }
     }
@@ -24,7 +25,7 @@ public class Target : MonoBehaviour, IDamageable
     private void Respawn()
     {
         gameObject.SetActive(true);
-
+        Debug.Log("Enemy respawned");
         currentHealth = maxHealth;
     }
 }

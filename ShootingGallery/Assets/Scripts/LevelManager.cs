@@ -9,11 +9,11 @@ public class LevelManager : MonoBehaviour
 
     public void SetTutorialData()
     {
-        _gameData.tutorial = true;
+        _gameData.practiceArea = true;
     }
 
     public void SetLevelData()
     {
-        _gameData.tutorial = false;
+        _gameData.practiceArea = false;
     }
 }

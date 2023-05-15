@@ -8,7 +8,7 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
-        if (_gameData.tutorial)
+        if (_gameData.practiceArea)
             DeactivateShopButtons();
         else
             ActivateShopButtons();

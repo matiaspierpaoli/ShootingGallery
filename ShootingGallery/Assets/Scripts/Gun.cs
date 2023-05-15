@@ -160,7 +160,7 @@ public class Gun : MonoBehaviour
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;
 
-        if (_gameData.tutorial)
+        if (_gameData.practiceArea)
             ActivateAllWeapons();
         else
             ActivateOnlyFirstWeapon();

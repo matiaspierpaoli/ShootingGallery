@@ -22,13 +22,16 @@ public class GameManager : MonoBehaviour
     {
         _gameData.currentTime += Time.deltaTime;
 
-        if (!_gameData.victory && !_gameData.defeat)
+        if (!_gameData.practiceArea)
         {
-            if (CheckWinCondition())
-                _UIManager.EnableVictoryText();
+            if (!_gameData.victory && !_gameData.defeat)
+            {
+                if (CheckWinCondition())
+                    _UIManager.EnableVictoryText();
 
-            if (CheckDefeatCondition())
-                _UIManager.EnableDefeatText();
+                if (CheckDefeatCondition())
+                    _UIManager.EnableDefeatText();
+            }
         }
     }
 

@@ -38,14 +38,16 @@ public class UIManager : MonoBehaviour
         GetCurrentPointsText();
         GetCurrentAmmoText();
 
-        if (_gameData.tutorial)
+        if (_gameData.practiceArea)
         {
+            pointsText.enabled = false;
             pointsForAKText.enabled = false;
             pointsForSniperText.enabled = false;
             currentTimeText.enabled = false;
         }
         else
         {
+            pointsText.enabled = true;
             pointsForAKText.enabled = true;
             pointsForAKText.text = "Points for AK: " + akData.cost;
             pointsForSniperText.enabled = true;

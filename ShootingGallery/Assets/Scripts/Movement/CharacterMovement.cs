@@ -15,7 +15,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float groundDrag;
 
 
-   [Header("Ground Check")]
+    [Header("Ground Check")]
     [SerializeField] private float playerHeight;
     [SerializeField] private LayerMask whatisGrounded;
     private bool grounded;
@@ -33,14 +33,14 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatisGrounded);
+        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatisGrounded);
 
         SpeedControl();
 
-        if (grounded)
-            rigidBody.drag = groundDrag;
-        else
-            rigidBody.drag = 0;
+        //if (grounded)
+        //    rigidBody.drag = groundDrag;
+        //else
+        //    rigidBody.drag = 0;
 
 
         // get current orientation
@@ -51,7 +51,8 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         moveDir = orientationForward * _movementDirection.y + orientationRight * _movementDirection.x;
-        rigidBody.AddForce(moveDir.normalized * speed * 10f, ForceMode.Force);
+        rigidBody.velocity = new Vector3(moveDir.x * speed, 0, moveDir.z * speed);
+        //rigidBody.AddForce(moveDir.normalized * speed * 10f, ForceMode.Force);
     }
 
     public void ProcessMove(Vector2 movementDirection)

@@ -20,12 +20,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        _gameData.currentTime += Time.deltaTime;
-
-        if (!_gameData.practiceArea)
+        if (_gameData.challengeStarted)
         {
             if (!_gameData.victory && !_gameData.defeat)
             {
+                _gameData.currentTime += Time.deltaTime;
                 if (CheckWinCondition())
                     _UIManager.EnableVictoryText();
 
@@ -54,6 +53,7 @@ public class GameManager : MonoBehaviour
             _pauseManager.FreezeTime();
             _UIManager.EnableMainMenuButton();
             _gameData.victory = true;
+            _gameData.challengeStarted = false;
             return true;
        }
        else 
@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
             _pauseManager.FreezeTime();
             _UIManager.EnableMainMenuButton();
             _gameData.defeat = true;
+            _gameData.challengeStarted = false;
             return true;
         }
         else

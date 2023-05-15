@@ -23,6 +23,14 @@ public class Gun : MonoBehaviour
         ResetWeaponStats();
     }
 
+    private void Update()
+    {
+        if (!_gunData.availiable)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     private void OnEnable()
     {
         holdShootingActionReference.action.started += OnHoldStarted;

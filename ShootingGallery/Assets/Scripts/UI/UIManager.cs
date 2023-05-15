@@ -101,7 +101,7 @@ public class UIManager : MonoBehaviour
             {
                 if (weapons[1].activeSelf)
                 {
-                    if (pistolData.availiable)
+                    if (akData.availiable)
                         bulletsText.text = akData.currentAmmo.ToString() + "/" + akData.magSize.ToString();
                 }
             }
@@ -109,7 +109,7 @@ public class UIManager : MonoBehaviour
             {
                 if (weapons[2].activeSelf)
                 {
-                    if (pistolData.availiable)
+                    if (sniperData.availiable)
                         bulletsText.text = sniperData.currentAmmo.ToString() + "/" + sniperData.magSize.ToString();
                 }
             }

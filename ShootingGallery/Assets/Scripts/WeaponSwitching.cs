@@ -28,8 +28,8 @@ public class WeaponSwitching : MonoBehaviour
     {
         SetWeapon();
 
-        selectedWeapon = 0;
-        SelectFromIndex(selectedWeapon);
+        //selectedWeapon = 0;
+        //SelectFromIndex(selectedWeapon);
 
         timeSinceLastSwitch = 0f;
     }
@@ -37,19 +37,28 @@ public class WeaponSwitching : MonoBehaviour
     public void OnChangeWeapon1(InputValue value)
     {
         if (pistol.availiable)
+        {
             selectedWeapon = 0;
+            SelectFromIndex(selectedWeapon);
+        }
     }
 
     public void OnChangeWeapon2(InputValue value)
     {
         if (ak.availiable)
+        {
             selectedWeapon = 1;
+            SelectFromIndex(selectedWeapon);
+        }
     }
 
     public void OnChangeWeapon3(InputValue value)
     {
         if (sniper.availiable)
+        {
             selectedWeapon = 2;
+            SelectFromIndex(selectedWeapon);
+        }
     }
 
     private void SetWeapon()
@@ -59,6 +68,7 @@ public class WeaponSwitching : MonoBehaviour
         for (int i = 0; i < weapons.Length; i++)
         {
             weapons[i] = transform.GetChild(i);
+            weapons[i].gameObject.SetActive(false);
         }
     }
 
@@ -66,7 +76,6 @@ public class WeaponSwitching : MonoBehaviour
     {
         timeSinceLastSwitch += Time.deltaTime;
 
-        SelectFromIndex(selectedWeapon);
     }
 
     public void SelectFromIndex(int weaponIndex)

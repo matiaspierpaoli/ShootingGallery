@@ -12,5 +12,6 @@ public class GameData : ScriptableObject
     public float maxEnemiesToDefeat;
     public bool victory;
     public bool defeat;
+    public bool challengeStarted;
 
 }

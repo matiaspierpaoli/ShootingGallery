@@ -9,6 +9,11 @@ TagManager:
   - EnemySpawner
   - EnemyLinearMovement
   - EnemyRandomMovement
+  - neutralArea
+  - sniperPracticeArea
+  - AKPracticeArea
+  - ChallengeArea
+  - pistolPracticeArea
   layers:
   - Default
   - TransparentFX

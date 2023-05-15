@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
 
+
+    [SerializeField] private TMP_Text pointsForAKText;
+    [SerializeField] private TMP_Text pointsForSniperText;
+    [SerializeField] private TMP_Text currentTimeText;
+    [SerializeField] private GameData _gameData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +37,21 @@ public class UIManager : MonoBehaviour
 
         GetCurrentPointsText();
         GetCurrentAmmoText();
+
+        if (_gameData.tutorial)
+        {
+            pointsForAKText.enabled = false;
+            pointsForSniperText.enabled = false;
+            currentTimeText.enabled = false;
+        }
+        else
+        {
+            pointsForAKText.enabled = true;
+            pointsForAKText.text = "Points for AK: " + akData.cost;
+            pointsForSniperText.enabled = true;
+            pointsForSniperText.text = "Points for Sniper: " + sniperData.cost;
+            currentTimeText.enabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +59,9 @@ public class UIManager : MonoBehaviour
     {
         GetCurrentPointsText();
         GetCurrentAmmoText();
+        GetCurrentTimeText();
     }
+
 
     public void EnableVictoryText()
     {
@@ -88,5 +112,11 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void GetCurrentTimeText()
+    {
+        int currentTime = (int)_gameData.currentTime;
+        currentTimeText.text = "Current Time: " + currentTime.ToString() + "/" + _gameData.maxTime;        
     }
 }

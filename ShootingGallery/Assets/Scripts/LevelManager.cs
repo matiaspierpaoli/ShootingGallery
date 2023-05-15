@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
         }
         else if (gameObject.tag == "ChallengeArea")
         {
-            pistolData.availiable = false;
+            pistolData.availiable = true;
             akData.availiable = false;
             sniperData.availiable = false;
 

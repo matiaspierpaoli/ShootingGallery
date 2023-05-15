@@ -10,7 +10,7 @@ public class Target : MonoBehaviour, IDamageable
     private float currentHealth = 100f;
     private float timeToRespawn = 5f;
 
-    public void Damage(float damage, Vector3 hitPos, Vector3 hitNormal)
+    public void Damage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)

@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         _gameData.maxEnemiesToDefeat = maxEnemiesToDefeat;
         _gameData.victory = false;
         _gameData.defeat = false;
+        _gameData.challengeStarted = false;
     }
 
     private bool CheckWinCondition()
@@ -79,5 +80,10 @@ public class GameManager : MonoBehaviour
     public void AddOneEnemyDefeated()
     {
         _gameData.currentEnemiesDefeated++;
+    }
+
+    public void StartChallenge()
+    {
+        _gameData.challengeStarted = true;
     }
 }

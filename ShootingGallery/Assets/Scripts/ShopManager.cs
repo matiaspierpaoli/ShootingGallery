@@ -6,9 +6,9 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private GameData _gameData;
     [SerializeField] private Button[] _shopButtons;
 
-    private void Start()
+    private void Update()
     {
-        if (_gameData.practiceArea)
+        if (!_gameData.challengeStarted)
             DeactivateShopButtons();
         else
             ActivateShopButtons();

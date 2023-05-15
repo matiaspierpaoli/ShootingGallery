@@ -59,11 +59,27 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetCurrentPointsText();
-        GetCurrentAmmoText();
-        GetCurrentTimeText();
+        DrawUI();
     }
 
+    private void DrawUI()
+    {
+        if (_gameData.challengeStarted)
+        {
+            GetCurrentPointsText();
+            pointsText.enabled = true;   
+            
+            GetCurrentTimeText();
+            currentTimeText.enabled = true;
+        }
+        else
+        {
+            pointsText.enabled = false;
+            currentTimeText.enabled = false;
+        }
+        
+        GetCurrentAmmoText();
+    }
 
     public void EnableVictoryText()
     {

@@ -110,7 +110,7 @@ public class Gun : MonoBehaviour
 
             if (damageable != null)
             {
-                damageable.Damage(_gunData.damage, hit.point, hit.normal);
+                damageable.Damage(_gunData.damage);
                 Debug.Log("Target hit");
             }
 
@@ -167,24 +167,5 @@ public class Gun : MonoBehaviour
     {
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;
-
-        if (_gameData.practiceArea)
-            ActivateAllWeapons();
-        else
-            ActivateOnlyFirstWeapon();
     }
-
-    private void ActivateOnlyFirstWeapon()
-    {
-        if (_gunData.name == "Asault Rifle" || _gunData.name == "Sniper Rifle")
-            _gunData.availiable = false;
-        else
-            _gunData.availiable = true;
-    }
-
-    private void ActivateAllWeapons()
-    {
-        _gunData.availiable = true;
-    }
-
 }

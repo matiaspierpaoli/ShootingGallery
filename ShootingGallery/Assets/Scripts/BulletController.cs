@@ -12,7 +12,6 @@ public class BulletController : MonoBehaviour
 
     public void Fire(Vector3 direction)
     {
-        //rb.velocity = transform.forward * speed;
         rb.AddForce(direction * speed, ForceMode.Impulse);
     }
 

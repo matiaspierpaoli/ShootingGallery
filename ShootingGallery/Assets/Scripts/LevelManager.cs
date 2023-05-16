@@ -22,6 +22,10 @@ public class LevelManager : MonoBehaviour
             akData.availiable = false;
             sniperData.availiable = false;
 
+            _gameData.challengeStarted = false;
+            _gameData.currentEnemiesDefeated = 0;
+            _gameData.currentTime = 0;
+
             currentTimeText.enabled = false;
             currentAmmoText.enabled = false;
         }
@@ -62,12 +66,4 @@ public class LevelManager : MonoBehaviour
             currentAmmoText.enabled = true;
         }
     }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    pistolData.availiable = false;
-    //    akData.availiable = false;
-    //    sniperData.availiable = false;
-    //}
-
 }

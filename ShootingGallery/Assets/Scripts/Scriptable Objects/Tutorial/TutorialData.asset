@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f0bd76777d1a64187444519cffba31, type: 3}
+  m_Name: TutorialData
+  m_EditorClassIdentifier: 
+  finishedMoving: 0
+  finishedShooting: 0
+  finishedReloading: 0
+  finishedKillingHorEnemy: 0
+  finishedKillingVerEnemy: 0
+  finishedKillingForEnemy: 0
+  finishedKillingRanEnemy: 0

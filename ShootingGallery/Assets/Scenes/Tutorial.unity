@@ -1639,7 +1639,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1043293249}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -5727,9 +5727,9 @@ RectTransform:
   m_Father: {fileID: 348384990}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -202, y: -170}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 116, y: 40}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124941727
@@ -5779,8 +5779,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6731,7 +6731,7 @@ MonoBehaviour:
   _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   _gunData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   _cameraTransform: {fileID: 1043293247}
-  bulletPrefab: {fileID: 5931740784325787188, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  bulletPrefab: {fileID: 7224738747996949258, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   firePoint: {fileID: 797529052}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!114 &1343835900

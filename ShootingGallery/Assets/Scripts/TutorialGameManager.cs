@@ -38,7 +38,7 @@ public class TutorialGameManager : MonoBehaviour
 
         _tutorialData.isMovingPlayerAvailable = true;
 
-        nextStepText.text = "Move Player with WASD";
+        nextStepText.text = "Move Player with WASD or Left-Stick";
 
         for (int i = 0; i < _gunData.Length; i++)
         {
@@ -79,7 +79,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Move Camera with mouse";
+                    nextStepText.text = "Next Step: Move Camera with mouse or Right-Stick";
                 }
             }
         }
@@ -107,7 +107,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Shoot with left-ckick";
+                    nextStepText.text = "Next Step: Shoot with left-click or R2/RT";
 
                 }
             }
@@ -132,7 +132,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Reload with R";
+                    nextStepText.text = "Next Step: Reload with R or Square/X";
                 }
             }
         }
@@ -154,7 +154,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Pause with P";
+                    nextStepText.text = "Next Step: Pause with P or Options/Start";
                 }
             }
         }
@@ -177,7 +177,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Change weapons with 1,2 or 3";
+                    nextStepText.text = "Next Step: Change weapons with 1,2,3 or gamepad left,up,right arrows";
                 }
             }
             else

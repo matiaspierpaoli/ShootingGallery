@@ -23,14 +23,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
 
-
     [SerializeField] private TMP_Text pointsForAKText;
     [SerializeField] private TMP_Text pointsForSniperText;
     [SerializeField] private TMP_Text currentTimeText;
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
 
-    // Start is called before the first frame update
     void Start()
     {
         victoryText.enabled = false;
@@ -41,6 +39,9 @@ public class UIManager : MonoBehaviour
 
         GetCurrentPointsText();
         GetCurrentAmmoText();
+
+        GetCurrentPointsForAkText();
+        GetCurrentPointsForSniperText();
 
         pointsText.enabled = false;
         pointsForAKText.enabled = false;
@@ -68,6 +69,9 @@ public class UIManager : MonoBehaviour
 
             GetCurrentEnemiesDefeatedText();
             enemiesDefeatedText.enabled = true;
+
+            pointsForAKText.enabled = true;
+            pointsForSniperText.enabled = true;
 
         }
         else
@@ -138,6 +142,16 @@ public class UIManager : MonoBehaviour
     void GetCurrentEnemiesDefeatedText()
     {
         enemiesDefeatedText.text = "Enemies Defeated: " + _gameData.currentEnemiesDefeated.ToString() + "/" + _gameData.maxEnemiesToDefeat.ToString();
+    }
+
+    void GetCurrentPointsForAkText()
+    {
+        pointsForAKText.text = "AK: " + akData.cost.ToString() + " Points";
+    }
+
+    void GetCurrentPointsForSniperText()
+    {
+        pointsForSniperText.text = "Sniper: " + sniperData.cost.ToString() + " Points";
     }
 
     void GetCurrentAmmoText()

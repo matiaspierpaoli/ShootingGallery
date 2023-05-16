@@ -7,23 +7,14 @@ using UnityEngine.InputSystem;
 public class TutorialGameManager : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
-    [SerializeField] private TutorialUIManager _tutorialUIManager;
     [SerializeField] private PauseScript _pauseManager;
     [SerializeField] private GameObject[] weaponsGO;
     [SerializeField] private GunData[] _gunData; 
-    [SerializeField] private PlayerData player;
-
-    [SerializeField] private GameObject enemyHorizontalMovement;
-    [SerializeField] private GameObject enemyVerticalMovement;
-    [SerializeField] private GameObject enemyFBMovement;
-    [SerializeField] private GameObject enemyRandomMovement;
 
     [SerializeField] private TutorialData _tutorialData;
 
     [SerializeField] private CharacterMovement _characterMovement;
     [SerializeField] private PlayerLook _playerLook;
-
-    [SerializeField] private SceneLoader _sceneLoader;
 
     [SerializeField] private TMP_Text nextStepText;
     [SerializeField] private TMP_Text bulletsText;
@@ -33,7 +24,6 @@ public class TutorialGameManager : MonoBehaviour
 
     private void Start()
     {
-        //_pauseManager.FreezeTime();
         ResetTutorialData();
 
         _tutorialData.isMovingPlayerAvailable = true;
@@ -100,8 +90,6 @@ public class TutorialGameManager : MonoBehaviour
 
                 if (currentTutorialTimePractice >= maxTutorialTimePractice)
                 {
-                    //_tutorialData.finishedMovingCamera = true;
-
                     _tutorialData.isShootingAvailable = true;
                     _tutorialData.finishedMovingCamera = true;
 
@@ -270,13 +258,6 @@ public class TutorialGameManager : MonoBehaviour
         _tutorialData.finishedReloading = false;
         _tutorialData.finishedPausing = false;
 
-        _tutorialData.finishedKillingHorEnemy = false;
-        _tutorialData.finishedKillingVerEnemy = false;
-        _tutorialData.finishedKillingForEnemy = false;
-        _tutorialData.finishedKillingRanEnemy = false;
-
         bulletsText.enabled = false;
     }
-
-
 }

@@ -17,9 +17,4 @@ public class TutorialData : ScriptableObject
     public bool finishedShooting;
     public bool finishedReloading;
     public bool finishedPausing;
-
-    public bool finishedKillingHorEnemy;
-    public bool finishedKillingVerEnemy;
-    public bool finishedKillingForEnemy;
-    public bool finishedKillingRanEnemy;
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private Transform orientation;
-    //[SerializeField] Camera cam;   
     
     [SerializeField] private float sensX = 10f;
     [SerializeField] private float sensY = 10f;
@@ -29,9 +28,5 @@ public class PlayerLook : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-
-        //cam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
-        //transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * sensX);
     }
 }

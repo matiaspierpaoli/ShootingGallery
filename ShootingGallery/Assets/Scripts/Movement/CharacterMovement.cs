@@ -33,15 +33,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatisGrounded);
-
         SpeedControl();
-
-        //if (grounded)
-        //    rigidBody.drag = groundDrag;
-        //else
-        //    rigidBody.drag = 0;
-
 
         // get current orientation
         orientationForward = orientation.forward;
@@ -52,7 +44,6 @@ public class CharacterMovement : MonoBehaviour
     {
         moveDir = orientationForward * _movementDirection.y + orientationRight * _movementDirection.x;
         rigidBody.velocity = new Vector3(moveDir.x * speed, 0, moveDir.z * speed);
-        //rigidBody.AddForce(moveDir.normalized * speed * 10f, ForceMode.Force);
     }
 
     public void ProcessMove(Vector2 movementDirection)

@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.PlayerLoop;
 
 public class WeaponSwitching : MonoBehaviour
 {
@@ -17,21 +12,11 @@ public class WeaponSwitching : MonoBehaviour
     [SerializeField] private GunData ak;
     [SerializeField] private GunData sniper;
 
-    [Header("Settings")]
-    [SerializeField] private float switchTime;
-
     private int selectedWeapon;
-    private float timeSinceLastSwitch;
 
-    // Start is called before the first frame update
     void Start()
     {
         SetWeapon();
-
-        //selectedWeapon = 0;
-        //SelectFromIndex(selectedWeapon);
-
-        timeSinceLastSwitch = 0f;
     }
 
     public void OnChangeWeapon1(InputValue value)
@@ -72,21 +57,12 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        timeSinceLastSwitch += Time.deltaTime;
-
-    }
-
     public void SelectFromIndex(int weaponIndex)
     {
         for (int i = 0; i < weapons.Length; i++)
         {
             weapons[i].gameObject.SetActive(i == weaponIndex);
         }
-
-        timeSinceLastSwitch = 0f;
-
     }
 
     public void AcquireWeapon(GunData weapon)

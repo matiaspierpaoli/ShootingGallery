@@ -9,18 +9,12 @@ public class BulletController : MonoBehaviour
     [SerializeField] float speed = 10;
     [SerializeField] Rigidbody rb;
     [SerializeField] private float damage;
-    //private float traveledDistance;
 
     public void Fire(Vector3 direction)
     {
         //rb.velocity = transform.forward * speed;
         rb.AddForce(direction * speed, ForceMode.Impulse);
     }
-
-    //private void Update()
-    //{
-    //    traveledDistance += Time.deltaTime * speed;
-    //}
 
     private void OnCollisionEnter(Collision collision)
     {

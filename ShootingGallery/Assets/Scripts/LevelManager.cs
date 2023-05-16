@@ -14,16 +14,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text currentTimeText;
     [SerializeField] private TMP_Text currentAmmoText;
 
-    //public void SetTutorialData()
-    //{
-    //    _gameData.practiceArea = true;
-    //}
-
-    //public void SetLevelData()
-    //{
-    //    _gameData.practiceArea = false;
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
         if (gameObject.tag == "neutralArea")

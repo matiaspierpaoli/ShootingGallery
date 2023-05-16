@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameData _gameData;
     [SerializeField] private UIManager _UIManager;
     [SerializeField] private PauseScript _pauseManager;
+    [SerializeField] private GunData[] weapons;
+    [SerializeField] private PlayerData player;
 
     [SerializeField] private float maxTime;
     [SerializeField] private float maxEnemiesToDefeat;
@@ -43,6 +45,27 @@ public class GameManager : MonoBehaviour
         _gameData.victory = false;
         _gameData.defeat = false;
         _gameData.challengeStarted = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        _pauseManager.UnfreezeTime();
+
+        _UIManager.DisableMainMenuButton();
+        _UIManager.DisableReplayButton();
+        _UIManager.DisableExitChallengeButton();
+
+        _UIManager.DisableVictoryText();
+        _UIManager.DisableDefeatText();
+
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].availiable = false;
+
+            if (weapons[i].name == "Pistol")
+                weapons[i].availiable = true;
+        }
+
+        player.points = 0;
     }
 
     private bool CheckWinCondition()
@@ -53,6 +76,8 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             _pauseManager.FreezeTime();
             _UIManager.EnableMainMenuButton();
+            _UIManager.EnableReplayButton();
+            _UIManager.EnableExitChallengeButton();
             _gameData.victory = true;
             _gameData.challengeStarted = false;
             return true;
@@ -69,6 +94,8 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             _pauseManager.FreezeTime();
             _UIManager.EnableMainMenuButton();
+            _UIManager.EnableReplayButton();
+            _UIManager.EnableExitChallengeButton();
             _gameData.defeat = true;
             _gameData.challengeStarted = false;
             return true;
@@ -85,5 +112,16 @@ public class GameManager : MonoBehaviour
     public void StartChallenge()
     {
         _gameData.challengeStarted = true;
+    }
+
+    public void Replay()
+    {
+        ResetGameData();
+        _gameData.challengeStarted = true;
+    }
+
+    public void ExitChallenge()
+    {
+        ResetGameData();
     }
 }

@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private PlayerData playerData;
 
     [SerializeField] private GameObject mainMenuButton;
+    [SerializeField] private GameObject replayButton;
+    [SerializeField] private GameObject exitChallengeButton;
  
     [SerializeField] private GameObject[] weapons;
 
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text pointsForAKText;
     [SerializeField] private TMP_Text pointsForSniperText;
     [SerializeField] private TMP_Text currentTimeText;
+    [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
 
     // Start is called before the first frame update
@@ -33,27 +36,18 @@ public class UIManager : MonoBehaviour
         victoryText.enabled = false;
         defeatText.enabled = false;
 
-        mainMenuButton.SetActive(false);
+        DisableMainMenuButton();
+        DisableReplayButton();
 
         GetCurrentPointsText();
         GetCurrentAmmoText();
 
-        if (_gameData.practiceArea)
-        {
-            pointsText.enabled = false;
-            pointsForAKText.enabled = false;
-            pointsForSniperText.enabled = false;
-            currentTimeText.enabled = false;
-        }
-        else
-        {
-            pointsText.enabled = true;
-            pointsForAKText.enabled = true;
-            pointsForAKText.text = "Points for AK: " + akData.cost;
-            pointsForSniperText.enabled = true;
-            pointsForSniperText.text = "Points for Sniper: " + sniperData.cost;
-            currentTimeText.enabled = true;
-        }
+        pointsText.enabled = false;
+        pointsForAKText.enabled = false;
+        pointsForSniperText.enabled = false;
+        currentTimeText.enabled = false;
+        enemiesDefeatedText.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -71,11 +65,16 @@ public class UIManager : MonoBehaviour
             
             GetCurrentTimeText();
             currentTimeText.enabled = true;
+
+            GetCurrentEnemiesDefeatedText();
+            enemiesDefeatedText.enabled = true;
+
         }
         else
         {
             pointsText.enabled = false;
             currentTimeText.enabled = false;
+            enemiesDefeatedText.enabled = false;
         }
         
         GetCurrentAmmoText();
@@ -91,14 +90,54 @@ public class UIManager : MonoBehaviour
         defeatText.enabled = true;
     }
 
+    public void DisableVictoryText()
+    {
+        victoryText.enabled = false;
+    }
+
+    public void DisableDefeatText()
+    {
+        defeatText.enabled = false;
+    }
+
     public void EnableMainMenuButton()
     {
         mainMenuButton.SetActive(true);
     }
 
+    public void EnableReplayButton()
+    {
+        replayButton.SetActive(true);
+    }
+
+    public void EnableExitChallengeButton()
+    {
+        exitChallengeButton.SetActive(true);
+    }
+
+    public void DisableMainMenuButton()
+    {
+        mainMenuButton.SetActive(false);
+    }
+    
+    public void DisableReplayButton()
+    {
+        replayButton.SetActive(false);
+    }
+    
+    public void DisableExitChallengeButton()
+    {
+        exitChallengeButton.SetActive(false);
+    }
+
     void GetCurrentPointsText()
     {
         pointsText.text = "Points: " + playerData.points.ToString();
+    }
+
+    void GetCurrentEnemiesDefeatedText()
+    {
+        enemiesDefeatedText.text = "Enemies Defeated: " + _gameData.currentEnemiesDefeated.ToString() + "/" + _gameData.maxEnemiesToDefeat.ToString();
     }
 
     void GetCurrentAmmoText()

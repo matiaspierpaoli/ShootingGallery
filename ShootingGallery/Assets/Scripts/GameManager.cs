@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+//TODO: Documentation - Add summary
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
@@ -22,11 +23,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //TODO: TP2 - FSM
         if (_gameData.challengeStarted)
         {
             if (!_gameData.victory && !_gameData.defeat)
             {
                 _gameData.currentTime += Time.deltaTime;
+                //TODO: Fix - Should be event based
                 if (CheckWinCondition())
                     _UIManager.EnableVictoryText();
 
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
         {
             weapons[i].availiable = false;
 
+            //TODO: Fix - Hardcoded value
             if (weapons[i].name == "Pistol")
                 weapons[i].availiable = true;
         }

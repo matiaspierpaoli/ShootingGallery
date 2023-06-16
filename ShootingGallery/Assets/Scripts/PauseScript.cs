@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+//TODO: Fix - Using script in a name is not really recommended, it's obvious that this is a script
 public class PauseScript : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;

@@ -17,19 +17,23 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //TODO: Fix - collider.TryGetComponent
         IDamageable damageable = collision.collider.GetComponent<IDamageable>();
 
         if (damageable != null)
         {           
             damageable.Damage(damage);
+            //TODO: Fix - Bad log/Log out of context
             Debug.Log("Target hit");
         }
 
+        //TODO: Fix - collider.TryGetComponent
         Button otherButton = collision.gameObject.GetComponent<Button>();
 
         if (otherButton != null)
         {
             otherButton.onClick.Invoke();
+            //TODO: Fix - Bad log/Log out of context
             Debug.Log("Button hit");
 
         }

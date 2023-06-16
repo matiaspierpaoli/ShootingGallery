@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+//TODO: Documentation - Add summary
 public class EnemyRandomMovement : MonoBehaviour
 {
     [SerializeField] private List<Transform> points = new List<Transform>();
@@ -11,6 +12,7 @@ public class EnemyRandomMovement : MonoBehaviour
     private Transform activePoint;
     private Transform goalPoint;
 
+    //TODO: Fix - Unclear name
     float aux = 0f;
 
     private void Awake()
@@ -29,6 +31,7 @@ public class EnemyRandomMovement : MonoBehaviour
         return spawnPoint;
     }
 
+    //TODO: Fix - Could be a coroutine.
     private void Update()
     {
         aux += Time.deltaTime;

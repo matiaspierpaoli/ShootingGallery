@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//TODO: Fix - Unclear name
+//TODO: Documentation - Add summary
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private Transform orientation;

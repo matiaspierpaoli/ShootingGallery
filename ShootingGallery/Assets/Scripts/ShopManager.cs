@@ -8,6 +8,7 @@ public class ShopManager : MonoBehaviour
 
     private void Update()
     {
+        //TODO: TP2 - FSM
         if (!_gameData.challengeStarted)
             DeactivateShopButtons();
         else

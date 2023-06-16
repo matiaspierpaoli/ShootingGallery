@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class TutorialGameManager : MonoBehaviour
 {
+    //TODO: TP2 - Remove unused methods/variables/classes
     [SerializeField] private GameData _gameData;
     [SerializeField] private PauseScript _pauseManager;
     [SerializeField] private GameObject[] weaponsGO;
@@ -28,6 +29,7 @@ public class TutorialGameManager : MonoBehaviour
 
         _tutorialData.isMovingPlayerAvailable = true;
 
+        //TODO: Fix - Hardcoded value
         nextStepText.text = "Move Player with WASD or Left-Stick";
 
         for (int i = 0; i < _gunData.Length; i++)
@@ -46,6 +48,7 @@ public class TutorialGameManager : MonoBehaviour
 
     private void Update()
     {
+        //TODO: Fix - Should be event based
         GetCurrentAmmoText();
     }
 

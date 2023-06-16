@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    //TODO: TP2 - Remove unused methods/variables/classes
     [SerializeField] private GameData _gameData;
 
     [SerializeField] private GunData _gunData;
     [SerializeField] private Transform _cameraTransform;
 
+    //TODO: Fix - Change type to bulletController
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
 
@@ -27,6 +29,7 @@ public class Gun : MonoBehaviour
     {
         if (!_gunData.availiable)
         {
+            //TODO: Fix - Log something when this happens pls
             gameObject.SetActive(false);
         }
     }
@@ -68,13 +71,16 @@ public class Gun : MonoBehaviour
     {
         while (true)
         {
+            //TODO: Fix - Hardcoded value
             if (GameObject.FindGameObjectWithTag("InstanceBulletGun"))
             {
                 if (_gunData.currentAmmo > 0)
                     CreateBullet();
             }
+            //TODO: Fix - Hardcoded value
             else if (GameObject.FindGameObjectWithTag("RaycastGun"))
             {
+                //TODO: TP2 - Remove unused methods/variables/classes
                 if (RaycastShoot())
                 {
                     //Debug.Log("Raycast hit");
@@ -103,6 +109,7 @@ public class Gun : MonoBehaviour
             if (button != null)
             {
                 button.onClick.Invoke();
+                //TODO: Fix - Bad log/Log out of context
                 Debug.Log("Button hit");
             }
 
@@ -111,6 +118,7 @@ public class Gun : MonoBehaviour
             if (damageable != null)
             {
                 damageable.Damage(_gunData.damage);
+                //TODO: Fix - Bad log/Log out of context
                 Debug.Log("Target hit");
             }
 
@@ -141,6 +149,7 @@ public class Gun : MonoBehaviour
 
     public void OnReload(InputValue context)
     {
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("Reload started");
         StartReload();
     }
@@ -158,6 +167,7 @@ public class Gun : MonoBehaviour
         _gunData.reloading = true;
         yield return new WaitForSeconds(_gunData.reloadTime);
 
+        //TODO: Fix - Bad log/Log out of context
         Debug.Log("Reload finished");
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;

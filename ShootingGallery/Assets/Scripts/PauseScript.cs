@@ -8,6 +8,8 @@ public class PauseScript : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;
 
+    [SerializeField] private GameObject[] pauseUIElements;
+ 
     public void Pause()
     {
         Cursor.visible = true;

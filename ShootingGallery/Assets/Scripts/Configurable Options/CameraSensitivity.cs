@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class CameraSensitivity : MonoBehaviour
 {
-    public float horizontalSensitivity;
-    public float verticalSensitivity;
+    private float horizontalSensitivity;
+    private float verticalSensitivity;
 
     private float defaultHorizontalSensitivity = 75f;
     private float defaultVerticalSensitivity = 75f;
 
-    public Scrollbar horizontalScrollbar;
-    public Scrollbar verticalScrollbar;
+    public Slider horizontalSlider;
+    public Slider verticalSlider;
 
     private float minSensitivity;
     private float maxSensitivity;
@@ -23,15 +23,15 @@ public class CameraSensitivity : MonoBehaviour
         maxSensitivity = 150f;
 
         horizontalSensitivity = PlayerPrefs.GetFloat("horizontalSensitivity", defaultHorizontalSensitivity);
-        horizontalSensitivity = PlayerPrefs.GetFloat("verticalSensitivity", defaultVerticalSensitivity);
+        verticalSensitivity = PlayerPrefs.GetFloat("verticalSensitivity", defaultVerticalSensitivity);
 
-        horizontalScrollbar.value = maxSensitivity / 2;
-        verticalScrollbar.value = maxSensitivity / 2;
+        horizontalSlider.value = horizontalSensitivity;
+        verticalSlider.value = verticalSensitivity;
     }
 
     public void OnHorizontalSensitivityChange()
     {
-        horizontalSensitivity = horizontalScrollbar.value;
+        horizontalSensitivity = horizontalSlider.value;
 
         horizontalSensitivity = Mathf.Clamp(horizontalSensitivity, minSensitivity, maxSensitivity);
         
@@ -41,7 +41,7 @@ public class CameraSensitivity : MonoBehaviour
 
     public void OnVerticalSensitivityChange()
     {
-        verticalSensitivity = verticalScrollbar.value;
+        verticalSensitivity = verticalSlider.value;
 
         verticalSensitivity = Mathf.Clamp(verticalSensitivity, minSensitivity, maxSensitivity);
 

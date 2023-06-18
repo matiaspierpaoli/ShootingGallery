@@ -4,14 +4,17 @@ public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private Transform orientation;
     
-    [SerializeField] private float sensX = 10f;
-    [SerializeField] private float sensY = 10f;
+    private float sensX;
+    private float sensY;
 
     private float xRotation = 0f;
     private float yRotation = 0f;
 
     private void Start()
     {
+        sensX = PlayerPrefs.GetFloat("horizontalSensitivity", 75f);
+        sensY = PlayerPrefs.GetFloat("verticalSensitivity", 75f);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

@@ -746,8 +746,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 981092348}
-  sensX: 100
-  sensY: 100
 --- !u!1 &168127150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
-  _tutorialUIManager: {fileID: 0}
   _pauseManager: {fileID: 399005428}
   weaponsGO:
   - {fileID: 999573937}
@@ -2752,15 +2749,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   - {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   - {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
-  player: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
-  enemyHorizontalMovement: {fileID: 1736519645}
-  enemyVerticalMovement: {fileID: 200209669}
-  enemyFBMovement: {fileID: 1267549571}
-  enemyRandomMovement: {fileID: 1062157127}
   _tutorialData: {fileID: 11400000, guid: f584a01741e05864e926685fba21a736, type: 2}
   _characterMovement: {fileID: 929458443}
-  _playerLook: {fileID: 151973034}
-  _sceneLoader: {fileID: 1592338808}
+  _playerLook: {fileID: 0}
   nextStepText: {fileID: 1124941727}
   bulletsText: {fileID: 832429247}
   maxTutorialTimePractice: 5

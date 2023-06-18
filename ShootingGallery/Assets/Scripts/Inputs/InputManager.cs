@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//TODO: Documentation - Add summary
 public class InputManager : MonoBehaviour
 {
+    //TODO: Fix - Should be event based
     [SerializeField] private CharacterMovement _characterMovement;
     [SerializeField] private PlayerLook _playerLook;
     [SerializeField] private PauseScript _PauseManager;
 
+    //TODO: TP2 - Remove unused methods/variables/classes
     [SerializeField] private SceneLoader _sceneLoader;
 
     public void OnMove(InputValue context)

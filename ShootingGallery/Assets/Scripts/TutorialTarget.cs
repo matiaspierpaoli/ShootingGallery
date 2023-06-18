@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: Fix - Isn't this the same as the target class? If the only diff is the points, that should be worked through an event or external class
 public class TutorialTarget : MonoBehaviour, IDamageable
 {
     [SerializeField] private float maxHealth;

@@ -4,7 +4,9 @@ using UnityEngine.InputSystem;
 public class WeaponSwitching : MonoBehaviour
 {
     [Header("References")]
+    //TODO: TP2 - Syntax - Fix declaration order
     private Transform[] weapons;
+    //TODO: TP2 - Syntax - Consistency in naming convention
     [SerializeField] private PlayerData _playerData;
 
     [Header("Scriptable Objects")]
@@ -14,6 +16,7 @@ public class WeaponSwitching : MonoBehaviour
 
     private int selectedWeapon;
 
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     void Start()
     {
         SetWeapon();

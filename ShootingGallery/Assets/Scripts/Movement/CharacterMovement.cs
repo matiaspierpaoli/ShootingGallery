@@ -12,12 +12,14 @@ public class CharacterMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed;
 
+    //TODO: TP2 - Remove unused methods/variables/classes
     [SerializeField] private float groundDrag;
 
 
     [Header("Ground Check")]
     [SerializeField] private float playerHeight;
     [SerializeField] private LayerMask whatisGrounded;
+    //TODO: TP2 - Syntax - Consistency in naming convention
     private bool grounded;
 
     private Vector3 orientationForward;  
@@ -35,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
     {
         SpeedControl();
 
+        //TODO: Fix - Unnecessary code
         // get current orientation
         orientationForward = orientation.forward;
         orientationRight = orientation.right;
@@ -46,11 +49,13 @@ public class CharacterMovement : MonoBehaviour
         rigidBody.velocity = new Vector3(moveDir.x * speed, 0, moveDir.z * speed);
     }
 
+    //TODO: Fix - Unclear name
     public void ProcessMove(Vector2 movementDirection)
     {
         _movementDirection = movementDirection;
     }
 
+    //TODO: Fix - Unclear name
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z);

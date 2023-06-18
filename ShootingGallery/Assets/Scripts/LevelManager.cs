@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //TODO: TP2 - SOLID
         if (gameObject.tag == "neutralArea")
         {
             pistolData.availiable = false;

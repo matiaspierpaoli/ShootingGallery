@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
 
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     void Start()
     {
         victoryText.enabled = false;
@@ -54,6 +55,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //TODO: Fix - Should be event based
         DrawUI();
     }
 
@@ -84,6 +86,7 @@ public class UIManager : MonoBehaviour
         GetCurrentAmmoText();
     }
 
+    //TODO: Fix - Should be native Setter/Getter
     public void EnableVictoryText()
     {
         victoryText.enabled = true;

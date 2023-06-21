@@ -23,8 +23,8 @@ public class BulletController : MonoBehaviour
         if (damageable != null)
         {           
             damageable.Damage(damage);
-            //TODO: Fix - Bad log/Log out of context
-            Debug.Log("Target hit");
+           
+            Debug.Log("Target hit with bullet rigidbody");
         }
 
         //TODO: Fix - collider.TryGetComponent
@@ -33,8 +33,8 @@ public class BulletController : MonoBehaviour
         if (otherButton != null)
         {
             otherButton.onClick.Invoke();
-            //TODO: Fix - Bad log/Log out of context
-            Debug.Log("Button hit");
+            
+            Debug.Log("Button hit with bullet rigidbody");
 
         }
 

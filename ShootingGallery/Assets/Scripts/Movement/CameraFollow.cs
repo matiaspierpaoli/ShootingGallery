@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour 
 {
-    //TODO: Fix - Unclear name
-    [SerializeField] private Transform cameraPosition;
+    [SerializeField] private Transform playerCameraPosition;
 
-    //TODO: Fix - Should be LateUpdate
-    private void Update()
+    private void LateUpdate()
     {
-        transform.position = cameraPosition.position;
+        transform.position = playerCameraPosition.position;
     }
 }

@@ -7,7 +7,7 @@ public class WeaponSwitching : MonoBehaviour
     //TODO: TP2 - Syntax - Fix declaration order
     private Transform[] weapons;
     //TODO: TP2 - Syntax - Consistency in naming convention
-    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private PlayerStats _playerData;
 
     [Header("Scriptable Objects")]
     [SerializeField] private GunData pistol;
@@ -16,8 +16,7 @@ public class WeaponSwitching : MonoBehaviour
 
     private int selectedWeapon;
 
-    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
-    void Start()
+    private void Start()
     {
         SetWeapon();
     }

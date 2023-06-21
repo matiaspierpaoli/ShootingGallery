@@ -5,16 +5,12 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
-    //TODO: TP2 - Remove unused methods/variables/classes
-    [SerializeField] private GameData _gameData;
-
     [SerializeField] private GunData _gunData;
     [SerializeField] private Transform _cameraTransform;
 
     //TODO: Fix - Change type to bulletController
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-
 
     public InputActionReference holdShootingActionReference;
 

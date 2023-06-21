@@ -2125,6 +2125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 1592338808}
+  pauseUIElements: []
 --- !u!4 &399005429
 Transform:
   m_ObjectHideFlags: 0
@@ -2751,7 +2752,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
   _tutorialData: {fileID: 11400000, guid: f584a01741e05864e926685fba21a736, type: 2}
   _characterMovement: {fileID: 929458443}
-  _playerLook: {fileID: 0}
+  _playerLook: {fileID: 151973034}
   nextStepText: {fileID: 1124941727}
   bulletsText: {fileID: 832429247}
   maxTutorialTimePractice: 5

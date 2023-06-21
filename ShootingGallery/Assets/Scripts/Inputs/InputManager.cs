@@ -9,13 +9,10 @@ public class InputManager : MonoBehaviour
     [SerializeField] private PlayerLook _playerLook;
     [SerializeField] private PauseScript _PauseManager;
 
-    //TODO: TP2 - Remove unused methods/variables/classes
-    [SerializeField] private SceneLoader _sceneLoader;
-
     public void OnMove(InputValue context)
     {
         var movementInput = context.Get<Vector2>();
-        _characterMovement.ProcessMove(movementInput);
+        _characterMovement.SetMovementDir(movementInput);
     }
 
     public void OnLook(InputValue context)

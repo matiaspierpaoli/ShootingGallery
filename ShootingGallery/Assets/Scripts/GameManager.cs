@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager _UIManager;
     [SerializeField] private PauseScript _pauseManager;
     [SerializeField] private GunData[] weapons;
-    [SerializeField] private PlayerData player;
+    [SerializeField] private PlayerStats player;
 
     [SerializeField] private float maxTime;
     [SerializeField] private float maxEnemiesToDefeat;

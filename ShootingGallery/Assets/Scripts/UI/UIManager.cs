@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text bulletsText;
     [SerializeField] private TMP_Text victoryText;
     [SerializeField] private TMP_Text defeatText;
-    [SerializeField] private PlayerData playerData;
+    [SerializeField] private PlayerStats playerData;
 
     [SerializeField] private GameObject mainMenuButton;
     [SerializeField] private GameObject replayButton;
@@ -29,8 +29,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
 
-    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
-    void Start()
+    private void Start()
     {
         victoryText.enabled = false;
         defeatText.enabled = false;
@@ -52,8 +51,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //TODO: Fix - Should be event based
         DrawUI();
@@ -137,27 +135,27 @@ public class UIManager : MonoBehaviour
         exitChallengeButton.SetActive(false);
     }
 
-    void GetCurrentPointsText()
+    private void GetCurrentPointsText()
     {
         pointsText.text = "Points: " + playerData.points.ToString();
     }
 
-    void GetCurrentEnemiesDefeatedText()
+    private void GetCurrentEnemiesDefeatedText()
     {
         enemiesDefeatedText.text = "Enemies Defeated: " + _gameData.currentEnemiesDefeated.ToString() + "/" + _gameData.maxEnemiesToDefeat.ToString();
     }
 
-    void GetCurrentPointsForAkText()
+    private void GetCurrentPointsForAkText()
     {
         pointsForAKText.text = "AK: " + akData.cost.ToString() + " Points";
     }
 
-    void GetCurrentPointsForSniperText()
+    private void GetCurrentPointsForSniperText()
     {
         pointsForSniperText.text = "Sniper: " + sniperData.cost.ToString() + " Points";
     }
 
-    void GetCurrentAmmoText()
+    private void GetCurrentAmmoText()
     {
         for (int i = 0; i < weapons.Length; i++) 
         {

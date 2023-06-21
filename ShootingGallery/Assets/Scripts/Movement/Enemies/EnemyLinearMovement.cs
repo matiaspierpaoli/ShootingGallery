@@ -2,30 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO: Documentation - Add summary
+/// <summary>
+///  One type of enemy which moves linearly, from point A to point B and backwards using a coroutine
+/// </summary>
 public class EnemyLinearMovement : MonoBehaviour
 {
     [SerializeField] private Transform pointA;
     [SerializeField] private Transform pointB;
-    [SerializeField] private float timeToReachPos;
+    [SerializeField] private float speed = 1f;
 
-    //TODO: Fix - Unclear name
-    private bool isMoving = true;
+    private bool isMovingToPointA = true;
 
-    //TODO: Fix - Could be a coroutine.
-    private float internalTimer = 0;
-
-    private void Update()
+    private IEnumerator Start()
     {
-        if (isMoving)
-            internalTimer += 1 / timeToReachPos * Time.deltaTime;
-        else
-            internalTimer -= 1 / timeToReachPos * Time.deltaTime;
+        while (true)
+        {
+            yield return StartCoroutine(MoveToPoint(isMovingToPointA ? pointA.position : pointB.position));
+            isMovingToPointA = !isMovingToPointA;
+        }
+    }
 
-        transform.position = Vector3.Lerp(pointA.position, pointB.position, internalTimer);
+    private IEnumerator MoveToPoint(Vector3 targetPosition)
+    {
+        Vector3 startPosition = transform.position;
+        float distance = Vector3.Distance(startPosition, targetPosition);
+        float duration = distance / speed;
+        float elapsed = 0f;
 
-        //BUG: Comparing floats (vector3 = 3 floats) could generate problems. Please use small threshold.
-        if (transform.position == pointA.position || transform.position == pointB.position)
-            isMoving = !isMoving;
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
     }
 }

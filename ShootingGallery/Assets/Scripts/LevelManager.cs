@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //other.TryGetComponent(out IFloor floor)
         //TODO: TP2 - SOLID
         if (gameObject.tag == "neutralArea")
         {

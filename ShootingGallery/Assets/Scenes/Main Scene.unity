@@ -1309,6 +1309,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -1317,12 +1321,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -1727,7 +1739,6 @@ MonoBehaviour:
   _characterMovement: {fileID: 929458443}
   _playerLook: {fileID: 151973034}
   _PauseManager: {fileID: 399005428}
-  _sceneLoader: {fileID: 1592338808}
 --- !u!4 &93521446
 Transform:
   m_ObjectHideFlags: 0
@@ -3088,7 +3099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964e63f3d474cd1438d61ca26387be45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPosition: {fileID: 1587377654}
+  playerCameraPosition: {fileID: 1587377654}
 --- !u!114 &151973034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3102,8 +3113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 981092348}
-  sensX: 100
-  sensY: 100
 --- !u!1 &156165704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,9 +4136,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -4137,6 +4158,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -4601,6 +4626,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -4609,12 +4638,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -5206,6 +5243,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -5214,12 +5255,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -5675,9 +5724,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1062157128}
     m_Modifications:
     - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
       propertyPath: _gameManager
       value: 
@@ -6167,9 +6228,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -6177,6 +6250,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -6257,9 +6334,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -6267,6 +6356,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -6378,9 +6471,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -6388,6 +6493,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -6833,6 +6942,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -6841,12 +6954,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -7603,6 +7724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 1592338808}
+  pauseUIElements: []
 --- !u!4 &399005429
 Transform:
   m_ObjectHideFlags: 0
@@ -9136,6 +9258,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -9144,12 +9270,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -9657,6 +9791,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -9665,12 +9803,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -10029,6 +10175,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -10037,12 +10187,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -10360,6 +10518,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -10368,12 +10530,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -11712,9 +11882,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -11722,6 +11904,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -15243,6 +15429,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -15251,12 +15441,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -17281,6 +17479,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -17288,6 +17490,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -17298,6 +17504,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499461, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
@@ -18161,11 +18371,6 @@ MonoBehaviour:
   rigidBody: {fileID: 929458442}
   orientation: {fileID: 981092348}
   speed: 20
-  groundDrag: 5
-  playerHeight: 0
-  whatisGrounded:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &929458444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18178,7 +18383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1855a89143f6a2419235470924e8440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerData: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
+  _playerStats: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
 --- !u!136 &929458445
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19178,10 +19383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831d675f40652014fa3676b9e5082b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   _gunData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   _cameraTransform: {fileID: 1043293247}
-  bulletPrefab: {fileID: 5931740784325787188, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  bulletPrefab: {fileID: 7224738747996949258, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   firePoint: {fileID: 1161830445}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!1001 &1003245006
@@ -19638,6 +19842,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -19646,12 +19854,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -20702,9 +20918,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -20712,6 +20940,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -21481,9 +21713,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -21491,6 +21735,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -21743,6 +21991,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -21751,12 +22003,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -24769,6 +25029,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -24777,12 +25041,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -25485,7 +25757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831d675f40652014fa3676b9e5082b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   _gunData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   _cameraTransform: {fileID: 1043293247}
   bulletPrefab: {fileID: 7224738747996949258, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
@@ -26516,10 +26787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831d675f40652014fa3676b9e5082b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   _gunData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
   _cameraTransform: {fileID: 1043293247}
-  bulletPrefab: {fileID: 5931740784325787188, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  bulletPrefab: {fileID: 7224738747996949258, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   firePoint: {fileID: 349676897}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!4 &1389495122 stripped
@@ -27093,9 +27363,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -27103,6 +27385,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -27715,9 +28001,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -27725,6 +28023,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -28542,9 +28844,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -28552,6 +28866,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -32766,6 +33084,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -32774,12 +33096,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -33318,6 +33648,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -33326,12 +33660,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -36302,9 +36644,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -36312,6 +36666,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -37085,6 +37443,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -37093,12 +37455,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -37896,9 +38266,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -37906,6 +38288,10 @@ PrefabInstance:
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA
@@ -39808,6 +40194,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 929458444}
@@ -39816,12 +40206,20 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8065925249338129985, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: pointA

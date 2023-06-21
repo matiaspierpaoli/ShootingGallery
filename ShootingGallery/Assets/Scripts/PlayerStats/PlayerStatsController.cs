@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerStatsController : MonoBehaviour
 {
-    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private PlayerStats _playerStats;
 
     private void Start()
     {
-        _playerData.points = 0;
+        _playerStats.points = 0;
     }
 
     public void AddPoints(int newPoints)
     {
-        _playerData.points += newPoints;
+        _playerStats.points += newPoints;
     }
 }

@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class TutorialGameManager : MonoBehaviour
 {
-    //TODO: TP2 - Remove unused methods/variables/classes
-    [SerializeField] private GameData _gameData;
     [SerializeField] private PauseScript _pauseManager;
     [SerializeField] private GameObject[] weaponsGO;
     [SerializeField] private GunData[] _gunData; 
@@ -57,7 +55,7 @@ public class TutorialGameManager : MonoBehaviour
         if (_tutorialData.isMovingPlayerAvailable)
         {
             var movementInput = context.Get<Vector2>();
-            _characterMovement.ProcessMove(movementInput);
+            _characterMovement.SetMovementDir(movementInput);
 
             if (!_tutorialData.finishedMovingPlayer)
             {

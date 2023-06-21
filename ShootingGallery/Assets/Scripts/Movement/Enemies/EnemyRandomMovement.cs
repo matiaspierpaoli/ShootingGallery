@@ -1,58 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-//TODO: Documentation - Add summary
+/// <summary>
+///  One type of enemy which moves linearly randomly, from point A to point B and backwards using a coroutine
+/// </summary>
 public class EnemyRandomMovement : MonoBehaviour
 {
     [SerializeField] private List<Transform> points = new List<Transform>();
-    [SerializeField] private float timeToReachPos;
-    
-    private Transform activePoint;
+    [SerializeField] private float speed = 1f;
+
     private Transform goalPoint;
 
-    //TODO: Fix - Unclear name
-    float aux = 0f;
-
-    private void Awake()
+    private IEnumerator Start()
     {
-        activePoint = GetRandomSpawnPoint();
-
-        goalPoint = points[0];
-
-        UpdateNewGoalPoint();
-    }
-
-    private Transform GetRandomSpawnPoint()
-    {
-        Transform spawnPoint = points[UnityEngine.Random.Range(0, points.Count)];
-
-        return spawnPoint;
-    }
-
-    //TODO: Fix - Could be a coroutine.
-    private void Update()
-    {
-        aux += Time.deltaTime;
-
-        transform.position = Vector3.Lerp(activePoint.position, goalPoint.position, aux / timeToReachPos);
-
-        if (aux > timeToReachPos)
+        while (true)
         {
-            aux = 0;
-            UpdateNewGoalPoint();
+            yield return StartCoroutine(MoveToPoint(GetNewGoalPoint().position));
         }
     }
 
+    private IEnumerator MoveToPoint(Vector3 targetPosition)
+    {
+        Vector3 startPosition = transform.position;
+        float distance = Vector3.Distance(startPosition, targetPosition);
+        float duration = distance / speed;
+        float elapsed = 0f;
 
-    private void UpdateNewGoalPoint()
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+    }
+
+    private Transform GetNewGoalPoint()
     {
         List<Transform> newPointsList = new List<Transform>(points);
         newPointsList.Remove(goalPoint);
 
         int index = Random.Range(0, newPointsList.Count);
-        activePoint = goalPoint;
         goalPoint = newPointsList[index];
+        return goalPoint;
     }
 }

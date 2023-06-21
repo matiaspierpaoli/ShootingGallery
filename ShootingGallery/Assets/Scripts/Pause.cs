@@ -1,17 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-//TODO: Fix - Using script in a name is not really recommended, it's obvious that this is a script
-public class PauseScript : MonoBehaviour
+public class Pause : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;
-
-    [SerializeField] private GameObject[] pauseUIElements;
  
-    public void Pause()
+    public void PauseScreen()
     {
         Cursor.visible = true;
         FreezeTime();
@@ -19,7 +13,7 @@ public class PauseScript : MonoBehaviour
         _sceneLoader.LoadLevelAdditive(5);
     }
 
-    public void UnPause()
+    public void UnPauseScreen()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

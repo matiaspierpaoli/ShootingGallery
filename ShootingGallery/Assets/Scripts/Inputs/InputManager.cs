@@ -6,8 +6,8 @@ public class InputManager : MonoBehaviour
 {
     //TODO: Fix - Should be event based
     [SerializeField] private CharacterMovement _characterMovement;
-    [SerializeField] private PlayerLook _playerLook;
-    [SerializeField] private PauseScript _PauseManager;
+    [SerializeField] private PlayerLookController _playerLook;
+    [SerializeField] private Pause _PauseManager;
 
     public void OnMove(InputValue context)
     {
@@ -23,6 +23,6 @@ public class InputManager : MonoBehaviour
 
     public void OnPause(InputValue context)
     {
-        _PauseManager.Pause();       
+        _PauseManager.PauseScreen();       
     }
 }

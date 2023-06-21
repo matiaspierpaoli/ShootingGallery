@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatsController : MonoBehaviour
+public class PlayerStatsController : MonoBehaviour, IPointsProvider
 {
     [SerializeField] private PlayerStats _playerStats;
 

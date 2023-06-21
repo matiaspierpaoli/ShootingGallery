@@ -6,14 +6,14 @@ using UnityEngine.InputSystem;
 
 public class TutorialGameManager : MonoBehaviour
 {
-    [SerializeField] private PauseScript _pauseManager;
+    [SerializeField] private Pause _pauseManager;
     [SerializeField] private GameObject[] weaponsGO;
     [SerializeField] private GunData[] _gunData; 
 
     [SerializeField] private TutorialData _tutorialData;
 
     [SerializeField] private CharacterMovement _characterMovement;
-    [SerializeField] private PlayerLook _playerLook;
+    [SerializeField] private PlayerLookController _playerLook;
 
     [SerializeField] private TMP_Text nextStepText;
     [SerializeField] private TMP_Text bulletsText;
@@ -170,7 +170,7 @@ public class TutorialGameManager : MonoBehaviour
                 }
             }
             else
-                _pauseManager.Pause();
+                _pauseManager.PauseScreen();
         }
     }
 

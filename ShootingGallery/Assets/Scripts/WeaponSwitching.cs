@@ -4,16 +4,15 @@ using UnityEngine.InputSystem;
 public class WeaponSwitching : MonoBehaviour
 {
     [Header("References")]
-    //TODO: TP2 - Syntax - Fix declaration order
-    private Transform[] weapons;
     //TODO: TP2 - Syntax - Consistency in naming convention
-    [SerializeField] private PlayerStats _playerData;
+    [SerializeField] private PlayerStats _playerStats;
 
     [Header("Scriptable Objects")]
     [SerializeField] private GunData pistol;
     [SerializeField] private GunData ak;
     [SerializeField] private GunData sniper;
 
+    private Transform[] weapons;
     private int selectedWeapon;
 
     private void Start()
@@ -69,10 +68,10 @@ public class WeaponSwitching : MonoBehaviour
 
     public void AcquireWeapon(GunData weapon)
     {
-        if (_playerData.points >= weapon.cost)
+        if (_playerStats.points >= weapon.cost)
         {
             weapon.availiable = true;
-            _playerData.points -= weapon.cost;
+            _playerStats.points -= weapon.cost;
         }
     }
 }

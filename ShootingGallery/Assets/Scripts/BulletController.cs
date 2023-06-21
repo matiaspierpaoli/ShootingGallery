@@ -17,25 +17,19 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //TODO: Fix - collider.TryGetComponent
-        IDamageable damageable = collision.collider.GetComponent<IDamageable>();
-
-        if (damageable != null)
-        {           
+        if(collision.collider.TryGetComponent(out IDamageable damageable))
+        {
             damageable.Damage(damage);
-           
+
             Debug.Log("Target hit with bullet rigidbody");
+
         }
 
-        //TODO: Fix - collider.TryGetComponent
-        Button otherButton = collision.gameObject.GetComponent<Button>();
-
-        if (otherButton != null)
+        if (collision.collider.TryGetComponent(out Button button))
         {
-            otherButton.onClick.Invoke();
-            
-            Debug.Log("Button hit with bullet rigidbody");
+            button.onClick.Invoke();
 
+            Debug.Log("Button hit with bullet rigidbody");
         }
 
         Destroy(gameObject);

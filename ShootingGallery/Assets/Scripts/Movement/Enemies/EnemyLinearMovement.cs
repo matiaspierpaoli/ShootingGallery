@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///  One type of enemy which moves linearly, from point A to point B and backwards using a coroutine
+///  One type of enemy which moves linearly, from point A to point B and backwards using a coroutine.
+///  If the gameObject is turned off, the coroutine also stopts 
 /// </summary>
 public class EnemyLinearMovement : MonoBehaviour
 {
@@ -12,8 +13,43 @@ public class EnemyLinearMovement : MonoBehaviour
     [SerializeField] private float speed = 1f;
 
     private bool isMovingToPointA = true;
+    private bool isCoroutineRunning = false;
 
-    private IEnumerator Start()
+    private void Start()
+    {
+        StartMovementCoroutine();
+    }
+
+    private void OnEnable()
+    {
+        if (!isCoroutineRunning)
+            StartMovementCoroutine();
+    }
+
+    private void OnDisable()
+    {
+        StopMovementCoroutine();
+    }
+
+    private void StartMovementCoroutine()
+    {
+        if (isCoroutineRunning)
+            return;
+
+        StartCoroutine(MovementCoroutine());
+        isCoroutineRunning = true;
+    }
+
+    private void StopMovementCoroutine()
+    {
+        if (!isCoroutineRunning)
+            return;
+
+        StopAllCoroutines();
+        isCoroutineRunning = false;
+    }
+
+    private IEnumerator MovementCoroutine()
     {
         while (true)
         {

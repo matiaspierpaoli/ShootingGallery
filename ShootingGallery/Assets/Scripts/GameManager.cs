@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
     [SerializeField] private UIManager _UIManager;
-    [SerializeField] private PauseScript _pauseManager;
+    [SerializeField] private Pause _pauseManager;
     [SerializeField] private GunData[] weapons;
     [SerializeField] private PlayerStats player;
 
@@ -31,10 +31,12 @@ public class GameManager : MonoBehaviour
                 _gameData.currentTime += Time.deltaTime;
                 //TODO: Fix - Should be event based
                 if (CheckWinCondition())
-                    _UIManager.EnableVictoryText();
+                    _UIManager.VictoryTextEnabled = true;
+                //_UIManager.EnableVictoryText();
 
                 if (CheckDefeatCondition())
-                    _UIManager.EnableDefeatText();
+                    _UIManager.DefeatTextEnabled = true;
+                //_UIManager.EnableDefeatText();
             }
         }
     }
@@ -53,12 +55,20 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         _pauseManager.UnfreezeTime();
 
-        _UIManager.DisableMainMenuButton();
-        _UIManager.DisableReplayButton();
-        _UIManager.DisableExitChallengeButton();
+        //_UIManager.DisableMainMenuButton();
+        _UIManager.MainMenuButtonEnabled = false;
+        
+        //_UIManager.DisableReplayButton();
+        _UIManager.ReplayButtonEnabled = false;
 
-        _UIManager.DisableVictoryText();
-        _UIManager.DisableDefeatText();
+        //_UIManager.DisableExitChallengeButton();
+        _UIManager.ExitChallengeButtonEnabled = false;
+
+        //_UIManager.DisableVictoryText();
+        _UIManager.VictoryTextEnabled = false;
+              
+        //_UIManager.DisableDefeatText();
+        _UIManager.DefeatTextEnabled = false;
 
         for (int i = 0; i < weapons.Length; i++)
         {
@@ -79,10 +89,19 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
             _pauseManager.FreezeTime();
-            _UIManager.EnableMainMenuButton();
-            _UIManager.EnableReplayButton();
-            _UIManager.EnableExitChallengeButton();
+            
+            //_UIManager.EnableMainMenuButton();           
+            _UIManager.MainMenuButtonEnabled = true;
+            
+            //_UIManager.EnableReplayButton();
+            _UIManager.ReplayButtonEnabled = true;
+
+            //_UIManager.EnableExitChallengeButton();
+            _UIManager.ExitChallengeButtonEnabled = true;
+
+
             _gameData.victory = true;
+            
             _gameData.challengeStarted = false;
             return true;
        }
@@ -97,9 +116,16 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
             _pauseManager.FreezeTime();
-            _UIManager.EnableMainMenuButton();
-            _UIManager.EnableReplayButton();
-            _UIManager.EnableExitChallengeButton();
+
+            //_UIManager.EnableMainMenuButton();
+            _UIManager.MainMenuButtonEnabled = true;
+
+            //_UIManager.EnableReplayButton();
+            _UIManager.ReplayButtonEnabled = true;
+            
+            //_UIManager.EnableExitChallengeButton();
+            _UIManager.ExitChallengeButtonEnabled = true;
+
             _gameData.defeat = true;
             _gameData.challengeStarted = false;
             return true;

@@ -29,13 +29,52 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
 
+    public bool VictoryTextEnabled
+    {
+        get { return victoryText.enabled; }
+        set { victoryText.enabled = value; }
+    }
+
+    public bool DefeatTextEnabled
+    {
+        get { return defeatText.enabled; }
+        set { defeatText.enabled = value; }
+    }
+
+    public bool MainMenuButtonEnabled
+    {
+        set
+        {
+            bool newValue = value;
+            mainMenuButton.SetActive(newValue);
+        }
+    }
+
+    public bool ReplayButtonEnabled
+    {
+        set
+        {
+            bool newValue = value;
+            replayButton.SetActive(newValue);
+        }
+    }
+
+    public bool ExitChallengeButtonEnabled
+    {
+        set
+        {
+            bool newValue = value;
+            exitChallengeButton.SetActive(newValue);
+        }
+    }
+
     private void Start()
     {
-        victoryText.enabled = false;
-        defeatText.enabled = false;
+        VictoryTextEnabled = false;
+        DefeatTextEnabled = false;
 
-        DisableMainMenuButton();
-        DisableReplayButton();
+        MainMenuButtonEnabled = false;
+        ReplayButtonEnabled = false;
 
         GetCurrentPointsText();
         GetCurrentAmmoText();
@@ -85,55 +124,55 @@ public class UIManager : MonoBehaviour
     }
 
     //TODO: Fix - Should be native Setter/Getter
-    public void EnableVictoryText()
-    {
-        victoryText.enabled = true;
-    }
+    //public void EnableVictoryText()
+    //{
+    //    victoryText.enabled = true;
+    //}
 
-    public void EnableDefeatText()
-    {
-        defeatText.enabled = true;
-    }
+    //public void EnableDefeatText()
+    //{
+    //    defeatText.enabled = true;
+    //}
 
-    public void DisableVictoryText()
-    {
-        victoryText.enabled = false;
-    }
+    //public void DisableVictoryText()
+    //{
+    //    victoryText.enabled = false;
+    //}
 
-    public void DisableDefeatText()
-    {
-        defeatText.enabled = false;
-    }
+    //public void DisableDefeatText()
+    //{
+    //    defeatText.enabled = false;
+    //}
 
-    public void EnableMainMenuButton()
-    {
-        mainMenuButton.SetActive(true);
-    }
+    //public void EnableMainMenuButton()
+    //{
+    //    mainMenuButton.SetActive(true);
+    //}
 
-    public void EnableReplayButton()
-    {
-        replayButton.SetActive(true);
-    }
+    //public void EnableReplayButton()
+    //{
+    //    replayButton.SetActive(true);
+    //}
 
-    public void EnableExitChallengeButton()
-    {
-        exitChallengeButton.SetActive(true);
-    }
+    //public void EnableExitChallengeButton()
+    //{
+    //    exitChallengeButton.SetActive(true);
+    //}
 
-    public void DisableMainMenuButton()
-    {
-        mainMenuButton.SetActive(false);
-    }
+    //public void DisableMainMenuButton()
+    //{
+    //    mainMenuButton.SetActive(false);
+    //}
     
-    public void DisableReplayButton()
-    {
-        replayButton.SetActive(false);
-    }
+    //public void DisableReplayButton()
+    //{
+    //    replayButton.SetActive(false);
+    //}
     
-    public void DisableExitChallengeButton()
-    {
-        exitChallengeButton.SetActive(false);
-    }
+    //public void DisableExitChallengeButton()
+    //{
+    //    exitChallengeButton.SetActive(false);
+    //}
 
     private void GetCurrentPointsText()
     {

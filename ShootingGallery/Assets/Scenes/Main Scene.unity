@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 25466204}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1190,7 +1190,7 @@ GameObject:
   - component: {fileID: 65838914}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (4)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1429,7 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2139a442b05c0e549b87104287a55742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStats: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
   pistol: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   ak: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniper: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
@@ -1706,84 +1706,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92424352}
   m_CullTransparentMesh: 1
---- !u!1 &93521444
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 93521446}
-  - component: {fileID: 93521445}
-  - component: {fileID: 93521447}
-  m_Layer: 0
-  m_Name: WorldInputReader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &93521445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93521444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c63702acc5c883f4aa2389d10d9ecf63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterMovement: {fileID: 929458443}
-  _playerLook: {fileID: 151973034}
-  _PauseManager: {fileID: 399005428}
---- !u!4 &93521446
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93521444}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5398915, y: 3.1316593, z: -0.27184483}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &93521447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93521444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: World
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1001 &93989059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2472,7 +2394,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &129858539
 GameObject:
@@ -2935,7 +2857,7 @@ GameObject:
   - component: {fileID: 147331673}
   m_Layer: 0
   m_Name: Forward/Backward Enemy (5)
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3382,7 +3304,7 @@ GameObject:
   - component: {fileID: 169468694}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (6)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4193,7 +4115,7 @@ GameObject:
   - component: {fileID: 199058010}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (5)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4227,7 +4149,7 @@ GameObject:
   - component: {fileID: 200209670}
   m_Layer: 0
   m_Name: Vertical Movement Enemy
-  m_TagString: Untagged
+  m_TagString: Challenge Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4355,7 +4277,7 @@ GameObject:
   - component: {fileID: 217049757}
   m_Layer: 0
   m_Name: Forward/Backward Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4715,7 +4637,7 @@ GameObject:
   - component: {fileID: 238621520}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (3)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5296,10 +5218,11 @@ GameObject:
   - component: {fileID: 306642132}
   - component: {fileID: 306642131}
   - component: {fileID: 306642130}
+  - component: {fileID: 306642135}
   - component: {fileID: 306642134}
   m_Layer: 10
   m_Name: Ground
-  m_TagString: neutralArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5394,12 +5317,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84bcfd94e639b04a8188c07dfd098e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
+  gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   pistolData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   akData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniperData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
   currentTimeText: {fileID: 2104535637}
   currentAmmoText: {fileID: 92424354}
+--- !u!114 &306642135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306642129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2342d8ada28a84cb90533dad933fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSettings: {fileID: 11400000, guid: 875e6bddc750697418371e2fd712c1f4, type: 2}
 --- !u!1 &308633409
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,6 +6803,7 @@ MonoBehaviour:
   currentTimeText: {fileID: 2104535637}
   enemiesDefeatedText: {fileID: 693635142}
   _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
+  gameManager: {fileID: 585211203}
 --- !u!4 &358109020
 Transform:
   m_ObjectHideFlags: 0
@@ -6880,7 +6817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &359864033
 PrefabInstance:
@@ -7089,10 +7026,11 @@ GameObject:
   - component: {fileID: 366334261}
   - component: {fileID: 366334260}
   - component: {fileID: 366334259}
+  - component: {fileID: 366334262}
   - component: {fileID: 366334258}
   m_Layer: 10
   m_Name: Ground
-  m_TagString: ChallengeArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7124,7 +7062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84bcfd94e639b04a8188c07dfd098e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
+  gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   pistolData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   akData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniperData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
@@ -7193,6 +7131,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366334256}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &366334262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366334256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2342d8ada28a84cb90533dad933fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSettings: {fileID: 11400000, guid: 3340a897019a10f4485a306d6f3ea4e8, type: 2}
 --- !u!1 &369739611
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,7 +7155,7 @@ GameObject:
   - component: {fileID: 369739612}
   m_Layer: 0
   m_Name: Forward/Backward Enemy (7)
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7737,7 +7688,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &414976239
 PrefabInstance:
@@ -7940,7 +7891,7 @@ GameObject:
   - component: {fileID: 426280435}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (3)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10574,7 +10525,7 @@ GameObject:
   - component: {fileID: 564612021}
   m_Layer: 0
   m_Name: Forward/Backward Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11050,6 +11001,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   - {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
   player: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
+  _shopManager: {fileID: 750878485}
+  pistolName: Pistol
   maxTime: 200
   maxEnemiesToDefeat: 50
 --- !u!4 &585211204
@@ -11065,7 +11018,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &593542814
 PrefabInstance:
@@ -14584,7 +14537,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &753898913
 GameObject:
@@ -18264,6 +18217,7 @@ GameObject:
   - component: {fileID: 929458443}
   - component: {fileID: 929458444}
   - component: {fileID: 929458445}
+  - component: {fileID: 929458446}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -18329,7 +18283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929458437}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.2, y: 1.2, z: -12.1}
+  m_LocalPosition: {x: -30.2, y: 0.94, z: -12.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18397,6 +18351,24 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &929458446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929458437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84bcfd94e639b04a8188c07dfd098e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
+  pistolData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
+  akData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
+  sniperData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
+  currentTimeText: {fileID: 2104535637}
+  currentAmmoText: {fileID: 92424354}
 --- !u!1 &937006764
 GameObject:
   m_ObjectHideFlags: 0
@@ -18538,7 +18510,7 @@ GameObject:
   - component: {fileID: 945455905}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (8)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19119,10 +19091,11 @@ GameObject:
   - component: {fileID: 985443151}
   - component: {fileID: 985443150}
   - component: {fileID: 985443149}
+  - component: {fileID: 985443152}
   - component: {fileID: 985443148}
   m_Layer: 10
   m_Name: 'Ground '
-  m_TagString: sniperPracticeArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19154,7 +19127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84bcfd94e639b04a8188c07dfd098e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
+  gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   pistolData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   akData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniperData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
@@ -19223,6 +19196,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985443146}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &985443152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985443146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2342d8ada28a84cb90533dad933fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSettings: {fileID: 11400000, guid: 92683cabbe643eb4fad440b8acd4a730, type: 2}
 --- !u!1001 &986918082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19384,8 +19370,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   _cameraTransform: {fileID: 1043293247}
-  bulletPrefab: {fileID: 7224738747996949258, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   firePoint: {fileID: 1161830445}
+  bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  raycastGunTagName: RaycastGun
+  instanceGunTagName: InstanceBulletGun
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!1001 &1003245006
 PrefabInstance:
@@ -20727,7 +20715,7 @@ GameObject:
   - component: {fileID: 1062157128}
   m_Layer: 0
   m_Name: RandomMovementEnemy
-  m_TagString: Untagged
+  m_TagString: Challenge Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23870,6 +23858,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20.000002, y: 8.000002, z: 1}
   m_Center: {x: 0.000015258789, y: 4.0000005, z: 4.499999}
+--- !u!1 &1221078125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221078127}
+  - component: {fileID: 1221078126}
+  - component: {fileID: 1221078128}
+  m_Layer: 0
+  m_Name: WorldInputReader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1221078126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221078125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63702acc5c883f4aa2389d10d9ecf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1221078127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221078125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.567225, y: 0.9727722, z: -13.02428}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221078128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221078125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: World
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1221134161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23989,7 +24052,7 @@ GameObject:
   - component: {fileID: 1223329027}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (7)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24567,7 +24630,7 @@ GameObject:
   - component: {fileID: 1267549572}
   m_Layer: 0
   m_Name: Forward/Backward Enemy
-  m_TagString: Untagged
+  m_TagString: Challenge Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25453,7 +25516,7 @@ GameObject:
   - component: {fileID: 1317749048}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25758,8 +25821,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   _cameraTransform: {fileID: 1043293247}
-  bulletPrefab: {fileID: 7224738747996949258, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   firePoint: {fileID: 797529052}
+  bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  raycastGunTagName: RaycastGun
+  instanceGunTagName: InstanceBulletGun
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!114 &1343835900
 MonoBehaviour:
@@ -26370,7 +26435,7 @@ GameObject:
   - component: {fileID: 1378107018}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (5)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26788,8 +26853,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
   _cameraTransform: {fileID: 1043293247}
-  bulletPrefab: {fileID: 7224738747996949258, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   firePoint: {fileID: 349676897}
+  bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  raycastGunTagName: RaycastGun
+  instanceGunTagName: InstanceBulletGun
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!4 &1389495122 stripped
 Transform:
@@ -27176,7 +27243,7 @@ GameObject:
   - component: {fileID: 1406826454}
   m_Layer: 0
   m_Name: Forward/Backward Enemy (6)
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27279,7 +27346,7 @@ GameObject:
   - component: {fileID: 1416070420}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (7)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28500,7 +28567,7 @@ GameObject:
   - component: {fileID: 1467002287}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29498,10 +29565,11 @@ GameObject:
   - component: {fileID: 1514426241}
   - component: {fileID: 1514426240}
   - component: {fileID: 1514426239}
+  - component: {fileID: 1514426242}
   - component: {fileID: 1514426238}
   m_Layer: 10
   m_Name: 'Ground '
-  m_TagString: pistolPracticeArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29533,7 +29601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84bcfd94e639b04a8188c07dfd098e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
+  gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   pistolData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   akData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniperData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
@@ -29602,6 +29670,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514426236}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1514426242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514426236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2342d8ada28a84cb90533dad933fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSettings: {fileID: 11400000, guid: 4514c89072647fc47b96db37c1790755, type: 2}
 --- !u!4 &1515428644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6505687648206948003, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
@@ -31182,7 +31263,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1600991623
 GameObject:
@@ -31289,7 +31370,7 @@ GameObject:
   - component: {fileID: 1604555110}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31744,7 +31825,7 @@ GameObject:
   - component: {fileID: 1655953170}
   m_Layer: 0
   m_Name: Forward/Backward Enemy (3)
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31903,7 +31984,7 @@ GameObject:
   - component: {fileID: 1680015938}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (4)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32861,7 +32942,7 @@ GameObject:
   - component: {fileID: 1736519646}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy
-  m_TagString: Untagged
+  m_TagString: Challenge Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33140,7 +33221,7 @@ GameObject:
   - component: {fileID: 1754286727}
   m_Layer: 0
   m_Name: Forward/Backward Enemy (4)
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35423,10 +35504,11 @@ GameObject:
   - component: {fileID: 1905859020}
   - component: {fileID: 1905859019}
   - component: {fileID: 1905859018}
+  - component: {fileID: 1905859021}
   - component: {fileID: 1905859017}
   m_Layer: 10
   m_Name: 'Ground '
-  m_TagString: AKPracticeArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35458,7 +35540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84bcfd94e639b04a8188c07dfd098e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
+  gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
   pistolData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   akData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniperData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
@@ -35527,6 +35609,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905859015}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1905859021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905859015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2342d8ada28a84cb90533dad933fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSettings: {fileID: 11400000, guid: 7a1e469b74cd79d4d975cef2dd253890, type: 2}
 --- !u!1001 &1909545920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35702,7 +35797,7 @@ GameObject:
   - component: {fileID: 1920703610}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (6)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36141,7 +36236,7 @@ GameObject:
   - component: {fileID: 1944216945}
   m_Layer: 0
   m_Name: Vertical Movement Enemy (8)
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36384,7 +36479,7 @@ GameObject:
   - component: {fileID: 1978667797}
   m_Layer: 0
   m_Name: Forward/Backward Enemy
-  m_TagString: Untagged
+  m_TagString: Pistol Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37157,7 +37252,7 @@ GameObject:
   - component: {fileID: 1999065694}
   m_Layer: 0
   m_Name: Horizontal Movement Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Sniper Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39225,7 +39320,7 @@ GameObject:
   - component: {fileID: 2090827245}
   m_Layer: 0
   m_Name: Vertical Movement Enemy
-  m_TagString: Untagged
+  m_TagString: Ak Practice Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

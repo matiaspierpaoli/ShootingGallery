@@ -330,3 +330,4 @@ MonoBehaviour:
   speed: 80
   rb: {fileID: 1803796027765474654}
   damage: 25
+  bulletPrefab: {fileID: 7224738747996949258}

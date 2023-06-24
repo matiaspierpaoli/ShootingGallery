@@ -10,9 +10,18 @@ public class BulletController : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] private float damage;
 
+    [SerializeField] private GameObject bulletPrefab;
+
     public void Fire(Vector3 direction)
     {
         rb.AddForce(direction * speed, ForceMode.Impulse);
+    }
+
+    public void CreateBullet(Transform firePoint)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        BulletController bulletController = bullet.GetComponent<BulletController>();
+        bulletController.Fire(firePoint.forward);
     }
 
     private void OnCollisionEnter(Collision collision)

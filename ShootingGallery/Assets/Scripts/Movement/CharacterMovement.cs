@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,16 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 _movementDirection;
 
+    private void OnEnable()
+    {
+        InputManager.MoveEvent += OnMove;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.MoveEvent -= OnMove;
+    }
+
     private void OnValidate()
     {
         rigidBody ??= GetComponent<Rigidbody>();
@@ -30,6 +41,11 @@ public class CharacterMovement : MonoBehaviour
     {
         moveDir = orientation.forward * _movementDirection.y + orientation.right * _movementDirection.x;
         rigidBody.velocity = new Vector3(moveDir.x * speed, 0, moveDir.z * speed);
+    }
+
+    private void OnMove(Vector2 movementInput)
+    {
+        SetMovementDir(movementInput);
     }
 
     public void SetMovementDir(Vector2 movementDirection)

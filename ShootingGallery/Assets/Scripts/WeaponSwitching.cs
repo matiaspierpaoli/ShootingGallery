@@ -4,8 +4,7 @@ using UnityEngine.InputSystem;
 public class WeaponSwitching : MonoBehaviour
 {
     [Header("References")]
-    //TODO: TP2 - Syntax - Consistency in naming convention
-    [SerializeField] private PlayerStats _playerStats;
+    [SerializeField] private PlayerStats playerStats;
 
     [Header("Scriptable Objects")]
     [SerializeField] private GunData pistol;
@@ -68,10 +67,10 @@ public class WeaponSwitching : MonoBehaviour
 
     public void AcquireWeapon(GunData weapon)
     {
-        if (_playerStats.points >= weapon.cost)
+        if (playerStats.points >= weapon.cost)
         {
             weapon.availiable = true;
-            _playerStats.points -= weapon.cost;
+            playerStats.points -= weapon.cost;
         }
     }
 }

@@ -1,7 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.Playables;
 
-//TODO: Documentation - Add summary
+public enum GameState
+{
+    Inactive,
+    Active
+}
+
+/// <summary>
+/// Using states, manage challenge methods such as StartChallenge/Replay/Exit 
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
@@ -9,9 +18,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Pause _pauseManager;
     [SerializeField] private GunData[] weapons;
     [SerializeField] private PlayerStats player;
+    [SerializeField] private ShopManager _shopManager;
+    [SerializeField] private string pistolName;
 
     [SerializeField] private float maxTime;
     [SerializeField] private float maxEnemiesToDefeat;
+
+    private GameState currentState = GameState.Inactive;
 
     private void Start()
     {
@@ -23,22 +36,49 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //TODO: TP2 - FSM
-        if (_gameData.challengeStarted)
+        switch (currentState)
         {
-            if (!_gameData.victory && !_gameData.defeat)
-            {
-                _gameData.currentTime += Time.deltaTime;
-                //TODO: Fix - Should be event based
-                if (CheckWinCondition())
-                    _UIManager.VictoryTextEnabled = true;
-                //_UIManager.EnableVictoryText();
+            case GameState.Inactive:
+                // Handle inactive state logic
+                break;
+            case GameState.Active:
+                HandleActiveState();
+                break;
+        }
+    }
 
-                if (CheckDefeatCondition())
-                    _UIManager.DefeatTextEnabled = true;
-                //_UIManager.EnableDefeatText();
+    private void HandleActiveState()
+    {
+        if (!_gameData.victory && !_gameData.defeat)
+        {
+            _gameData.currentTime += Time.deltaTime;
+            _UIManager.DrawUI();
+
+            if (CheckWinCondition())
+            {
+                _UIManager.IsVictoryTextEnabled = true;               
+                FinishChallenge();
+            }
+
+            if (CheckDefeatCondition())
+            {
+                _UIManager.IsDefeatTextEnabled = true;
+                FinishChallenge();
             }
         }
+    }
+
+    public void SetState(GameState newState)
+    {
+        currentState = newState;
+    }
+
+    public void StartChallenge()
+    {
+        _gameData.challengeStarted = true;
+        SetState(GameState.Active);       
+        _UIManager.EnableChallengeTexts();
+        UpdateShopState();
     }
 
     private void ResetGameData()
@@ -51,60 +91,34 @@ public class GameManager : MonoBehaviour
         _gameData.defeat = false;
         _gameData.challengeStarted = false;
 
+        _UIManager.IsMainMenuButtonEnabled = false;
+        _UIManager.IsReplayButtonEnabled = false;
+        _UIManager.IsExitChallengeButtonEnabled = false;
+        _UIManager.IsVictoryTextEnabled = false;
+        _UIManager.IsDefeatTextEnabled = false;
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         _pauseManager.UnfreezeTime();
-
-        //_UIManager.DisableMainMenuButton();
-        _UIManager.MainMenuButtonEnabled = false;
-        
-        //_UIManager.DisableReplayButton();
-        _UIManager.ReplayButtonEnabled = false;
-
-        //_UIManager.DisableExitChallengeButton();
-        _UIManager.ExitChallengeButtonEnabled = false;
-
-        //_UIManager.DisableVictoryText();
-        _UIManager.VictoryTextEnabled = false;
-              
-        //_UIManager.DisableDefeatText();
-        _UIManager.DefeatTextEnabled = false;
 
         for (int i = 0; i < weapons.Length; i++)
         {
             weapons[i].availiable = false;
 
-            //TODO: Fix - Hardcoded value
-            if (weapons[i].name == "Pistol")
+            if (weapons[i].name == pistolName)
                 weapons[i].availiable = true;
+            
         }
 
         player.points = 0;
+
+        UpdateShopState();
     }
 
     private bool CheckWinCondition()
     {
        if (_gameData.currentEnemiesDefeated >= _gameData.maxEnemiesToDefeat)
-       {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-            _pauseManager.FreezeTime();
-            
-            //_UIManager.EnableMainMenuButton();           
-            _UIManager.MainMenuButtonEnabled = true;
-            
-            //_UIManager.EnableReplayButton();
-            _UIManager.ReplayButtonEnabled = true;
-
-            //_UIManager.EnableExitChallengeButton();
-            _UIManager.ExitChallengeButtonEnabled = true;
-
-
-            _gameData.victory = true;
-            
-            _gameData.challengeStarted = false;
-            return true;
-       }
+            return true;       
        else 
             return false;
     }
@@ -112,26 +126,26 @@ public class GameManager : MonoBehaviour
     private bool CheckDefeatCondition()
     {
         if (_gameData.currentTime >= _gameData.maxTime)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-            _pauseManager.FreezeTime();
-
-            //_UIManager.EnableMainMenuButton();
-            _UIManager.MainMenuButtonEnabled = true;
-
-            //_UIManager.EnableReplayButton();
-            _UIManager.ReplayButtonEnabled = true;
-            
-            //_UIManager.EnableExitChallengeButton();
-            _UIManager.ExitChallengeButtonEnabled = true;
-
-            _gameData.defeat = true;
-            _gameData.challengeStarted = false;
             return true;
-        }
         else
             return false;
+    }
+
+    private void FinishChallenge()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        _pauseManager.FreezeTime();
+
+
+        _UIManager.IsMainMenuButtonEnabled = true;
+        _UIManager.IsReplayButtonEnabled = true;
+        _UIManager.IsExitChallengeButtonEnabled = true;
+
+        _gameData.defeat = true;
+        _gameData.challengeStarted = false;
+
+        currentState = GameState.Inactive;
     }
 
     public void AddOneEnemyDefeated()
@@ -139,19 +153,25 @@ public class GameManager : MonoBehaviour
         _gameData.currentEnemiesDefeated++;
     }
 
-    public void StartChallenge()
-    {
-        _gameData.challengeStarted = true;
-    }
-
     public void Replay()
     {
         ResetGameData();
         _gameData.challengeStarted = true;
+        SetState(GameState.Active);
     }
 
     public void ExitChallenge()
     {
         ResetGameData();
+        _UIManager.DisableChallengeTexts();
+        SetState(GameState.Inactive);
+    }
+
+    public void UpdateShopState()
+    {
+        if (_gameData.challengeStarted)
+            _shopManager.SetState(ShopState.Active);
+        else
+            _shopManager.SetState(ShopState.Inactive);
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Target : MonoBehaviour, IDamageable
@@ -40,13 +38,11 @@ public class Target : MonoBehaviour, IDamageable
 
             if (hasGameManager)
             {
-                gameManager.GetComponent<GameManager>().AddOneEnemyDefeated();
                 gameManager.AddOneEnemyDefeated();
             }
 
             gameObject.SetActive(false);
-            //TODO: Fix - Bad log/Log out of context
-            Debug.Log("Enemy eliminated");
+            Debug.Log(transform.parent.gameObject.name + " eliminated in " + transform.parent.gameObject.tag);
             Invoke("Respawn", timeToRespawn);
         }
     }
@@ -54,8 +50,7 @@ public class Target : MonoBehaviour, IDamageable
     private void Respawn()
     {
         gameObject.SetActive(true);
-        //TODO: Fix - Bad log/Log out of context
-        Debug.Log("Enemy respawned");
+        Debug.Log(transform.parent.gameObject.name + " respawned in " + transform.parent.gameObject.tag);
         currentHealth = maxHealth;
     }
 }

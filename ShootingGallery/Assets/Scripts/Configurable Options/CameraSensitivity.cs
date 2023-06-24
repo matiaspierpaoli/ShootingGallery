@@ -17,6 +17,8 @@ public class CameraSensitivity : MonoBehaviour
     private float minSensitivity;
     private float maxSensitivity;
 
+    public static event System.Action SensChangeEvent;
+
     private void Start()
     {
         minSensitivity = 0.2f;
@@ -37,6 +39,8 @@ public class CameraSensitivity : MonoBehaviour
         
         PlayerPrefs.SetFloat("horizontalSensitivity", horizontalSensitivity);
         PlayerPrefs.Save();
+
+        SensChangeEvent?.Invoke();
     }
 
     public void OnVerticalSensitivityChange()
@@ -47,5 +51,7 @@ public class CameraSensitivity : MonoBehaviour
 
         PlayerPrefs.SetFloat("verticalSensitivity", verticalSensitivity);
         PlayerPrefs.Save();
+
+        SensChangeEvent?.Invoke();
     }
 }

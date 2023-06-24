@@ -1,10 +1,26 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;
- 
+
+    private void OnEnable()
+    {
+        InputManager.PauseEvent += OnPause;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.PauseEvent -= OnPause;
+    }
+
+    public void OnPause()
+    {
+        PauseScreen();
+    }
+
     public void PauseScreen()
     {
         Cursor.visible = true;

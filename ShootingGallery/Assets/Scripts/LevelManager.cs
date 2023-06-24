@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Playables;
 
+/// <summary>
+/// Determine which gun bools and text are correspondant to the floor in which the player is
+/// </summary>
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private GameData _gameData;
+    [SerializeField] private GameData gameData;
     [SerializeField] private GunData pistolData;
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
@@ -16,56 +16,22 @@ public class LevelManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //other.TryGetComponent(out IFloor floor)
-        //TODO: TP2 - SOLID
-        if (gameObject.tag == "neutralArea")
+        FloorSettingsContainer floorSettingsContainer = other.GetComponent<FloorSettingsContainer>();
+
+        if (floorSettingsContainer != null)
         {
-            pistolData.availiable = false;
-            akData.availiable = false;
-            sniperData.availiable = false;
+            FloorSettings floorSettings = floorSettingsContainer.floorSettings;
 
-            _gameData.challengeStarted = false;
-            _gameData.currentEnemiesDefeated = 0;
-            _gameData.currentTime = 0;
+            pistolData.availiable = floorSettings.pistolAvailable;
+            akData.availiable = floorSettings.akAvailable;
+            sniperData.availiable = floorSettings.sniperAvailable;
 
-            currentTimeText.enabled = false;
-            currentAmmoText.enabled = false;
-        }
-        else if (gameObject.tag == "ChallengeArea")
-        {
-            pistolData.availiable = true;
-            akData.availiable = false;
-            sniperData.availiable = false;
+            gameData.challengeStarted = floorSettings.challengeStarted;
+            gameData.currentEnemiesDefeated = 0;
+            gameData.currentTime = 0;
 
-            currentTimeText.enabled = true;
-            currentAmmoText.enabled = true;
-        }
-        else if (gameObject.tag == "pistolPracticeArea")
-        {
-            pistolData.availiable = true;
-            akData.availiable = false;
-            sniperData.availiable = false;
-
-            currentTimeText.enabled = false;
-            currentAmmoText.enabled = true;
-        }
-        else if (gameObject.tag == "AKPracticeArea")
-        {
-            pistolData.availiable = false;
-            akData.availiable = true;
-            sniperData.availiable = false;
-
-            currentTimeText.enabled = false;
-            currentAmmoText.enabled = true;
-        }
-        else if (gameObject.tag == "sniperPracticeArea")
-        {
-            pistolData.availiable = false;
-            akData.availiable = false;
-            sniperData.availiable = true;
-
-            currentTimeText.enabled = false;
-            currentAmmoText.enabled = true;
+            currentTimeText.enabled = floorSettings.currentTimeTextEnabled;
+            currentAmmoText.enabled = floorSettings.currentAmmoTextEnabled;
         }
     }
 }

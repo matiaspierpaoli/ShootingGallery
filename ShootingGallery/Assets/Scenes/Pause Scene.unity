@@ -1293,8 +1293,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1906817841}
-        m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
-        m_MethodName: UnPause
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: UnPauseScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2955,7 +2955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 2028671724}
-  pauseUIElements: []
 --- !u!4 &1906817842
 Transform:
   m_ObjectHideFlags: 0

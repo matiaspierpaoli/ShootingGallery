@@ -8,14 +8,16 @@ public class TutorialGameManager : MonoBehaviour
 {
     [SerializeField] private Pause _pauseManager;
     [SerializeField] private GameObject[] weaponsGO;
-    [SerializeField] private GunData[] _gunData; 
+    [SerializeField] private GunData[] _gunData;
 
     [SerializeField] private TutorialData _tutorialData;
 
     [SerializeField] private CharacterMovement _characterMovement;
     [SerializeField] private PlayerLookController _playerLook;
 
-    [SerializeField] private TMP_Text nextStepText;
+    private int currentStepIndex;
+    [SerializeField] private TMP_Text[] stepText;
+
     [SerializeField] private TMP_Text bulletsText;
 
     private float currentTutorialTimePractice = 0f;
@@ -27,8 +29,7 @@ public class TutorialGameManager : MonoBehaviour
 
         _tutorialData.isMovingPlayerAvailable = true;
 
-        //TODO: Fix - Hardcoded value
-        nextStepText.text = "Move Player with WASD or Left-Stick";
+        DisplayNextStepText();
 
         for (int i = 0; i < _gunData.Length; i++)
         {
@@ -44,12 +45,6 @@ public class TutorialGameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        //TODO: Fix - Should be event based
-        GetCurrentAmmoText();
-    }
-
     public void OnMove(InputValue context)
     {
         if (_tutorialData.isMovingPlayerAvailable)
@@ -59,18 +54,18 @@ public class TutorialGameManager : MonoBehaviour
 
             if (!_tutorialData.finishedMovingPlayer)
             {
-                currentTutorialTimePractice ++;
+                currentTutorialTimePractice++;
 
                 Debug.Log("Correctly Moved Player");
 
                 if (currentTutorialTimePractice >= maxTutorialTimePractice)
-                {                
+                {
                     _tutorialData.isMovingCameraAvailable = true;
                     _tutorialData.finishedMovingPlayer = true;
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Move Camera with mouse or Right-Stick";
+                    DisplayNextStepText();
                 }
             }
         }
@@ -96,8 +91,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Shoot with left-click or R2/RT";
-
+                    DisplayNextStepText();
                 }
             }
         }
@@ -114,14 +108,12 @@ public class TutorialGameManager : MonoBehaviour
 
                 if (currentTutorialTimePractice >= 1)
                 {
-                    //_tutorialData.finishedMovingPlayer = true;
-
                     _tutorialData.isReloadingAvailable = true;
                     _tutorialData.finishedShooting = true;
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Reload with R or Square/X";
+                    DisplayNextStepText();
                 }
             }
         }
@@ -143,7 +135,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Pause with P or Options/Start";
+                    DisplayNextStepText();
                 }
             }
         }
@@ -166,7 +158,7 @@ public class TutorialGameManager : MonoBehaviour
 
                     currentTutorialTimePractice = 0f;
 
-                    nextStepText.text = "Next Step: Change weapons with 1,2,3 or gamepad left,up,right arrows";
+                    DisplayNextStepText();
                 }
             }
             else
@@ -179,14 +171,16 @@ public class TutorialGameManager : MonoBehaviour
         if (_tutorialData.isChanginWeaponsAvailable)
         {
             Debug.Log("Correctly Changed Weapon to 1");
-            
-            for (int i = 0; i < weaponsGO.Length; i++) 
+
+            for (int i = 0; i < weaponsGO.Length; i++)
             {
                 if (i == 0)
                     weaponsGO[i].SetActive(true);
                 else
                     weaponsGO[i].SetActive(false);
-            }           
+            }
+
+            DisplayNextStepText();
         }
     }
 
@@ -203,6 +197,8 @@ public class TutorialGameManager : MonoBehaviour
                 else
                     weaponsGO[i].SetActive(false);
             }
+
+            DisplayNextStepText();
         }
     }
 
@@ -219,33 +215,24 @@ public class TutorialGameManager : MonoBehaviour
                 else
                     weaponsGO[i].SetActive(false);
             }
+
+            DisplayNextStepText();
         }
     }
 
-    void GetCurrentAmmoText()
+    public void SetNewAmmoText()
     {
         for (int i = 0; i < weaponsGO.Length; i++)
         {
-            if (i == 0)
-            {
-                if (weaponsGO[0].activeSelf)                  
-                    bulletsText.text = _gunData[0].currentAmmo.ToString() + "/" + _gunData[0].magSize.ToString();               
-            }
-            else if (i == 1)
-            {
-                if (weaponsGO[1].activeSelf)                   
-                    bulletsText.text = _gunData[1].currentAmmo.ToString() + "/" + _gunData[1].magSize.ToString();             
-            }
-            else
-            {
-                if (weaponsGO[2].activeSelf)                
-                    bulletsText.text = _gunData[2].currentAmmo.ToString() + "/" + _gunData[2].magSize.ToString();              
-            }
+            if (weaponsGO[i].activeSelf)
+                bulletsText.text = _gunData[i].currentAmmo.ToString() + "/" + _gunData[i].magSize.ToString();
         }
     }
 
-    void ResetTutorialData()
+    private void ResetTutorialData()
     {
+        currentStepIndex = 0;
+
         _tutorialData.isMovingPlayerAvailable = false;
         _tutorialData.isMovingCameraAvailable = false;
         _tutorialData.isShootingAvailable = false;
@@ -260,5 +247,21 @@ public class TutorialGameManager : MonoBehaviour
         _tutorialData.finishedPausing = false;
 
         bulletsText.enabled = false;
+    }
+
+    private void DisplayNextStepText()
+    {
+        for (int i = 0; i < stepText.Length; i++)
+        {
+            if (currentStepIndex < stepText.Length) // If the number of steps index reached the limit, keep the last text in the array alive
+            {
+                if (i == currentStepIndex)
+                    stepText[i].enabled = true;
+                else
+                    stepText[i].enabled = false;
+            }
+        }
+
+        currentStepIndex++;
     }
 }

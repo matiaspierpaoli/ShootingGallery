@@ -7,14 +7,16 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private GunData _gunData;
     [SerializeField] private Transform _cameraTransform;
-
-    //TODO: Fix - Change type to bulletController
-    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private BulletController bulletController;
+    
+    [SerializeField] private string raycastGunTagName;
+    [SerializeField] private string instanceGunTagName;
 
     public InputActionReference holdShootingActionReference;
 
     private Coroutine shootingCoroutine;
+
 
     private void Awake()
     {
@@ -25,8 +27,8 @@ public class Gun : MonoBehaviour
     {
         if (!_gunData.availiable)
         {
-            //TODO: Fix - Log something when this happens pls
             gameObject.SetActive(false);
+            Debug.Log(_gunData.name + " deactivated");
         }
     }
 
@@ -67,21 +69,14 @@ public class Gun : MonoBehaviour
     {
         while (true)
         {
-            //TODO: Fix - Hardcoded value
-            if (GameObject.FindGameObjectWithTag("InstanceBulletGun"))
+            if (GameObject.FindGameObjectWithTag(instanceGunTagName))
             {
                 if (_gunData.currentAmmo > 0)
-                    CreateBullet();
+                    bulletController.CreateBullet(firePoint);
             }
-            //TODO: Fix - Hardcoded value
-            else if (GameObject.FindGameObjectWithTag("RaycastGun"))
+            else if (GameObject.FindGameObjectWithTag(raycastGunTagName))
             {
-                //TODO: TP2 - Remove unused methods/variables/classes
-                if (RaycastShoot())
-                {
-                    //Debug.Log("Raycast hit");
-
-                }
+                RaycastShoot();
             }
 
             _gunData.currentAmmo--;
@@ -105,8 +100,7 @@ public class Gun : MonoBehaviour
             if (button != null)
             {
                 button.onClick.Invoke();
-                //TODO: Fix - Bad log/Log out of context
-                Debug.Log("Button hit");
+                Debug.Log("Button hit with raycast shot");
             }
 
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
@@ -114,8 +108,7 @@ public class Gun : MonoBehaviour
             if (damageable != null)
             {
                 damageable.Damage(_gunData.damage);
-                //TODO: Fix - Bad log/Log out of context
-                Debug.Log("Target hit");
+                Debug.Log("Target hit with raycast shot");
             }
 
             return true;
@@ -134,19 +127,11 @@ public class Gun : MonoBehaviour
 
         return dir.normalized;
     }
-   
-    private void CreateBullet()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.Fire(transform.forward);
-    }
     #endregion
 
     public void OnReload(InputValue context)
     {
-        //TODO: Fix - Bad log/Log out of context
-        Debug.Log("Reload started");
+        Debug.Log(_gunData.name + " started realoading");
         StartReload();
     }
 
@@ -163,8 +148,8 @@ public class Gun : MonoBehaviour
         _gunData.reloading = true;
         yield return new WaitForSeconds(_gunData.reloadTime);
 
-        //TODO: Fix - Bad log/Log out of context
-        Debug.Log("Reload finished");
+        Debug.Log(_gunData.name + " finished realoading");
+
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;
     }

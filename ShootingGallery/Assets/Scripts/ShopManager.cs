@@ -1,18 +1,41 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum ShopState
+{
+    Active,
+    Inactive
+}
+
 public class ShopManager : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
     [SerializeField] private Button[] _shopButtons;
 
-    private void Update()
+    private ShopState currentState = ShopState.Inactive;
+
+    private void Start()
     {
-        //TODO: TP2 - FSM
-        if (!_gameData.challengeStarted)
-            DeactivateShopButtons();
-        else
-            ActivateShopButtons();
+        UpdateState();
+    }
+
+    private void UpdateState()
+    {
+        switch (currentState)
+        {
+            case ShopState.Active:
+                ActivateShopButtons();
+                break;
+            case ShopState.Inactive:
+                DeactivateShopButtons();
+                break;
+        }
+    }
+
+    public void SetState(ShopState newState)
+    {
+        currentState = newState;
+        UpdateState();
     }
 
     private void ActivateShopButtons()

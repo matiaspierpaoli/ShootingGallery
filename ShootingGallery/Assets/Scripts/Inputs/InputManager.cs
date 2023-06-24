@@ -1,28 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
-//TODO: Documentation - Add summary
+/// <summary>
+///  Receive Input through new Input System and invoke events passing the corresponding values
+/// </summary>
 public class InputManager : MonoBehaviour
 {
-    //TODO: Fix - Should be event based
-    [SerializeField] private CharacterMovement _characterMovement;
-    [SerializeField] private PlayerLookController _playerLook;
-    [SerializeField] private Pause _PauseManager;
+    public static event System.Action<Vector2> MoveEvent;
+    public static event System.Action<Vector2> LookEvent;
+    public static event System.Action PauseEvent;
 
     public void OnMove(InputValue context)
     {
         var movementInput = context.Get<Vector2>();
-        _characterMovement.SetMovementDir(movementInput);
+
+        MoveEvent?.Invoke(movementInput);
     }
 
     public void OnLook(InputValue context)
     {
-        var movementInput = context.Get<Vector2>();
-        _playerLook.ProcessLook(movementInput);
+        var lookInput = context.Get<Vector2>();
+
+        LookEvent?.Invoke(lookInput);
     }
 
     public void OnPause(InputValue context)
     {
-        _PauseManager.PauseScreen();       
+        PauseEvent?.Invoke();
     }
 }

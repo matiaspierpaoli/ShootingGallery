@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject mainMenuButton;
     [SerializeField] private GameObject replayButton;
     [SerializeField] private GameObject exitChallengeButton;
- 
+
     [SerializeField] private GameObject[] weapons;
 
     [SerializeField] private GunData pistolData;
@@ -29,52 +25,43 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
 
-    public bool VictoryTextEnabled
+    [SerializeField] private GameManager gameManager;
+
+    public bool IsVictoryTextEnabled
     {
         get { return victoryText.enabled; }
-        set { victoryText.enabled = value; }
+        set { if (victoryText != null) victoryText.enabled = value; }
     }
 
-    public bool DefeatTextEnabled
+    public bool IsDefeatTextEnabled
     {
         get { return defeatText.enabled; }
-        set { defeatText.enabled = value; }
+        set { if (defeatText != null) defeatText.enabled = value;}
     }
 
-    public bool MainMenuButtonEnabled
-    {
-        set
-        {
-            bool newValue = value;
-            mainMenuButton.SetActive(newValue);
-        }
+    public bool IsMainMenuButtonEnabled
+    {       
+        set { if (mainMenuButton != null) mainMenuButton.SetActive(value);}        
     }
 
-    public bool ReplayButtonEnabled
+    public bool IsReplayButtonEnabled
     {
-        set
-        {
-            bool newValue = value;
-            replayButton.SetActive(newValue);
-        }
+        set { if (replayButton != null) replayButton.SetActive(value);}      
     }
 
-    public bool ExitChallengeButtonEnabled
+    public bool IsExitChallengeButtonEnabled
     {
-        set
-        {
-            bool newValue = value;
-            exitChallengeButton.SetActive(newValue);
-        }
+        set { if (exitChallengeButton != null) exitChallengeButton.SetActive(value);}       
     }
 
     private void Start()
     {
-        VictoryTextEnabled = false;
-        DefeatTextEnabled = false;
+        IsVictoryTextEnabled = false;
+        IsDefeatTextEnabled = false;
 
-        MainMenuButtonEnabled = false;
-        ReplayButtonEnabled = false;
+        IsMainMenuButtonEnabled = false;
+        IsReplayButtonEnabled = false;
+        IsExitChallengeButtonEnabled = false;
 
         GetCurrentPointsText();
         GetCurrentAmmoText();
@@ -82,97 +69,37 @@ public class UIManager : MonoBehaviour
         GetCurrentPointsForAkText();
         GetCurrentPointsForSniperText();
 
-        pointsText.enabled = false;
-        pointsForAKText.enabled = false;
-        pointsForSniperText.enabled = false;
-        currentTimeText.enabled = false;
-        enemiesDefeatedText.enabled = false;
-        
+        DisableChallengeTexts();
+
     }
 
-    private void Update()
+    public void DrawUI()
     {
-        //TODO: Fix - Should be event based
-        DrawUI();
-    }
-
-    private void DrawUI()
-    {
-        if (_gameData.challengeStarted)
-        {
-            GetCurrentPointsText();
-            pointsText.enabled = true;   
-            
-            GetCurrentTimeText();
-            currentTimeText.enabled = true;
-
-            GetCurrentEnemiesDefeatedText();
-            enemiesDefeatedText.enabled = true;
-
-            pointsForAKText.enabled = true;
-            pointsForSniperText.enabled = true;
-
-        }
-        else
-        {
-            pointsText.enabled = false;
-            currentTimeText.enabled = false;
-            enemiesDefeatedText.enabled = false;
-        }
-        
+        GetCurrentPointsText();                         
+        GetCurrentTimeText();          
+        GetCurrentEnemiesDefeatedText();                
         GetCurrentAmmoText();
     }
 
-    //TODO: Fix - Should be native Setter/Getter
-    //public void EnableVictoryText()
-    //{
-    //    victoryText.enabled = true;
-    //}
+    public void EnableChallengeTexts()
+    {
+        pointsText.enabled = true;
+        currentTimeText.enabled = true;
+        enemiesDefeatedText.enabled = true;
 
-    //public void EnableDefeatText()
-    //{
-    //    defeatText.enabled = true;
-    //}
+        pointsForAKText.enabled = true;
+        pointsForSniperText.enabled = true;
+    }
 
-    //public void DisableVictoryText()
-    //{
-    //    victoryText.enabled = false;
-    //}
+    public void DisableChallengeTexts()
+    {
+        pointsText.enabled = false;
+        currentTimeText.enabled = false;
+        enemiesDefeatedText.enabled = false;
 
-    //public void DisableDefeatText()
-    //{
-    //    defeatText.enabled = false;
-    //}
-
-    //public void EnableMainMenuButton()
-    //{
-    //    mainMenuButton.SetActive(true);
-    //}
-
-    //public void EnableReplayButton()
-    //{
-    //    replayButton.SetActive(true);
-    //}
-
-    //public void EnableExitChallengeButton()
-    //{
-    //    exitChallengeButton.SetActive(true);
-    //}
-
-    //public void DisableMainMenuButton()
-    //{
-    //    mainMenuButton.SetActive(false);
-    //}
-    
-    //public void DisableReplayButton()
-    //{
-    //    replayButton.SetActive(false);
-    //}
-    
-    //public void DisableExitChallengeButton()
-    //{
-    //    exitChallengeButton.SetActive(false);
-    //}
+        pointsForAKText.enabled = false;
+        pointsForSniperText.enabled = false;
+    }
 
     private void GetCurrentPointsText()
     {

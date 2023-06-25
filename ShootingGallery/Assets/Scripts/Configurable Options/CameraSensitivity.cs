@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraSensitivity : MonoBehaviour
 {
+    [SerializeField] private TMP_Text horizontalSensitivityText;
+    [SerializeField] private TMP_Text verticalSensitivityText;
+
     private float horizontalSensitivity;
     private float verticalSensitivity;
 
@@ -34,6 +38,7 @@ public class CameraSensitivity : MonoBehaviour
     public void OnHorizontalSensitivityChange()
     {
         horizontalSensitivity = horizontalSlider.value;
+        horizontalSensitivityText.text = horizontalSlider.value.ToString();
 
         horizontalSensitivity = Mathf.Clamp(horizontalSensitivity, minSensitivity, maxSensitivity);
         
@@ -46,6 +51,7 @@ public class CameraSensitivity : MonoBehaviour
     public void OnVerticalSensitivityChange()
     {
         verticalSensitivity = verticalSlider.value;
+        verticalSensitivityText.text = verticalSlider.value.ToString();
 
         verticalSensitivity = Mathf.Clamp(verticalSensitivity, minSensitivity, maxSensitivity);
 

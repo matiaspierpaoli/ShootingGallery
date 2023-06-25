@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         switch (currentState)
         {
             case GameState.Inactive:
-                // Handle inactive state logic
+                _UIManager.GetCurrentAmmoText();
                 break;
             case GameState.Active:
                 HandleActiveState();

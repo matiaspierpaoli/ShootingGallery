@@ -121,8 +121,10 @@ public class UIManager : MonoBehaviour
         pointsForSniperText.text = "Sniper: " + sniperData.cost.ToString() + " Points";
     }
 
-    private void GetCurrentAmmoText()
+    public void GetCurrentAmmoText()
     {
+        bulletsText.text = ""; // Reset ammo text to avoid wrong gun ammo in other area
+         
         for (int i = 0; i < weapons.Length; i++) 
         {
             if (i == 0)

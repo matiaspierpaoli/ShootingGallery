@@ -1,5 +1,7 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -26,6 +28,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameData _gameData;
 
     [SerializeField] private GameManager gameManager;
+
+    [SerializeField] private Image[] selectedWeapons;
+    [SerializeField] private Image[] unselectedWeapons;
 
     public bool IsVictoryTextEnabled
     {
@@ -54,6 +59,16 @@ public class UIManager : MonoBehaviour
         set { if (exitChallengeButton != null) exitChallengeButton.SetActive(value);}       
     }
 
+    private void OnEnable()
+    {
+        WeaponSwitching.SwitchWeaponEvent += OnSwitchWeapon;
+    }
+
+    private void OnDisable()
+    {
+        WeaponSwitching.SwitchWeaponEvent -= OnSwitchWeapon;
+    }
+
     private void Start()
     {
         IsVictoryTextEnabled = false;
@@ -62,6 +77,16 @@ public class UIManager : MonoBehaviour
         IsMainMenuButtonEnabled = false;
         IsReplayButtonEnabled = false;
         IsExitChallengeButtonEnabled = false;
+
+        for (int i = 0; i < selectedWeapons.Length; i++)
+        {
+            selectedWeapons[i].enabled = false;
+        }
+
+        for (int i = 0; i < unselectedWeapons.Length; i++)
+        {
+            unselectedWeapons[i].enabled = true;
+        }
 
         GetCurrentPointsText();
         GetCurrentAmmoText();
@@ -158,5 +183,30 @@ public class UIManager : MonoBehaviour
     {
         int currentTime = (int)_gameData.currentTime;
         currentTimeText.text = "Current Time: " + currentTime.ToString() + "/" + _gameData.maxTime;        
+    }
+
+    private void OnSwitchWeapon(int weaponSelected)
+    {
+        SetSelectedWeaponImage(weaponSelected);
+    }
+
+    public void SetSelectedWeaponImage(int weaponSelected)
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (i == weaponSelected)
+            {
+                if (weapons[weaponSelected].activeSelf)
+                {
+                    selectedWeapons[weaponSelected].enabled = true;
+                    unselectedWeapons[weaponSelected].enabled = false;
+                }
+            }
+            else
+            {
+                selectedWeapons[i].enabled = false;
+                unselectedWeapons[i].enabled = true;
+            }
+        }      
     }
 }

@@ -19,3 +19,5 @@ MonoBehaviour:
   challengeStarted: 0
   currentTimeTextEnabled: 0
   currentAmmoTextEnabled: 1
+  areSelectedWeaponImagesEnabled: 1
+  areUnselectedWeaponImagesEnabled: 1

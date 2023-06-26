@@ -14,6 +14,8 @@ public class WeaponSwitching : MonoBehaviour
     private Transform[] weapons;
     private int selectedWeapon;
 
+    public static event System.Action<int> SwitchWeaponEvent;
+
     private void Start()
     {
         SetWeapon();
@@ -25,6 +27,7 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 0;
             SelectFromIndex(selectedWeapon);
+            SwitchWeaponEvent?.Invoke(selectedWeapon);
         }
     }
 
@@ -34,6 +37,7 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 1;
             SelectFromIndex(selectedWeapon);
+            SwitchWeaponEvent?.Invoke(selectedWeapon);
         }
     }
 
@@ -43,6 +47,7 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 2;
             SelectFromIndex(selectedWeapon);
+            SwitchWeaponEvent?.Invoke(selectedWeapon);
         }
     }
 

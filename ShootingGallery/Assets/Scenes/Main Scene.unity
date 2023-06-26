@@ -5536,6 +5536,7 @@ MonoBehaviour:
   currentAmmoText: {fileID: 92424354}
   selectedWeapons: []
   unselectedWeapons: []
+  weapons: []
 --- !u!114 &306642135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7295,6 +7296,7 @@ MonoBehaviour:
   currentAmmoText: {fileID: 92424354}
   selectedWeapons: []
   unselectedWeapons: []
+  weapons: []
 --- !u!65 &366334259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18798,6 +18800,10 @@ MonoBehaviour:
   - {fileID: 1835234424}
   - {fileID: 1852182923}
   - {fileID: 1648111521}
+  weapons:
+  - {fileID: 999573937}
+  - {fileID: 1343835897}
+  - {fileID: 1387921003}
 --- !u!1 &937006764
 GameObject:
   m_ObjectHideFlags: 0
@@ -19564,6 +19570,7 @@ MonoBehaviour:
   currentAmmoText: {fileID: 92424354}
   selectedWeapons: []
   unselectedWeapons: []
+  weapons: []
 --- !u!65 &985443149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30175,6 +30182,7 @@ MonoBehaviour:
   currentAmmoText: {fileID: 92424354}
   selectedWeapons: []
   unselectedWeapons: []
+  weapons: []
 --- !u!65 &1514426239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36344,6 +36352,7 @@ MonoBehaviour:
   currentAmmoText: {fileID: 92424354}
   selectedWeapons: []
   unselectedWeapons: []
+  weapons: []
 --- !u!65 &1905859018
 BoxCollider:
   m_ObjectHideFlags: 0

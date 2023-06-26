@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public enum GameState
+public enum ChallengeState
 {
     Inactive,
     Active
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxTime;
     [SerializeField] private float maxEnemiesToDefeat;
 
-    private GameState currentState = GameState.Inactive;
+    private ChallengeState currentState = ChallengeState.Inactive;
 
     private void Start()
     {
@@ -38,10 +38,9 @@ public class GameManager : MonoBehaviour
     {
         switch (currentState)
         {
-            case GameState.Inactive:
-                _UIManager.GetCurrentAmmoText();
+            case ChallengeState.Inactive:
                 break;
-            case GameState.Active:
+            case ChallengeState.Active:
                 HandleActiveState();
                 break;
         }
@@ -68,7 +67,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetState(GameState newState)
+    public void SetState(ChallengeState newState)
     {
         currentState = newState;
     }
@@ -76,7 +75,7 @@ public class GameManager : MonoBehaviour
     public void StartChallenge()
     {
         _gameData.challengeStarted = true;
-        SetState(GameState.Active);       
+        SetState(ChallengeState.Active);       
         _UIManager.EnableChallengeTexts();
         UpdateShopState();
     }
@@ -145,7 +144,7 @@ public class GameManager : MonoBehaviour
         _gameData.defeat = true;
         _gameData.challengeStarted = false;
 
-        currentState = GameState.Inactive;
+        currentState = ChallengeState.Inactive;
     }
 
     public void AddOneEnemyDefeated()
@@ -157,14 +156,14 @@ public class GameManager : MonoBehaviour
     {
         ResetGameData();
         _gameData.challengeStarted = true;
-        SetState(GameState.Active);
+        SetState(ChallengeState.Active);
     }
 
     public void ExitChallenge()
     {
         ResetGameData();
         _UIManager.DisableChallengeTexts();
-        SetState(GameState.Inactive);
+        SetState(ChallengeState.Inactive);
     }
 
     public void UpdateShopState()

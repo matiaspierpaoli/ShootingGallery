@@ -17,6 +17,9 @@ public class Gun : MonoBehaviour
 
     private Coroutine shootingCoroutine;
 
+    public static event System.Action ReloadEvent;
+    public static event System.Action ShootEvent;
+
 
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class Gun : MonoBehaviour
             if (shootingCoroutine == null)
             {
                 shootingCoroutine = StartCoroutine(ShootCoroutiune());
+                ShootEvent?.Invoke();
             }
         }
     }
@@ -152,6 +156,8 @@ public class Gun : MonoBehaviour
 
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;
+
+        ReloadEvent?.Invoke();
     }
 
     private void ResetWeaponStats()

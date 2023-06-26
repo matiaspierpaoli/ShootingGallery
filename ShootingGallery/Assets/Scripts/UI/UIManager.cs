@@ -62,11 +62,17 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         WeaponSwitching.SwitchWeaponEvent += OnSwitchWeapon;
+        Gun.ReloadEvent += OnReload;
+        Gun.ShootEvent += OnShoot;
+        LevelManager.ChangeAreaEvent += OnChangeArea;
     }
 
     private void OnDisable()
     {
         WeaponSwitching.SwitchWeaponEvent -= OnSwitchWeapon;
+        Gun.ReloadEvent -= OnReload;
+        Gun.ShootEvent -= OnShoot;
+        LevelManager.ChangeAreaEvent -= OnChangeArea;
     }
 
     private void Start()
@@ -148,7 +154,7 @@ public class UIManager : MonoBehaviour
 
     public void GetCurrentAmmoText()
     {
-        bulletsText.text = ""; // Reset ammo text to avoid wrong gun ammo in other area
+        bulletsText.text = ""; // Reset ammo text to avoid wrong gun ammo in other area before switching
          
         for (int i = 0; i < weapons.Length; i++) 
         {
@@ -185,9 +191,25 @@ public class UIManager : MonoBehaviour
         currentTimeText.text = "Current Time: " + currentTime.ToString() + "/" + _gameData.maxTime;        
     }
 
+    private void OnReload()
+    {
+        GetCurrentAmmoText();
+    }
+
+    private void OnShoot()
+    {
+        GetCurrentAmmoText();
+    }
+
+    private void OnChangeArea()
+    {
+        GetCurrentAmmoText();
+    }
+
     private void OnSwitchWeapon(int weaponSelected)
     {
         SetSelectedWeaponImage(weaponSelected);
+        GetCurrentAmmoText();
     }
 
     public void SetSelectedWeaponImage(int weaponSelected)

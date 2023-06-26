@@ -18,6 +18,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Image[] selectedWeapons;
     [SerializeField] private Image[] unselectedWeapons;
 
+    [SerializeField] private GameObject[] weapons;
+
+    public static event System.Action ChangeAreaEvent;
+
     private void OnTriggerEnter(Collider other)
     {
         FloorSettingsContainer floorSettingsContainer = other.GetComponent<FloorSettingsContainer>();
@@ -30,6 +34,24 @@ public class LevelManager : MonoBehaviour
             akData.availiable = floorSettings.akAvailable;
             sniperData.availiable = floorSettings.sniperAvailable;
 
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                if (pistolData.availiable)
+                    weapons[0].SetActive(true);
+                else
+                    weapons[0].SetActive(false);
+
+                if (akData.availiable)
+                    weapons[1].SetActive(true);
+                else
+                    weapons[1].SetActive(false);
+
+                if (sniperData.availiable)
+                    weapons[2].SetActive(true);
+                else
+                    weapons[2].SetActive(false);
+            }
+
             gameData.challengeStarted = floorSettings.challengeStarted;
             gameData.currentEnemiesDefeated = 0;
             gameData.currentTime = 0;
@@ -39,13 +61,21 @@ public class LevelManager : MonoBehaviour
 
             for (int i = 0; i < selectedWeapons.Length; i++)
             {
-                selectedWeapons[i].enabled = false;
+                if (!weapons[i].activeSelf)
+                    selectedWeapons[i].enabled = false;
+                else
+                    selectedWeapons[i].enabled = true;
             }
 
             for (int i = 0; i < unselectedWeapons.Length; i++)
             {
-                unselectedWeapons[i].enabled = true;
+                if (!weapons[i].activeSelf)
+                    unselectedWeapons[i].enabled = true;
+                else
+                    unselectedWeapons[i].enabled = false;
             }
+
+            ChangeAreaEvent?.Invoke();
         }
     }
 }

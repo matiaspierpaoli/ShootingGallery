@@ -5249,6 +5249,63 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &995053086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995053088}
+  - component: {fileID: 995053087}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &995053087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995053086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9508c1d68fa26d045b7d4f83aa53cd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: c578f40efec5db043b3ea5193d4d8e6a, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &995053088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995053086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &999573937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5332,6 +5389,15 @@ MonoBehaviour:
   bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   raycastGunTagName: RaycastGun
   instanceGunTagName: InstanceBulletGun
+  audioManager: {fileID: 1558623962}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 396f3c5817fdc564bbc9302597658262, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4b5ae95983c431f42b0167d40a0d2da5, type: 2}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!1 &1018484278
 GameObject:
@@ -7038,6 +7104,15 @@ MonoBehaviour:
   player: {fileID: 0}
   gameManager: {fileID: 0}
   maxHealth: 100
+  audioManager: {fileID: 0}
+  dieSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9ee4b9875a912e448bbce597d929c229, type: 2}
+  damageSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 467ed1d9d805def47b6ffb53dffb2bf2, type: 2}
 --- !u!1 &1343835897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7091,6 +7166,15 @@ MonoBehaviour:
   bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   raycastGunTagName: RaycastGun
   instanceGunTagName: InstanceBulletGun
+  audioManager: {fileID: 1558623962}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 87f2b938a8066614d9bcab32f98089d9, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 372340e032f1ebd4e8c881dc002a9d85, type: 2}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!114 &1343835900
 MonoBehaviour:
@@ -7336,6 +7420,15 @@ MonoBehaviour:
   bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   raycastGunTagName: RaycastGun
   instanceGunTagName: InstanceBulletGun
+  audioManager: {fileID: 1558623962}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 20050180e25a73d49bf1021735e38f08, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eb7f32c520c0a8b4fa224976f467af04, type: 2}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!1 &1403861024
 GameObject:
@@ -8180,6 +8273,50 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1558623961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558623963}
+  - component: {fileID: 1558623962}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1558623962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558623961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb1e719063bcc447b8db516426662e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1558623963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558623961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 464.34647, y: 155.94902, z: -19.502283}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1560642914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8287,6 +8424,15 @@ MonoBehaviour:
   player: {fileID: 0}
   gameManager: {fileID: 0}
   maxHealth: 100
+  audioManager: {fileID: 0}
+  dieSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9ee4b9875a912e448bbce597d929c229, type: 2}
+  damageSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 467ed1d9d805def47b6ffb53dffb2bf2, type: 2}
 --- !u!1 &1587377653
 GameObject:
   m_ObjectHideFlags: 0
@@ -10023,6 +10169,15 @@ MonoBehaviour:
   player: {fileID: 0}
   gameManager: {fileID: 0}
   maxHealth: 100
+  audioManager: {fileID: 0}
+  dieSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9ee4b9875a912e448bbce597d929c229, type: 2}
+  damageSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 467ed1d9d805def47b6ffb53dffb2bf2, type: 2}
 --- !u!1001 &2100040703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10203,3 +10358,12 @@ MonoBehaviour:
   player: {fileID: 0}
   gameManager: {fileID: 0}
   maxHealth: 100
+  audioManager: {fileID: 0}
+  dieSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9ee4b9875a912e448bbce597d929c229, type: 2}
+  damageSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 467ed1d9d805def47b6ffb53dffb2bf2, type: 2}

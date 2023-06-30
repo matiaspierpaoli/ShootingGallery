@@ -13,8 +13,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private string raycastGunTagName;
     [SerializeField] private string instanceGunTagName;
 
-    [SerializeField] private WwisePlayEvent audioManager;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private AK.Wwise.Event shootSFX;
+    [SerializeField] private AK.Wwise.Event reloadSFX;
 
     public InputActionReference holdShootingActionReference;
 
@@ -149,6 +150,7 @@ public class Gun : MonoBehaviour
         if (!_gunData.reloading)
         {
             StartCoroutine(Reload());
+            audioManager.PlaySoundEvent(reloadSFX, gameObject);
         }
     }
 
@@ -161,6 +163,7 @@ public class Gun : MonoBehaviour
 
         _gunData.currentAmmo = _gunData.magSize;
         _gunData.reloading = false;
+
 
         ReloadEvent?.Invoke();
     }

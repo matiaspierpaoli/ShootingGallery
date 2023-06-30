@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WwisePlayEvent : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public void PlaySoundEvent(AK.Wwise.Event soundEvent, GameObject gameObject)
     {

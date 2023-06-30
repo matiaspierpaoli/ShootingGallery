@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 20981309}
   - component: {fileID: 20981308}
   - component: {fileID: 20981307}
+  - component: {fileID: 20981310}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -460,6 +461,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 20981310}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &20981308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +511,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20981305}
   m_CullTransparentMesh: 1
+--- !u!114 &20981310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20981305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b797c5da79f047344969c1c74f9180eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 538b96205538add44bbbe92b6b7bbd9a, type: 2}
 --- !u!1 &23554343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1212,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -4101,6 +4134,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -4807,6 +4844,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -5517,6 +5558,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -6304,6 +6349,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -6894,6 +6943,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -6999,6 +7052,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -7136,6 +7193,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -7542,6 +7603,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -10016,6 +10081,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -10554,6 +10623,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -10937,6 +11010,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -11362,6 +11439,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -12852,6 +12933,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -16383,6 +16468,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -18521,6 +18610,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -18707,6 +18800,7 @@ GameObject:
   - component: {fileID: 906050356}
   - component: {fileID: 906050355}
   - component: {fileID: 906050354}
+  - component: {fileID: 906050357}
   m_Layer: 5
   m_Name: Replay Button
   m_TagString: Untagged
@@ -18791,6 +18885,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 906050357}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &906050355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18829,6 +18935,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906050352}
   m_CullTransparentMesh: 1
+--- !u!114 &906050357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906050352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b797c5da79f047344969c1c74f9180eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 538b96205538add44bbbe92b6b7bbd9a, type: 2}
 --- !u!1001 &909100921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20540,6 +20662,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 396f3c5817fdc564bbc9302597658262, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4b5ae95983c431f42b0167d40a0d2da5, type: 2}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!1001 &1003245006
 PrefabInstance:
@@ -21014,6 +21140,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -22120,6 +22250,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -22728,6 +22862,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -23005,6 +23143,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -26444,6 +26586,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -27236,6 +27382,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 87f2b938a8066614d9bcab32f98089d9, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 372340e032f1ebd4e8c881dc002a9d85, type: 2}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!114 &1343835900
 MonoBehaviour:
@@ -28165,6 +28315,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 20050180e25a73d49bf1021735e38f08, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eb7f32c520c0a8b4fa224976f467af04, type: 2}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!4 &1389495122 stripped
 Transform:
@@ -28648,6 +28802,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -29383,6 +29541,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -30227,6 +30389,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -30507,6 +30673,7 @@ GameObject:
   - component: {fileID: 1497973092}
   - component: {fileID: 1497973091}
   - component: {fileID: 1497973090}
+  - component: {fileID: 1497973093}
   m_Layer: 5
   m_Name: Exit Challenge Button
   m_TagString: Untagged
@@ -30591,6 +30758,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1497973093}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1497973091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30629,6 +30808,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497973088}
   m_CullTransparentMesh: 1
+--- !u!114 &1497973093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497973088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b797c5da79f047344969c1c74f9180eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 538b96205538add44bbbe92b6b7bbd9a, type: 2}
 --- !u!1 &1503226616
 GameObject:
   m_ObjectHideFlags: 0
@@ -32558,6 +32753,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1600430449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600430451}
+  - component: {fileID: 1600430450}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1600430450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600430449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9508c1d68fa26d045b7d4f83aa53cd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: c578f40efec5db043b3ea5193d4d8e6a, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &1600430451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600430449}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1600991623
 GameObject:
   m_ObjectHideFlags: 0
@@ -34420,6 +34672,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -34983,6 +35239,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -38804,6 +39064,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 0}
@@ -39667,8 +39931,7 @@ Transform:
   m_LocalPosition: {x: 464.34647, y: 155.94902, z: -19.502283}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2096437560}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39879,6 +40142,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -40702,6 +40969,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 
@@ -41763,88 +42034,6 @@ Transform:
   m_Father: {fileID: 787229449}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2096437555
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2096437560}
-  - component: {fileID: 2096437559}
-  - component: {fileID: 2096437556}
-  m_Layer: 0
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2096437556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096437555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dd579b359555a34087c4f96def2dedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3fb21b3f097ed4442b60131eebcca08b, type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
---- !u!114 &2096437559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096437555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9508c1d68fa26d045b7d4f83aa53cd81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: c578f40efec5db043b3ea5193d4d8e6a, type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  engineLogging: 0
---- !u!4 &2096437560
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096437555}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -464.34647, y: -155.94902, z: 19.502283}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2032052568}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2099717141
 GameObject:
   m_ObjectHideFlags: 0
@@ -42783,6 +42972,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2032052567}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _enemySpawner
       value: 

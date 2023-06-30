@@ -1,10 +1,22 @@
 Event	ID	Name			Wwise Object Path	Notes
 	80894466	Play_Pistol_Shot			\Default Work Unit\Play_Pistol_Shot	
 	583523301	Play_AK_Shot			\Default Work Unit\Play_AK_Shot	
+	720751001	Play_Sniper_Reload			\Default Work Unit\Play_Sniper_Reload	
+	784302017	Play_Damage			\Default Work Unit\Play_Damage	
+	1516424628	Play_Add_Score			\Default Work Unit\Play_Add_Score	
+	1659688562	Play_AK_Reload			\Default Work Unit\Play_AK_Reload	
+	1886652945	Play_Pistol_Reload			\Default Work Unit\Play_Pistol_Reload	
+	3189657012	Play_UI_Confirmation			\Default Work Unit\Play_UI_Confirmation	
 	3312516170	Play_Sniper_Shot			\Default Work Unit\Play_Sniper_Shot	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	116352519	AK_Reload	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\AK_Reload_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\AK_Reload		615932
+	133270173	Sniper_Reload	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Sniper_Reload_95FA4CE5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sniper_Reload		377212
+	139896459	Add_Score	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Add_Score_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Add_Score		308800
+	249507041	Damage	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Damage_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Damage		27712
+	285739471	UI_Confirmation	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\UI_Confirmation_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI_Confirmation		233508
 	535581265	AK_Shot	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\AK_Shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\AK_Shot		52888
 	698934907	Pistol_Shot	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Pistol_Shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pistol_Shot		40704
 	731804848	Sniper_Shot	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Sniper_Shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sniper_Shot		59354
+	785160989	Pistol_Reload	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Pistol_Reload_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pistol_Reload		193140
 

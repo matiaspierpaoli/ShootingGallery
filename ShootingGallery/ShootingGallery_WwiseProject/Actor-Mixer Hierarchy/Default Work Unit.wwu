@@ -72,6 +72,189 @@
 						<ActiveSource Name="Sniper_Shot" ID="{41DCA6C2-7359-4C86-8322-72C93B618934}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Pistol_Reload" ID="{1F7B2A1F-0E7D-4BAE-AE3B-821E3FEE8AE4}" ShortID="84781290">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-500</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pistol_Reload" ID="{CB5B0085-FB50-49D6-AAA7-ECFBCCAA18A0}">
+							<Language>SFX</Language>
+							<AudioFile>Pistol_Reload.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="785160989"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Pistol_Reload" ID="{CB5B0085-FB50-49D6-AAA7-ECFBCCAA18A0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Sniper_Reload" ID="{3F0F4263-6566-479F-B7A5-DAD17E37278B}" ShortID="504989302">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>60</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Sniper_Reload" ID="{A6FE475F-D750-4035-AE88-841A1C1FFD6E}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.690113232217573"/>
+								<Property Name="LoopBegin" Type="Real64" Value="1.10336506276151"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.371"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.33497576708508"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Sniper_Reload.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="133270173"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Sniper_Reload" ID="{A6FE475F-D750-4035-AE88-841A1C1FFD6E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="AK_Reload" ID="{83B7A254-C3BA-4DB7-A90C-C252292B7845}" ShortID="401708931">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>20</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="AK_Reload" ID="{EE95D063-6898-4835-9545-655E087F95E1}">
+							<Language>SFX</Language>
+							<AudioFile>AK_Reload.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="116352519"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="AK_Reload" ID="{EE95D063-6898-4835-9545-655E087F95E1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Add_Score" ID="{659A3F69-CA38-4EB4-8C5E-ED1DB7B255AD}" ShortID="825732612">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Add_Score" ID="{61E11E99-1158-485D-952C-61B3A70DE391}">
+							<Language>SFX</Language>
+							<AudioFile>Add_Score.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="139896459"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Add_Score" ID="{61E11E99-1158-485D-952C-61B3A70DE391}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Damage" ID="{FA6E54DF-D598-44B7-8903-75A7D95A400C}" ShortID="933102620">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Damage" ID="{04CB3E0A-F0F1-4C73-BEC9-67CAD850E457}">
+							<Language>SFX</Language>
+							<AudioFile>Damage.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="249507041"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Damage" ID="{04CB3E0A-F0F1-4C73-BEC9-67CAD850E457}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="UI_Confirmation" ID="{FAF8121A-2E2C-4E1F-A554-13446A718C85}" ShortID="397059217">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="UI_Confirmation" ID="{96207B01-000C-4A7E-81DF-CF4BBB057860}">
+							<Language>SFX</Language>
+							<AudioFile>UI_Confirmation.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="285739471"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="UI_Confirmation" ID="{96207B01-000C-4A7E-81DF-CF4BBB057860}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

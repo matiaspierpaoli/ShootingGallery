@@ -9,16 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd1e1b57ff070246861f51a311a89ca, type: 3}
-  m_Name: AR
+  m_Script: {fileID: 11500000, guid: 1670d892aa837ba40ba5481a65b9838d, type: 3}
+  m_Name: 6276FED3-AA6A-4C9E-9BD9-7A605F8EBFB0
   m_EditorClassIdentifier: 
-  name: Asault Rifle
-  availiable: 1
-  damage: 20
-  maxDistance: 500
-  currentAmmo: 30
-  magSize: 30
-  fireRate: 0.1
-  reloadTime: 3.2
-  reloading: 0
-  cost: 10
+  objectName: Play_Sniper_Reload
+  id: 720751001
+  guid: 6276FED3-AA6A-4C9E-9BD9-7A605F8EBFB0

@@ -13,9 +13,15 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_ADD_SCORE = 1516424628U;
+        static const AkUniqueID PLAY_AK_RELOAD = 1659688562U;
         static const AkUniqueID PLAY_AK_SHOT = 583523301U;
+        static const AkUniqueID PLAY_DAMAGE = 784302017U;
+        static const AkUniqueID PLAY_PISTOL_RELOAD = 1886652945U;
         static const AkUniqueID PLAY_PISTOL_SHOT = 80894466U;
+        static const AkUniqueID PLAY_SNIPER_RELOAD = 720751001U;
         static const AkUniqueID PLAY_SNIPER_SHOT = 3312516170U;
+        static const AkUniqueID PLAY_UI_CONFIRMATION = 3189657012U;
     } // namespace EVENTS
 
     namespace BANKS

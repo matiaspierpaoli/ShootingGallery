@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 265493031}
   - component: {fileID: 265493030}
   - component: {fileID: 265493029}
+  - component: {fileID: 265493032}
   m_Layer: 5
   m_Name: Options Button
   m_TagString: Untagged
@@ -444,6 +445,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 265493032}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &265493030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +495,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265493027}
   m_CullTransparentMesh: 1
+--- !u!114 &265493032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265493027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b797c5da79f047344969c1c74f9180eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 538b96205538add44bbbe92b6b7bbd9a, type: 2}
 --- !u!1 &317195019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1249,7 @@ GameObject:
   - component: {fileID: 763412968}
   - component: {fileID: 763412967}
   - component: {fileID: 763412966}
+  - component: {fileID: 763412969}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -1316,6 +1346,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 763412969}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &763412967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,6 +1396,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763412964}
   m_CullTransparentMesh: 1
+--- !u!114 &763412969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763412964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b797c5da79f047344969c1c74f9180eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 538b96205538add44bbbe92b6b7bbd9a, type: 2}
 --- !u!1 &773281578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,6 +2386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd96e52122d16ca4eb429a5c16ad2649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalSensitivityText: {fileID: 758294301}
+  verticalSensitivityText: {fileID: 2140148667}
   horizontalSlider: {fileID: 611469788}
   verticalSlider: {fileID: 1173545207}
 --- !u!4 &1239135122
@@ -2534,6 +2594,7 @@ GameObject:
   - component: {fileID: 1424526571}
   - component: {fileID: 1424526570}
   - component: {fileID: 1424526569}
+  - component: {fileID: 1424526572}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -2630,6 +2691,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1424526572}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1424526570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,6 +2741,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424526567}
   m_CullTransparentMesh: 1
+--- !u!114 &1424526572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424526567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b797c5da79f047344969c1c74f9180eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 538b96205538add44bbbe92b6b7bbd9a, type: 2}
 --- !u!1 &1441552019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3308,6 +3397,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2035628061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2035628063}
+  - component: {fileID: 2035628062}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2035628062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035628061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9508c1d68fa26d045b7d4f83aa53cd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: c578f40efec5db043b3ea5193d4d8e6a, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &2035628063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035628061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113328187
 GameObject:

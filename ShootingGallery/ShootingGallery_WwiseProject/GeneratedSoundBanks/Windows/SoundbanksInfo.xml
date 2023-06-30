@@ -16,16 +16,48 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="292190437">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3118163193">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="1516424628" Name="Play_Add_Score" ObjectPath="\Events\Default Work Unit\Play_Add_Score" DurationType="OneShot" DurationMin="1.750204" DurationMax="1.750204">
+					<IncludedMemoryFiles>
+						<File Id="139896459" Language="SFX">
+							<ShortName>Add_Score.wav</ShortName>
+							<Path>SFX\Add_Score_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1659688562" Name="Play_AK_Reload" ObjectPath="\Events\Default Work Unit\Play_AK_Reload" DurationType="OneShot" DurationMin="3.491315" DurationMax="3.491315">
+					<IncludedMemoryFiles>
+						<File Id="116352519" Language="SFX">
+							<ShortName>AK_Reload.wav</ShortName>
+							<Path>SFX\AK_Reload_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="583523301" Name="Play_AK_Shot" ObjectPath="\Events\Default Work Unit\Play_AK_Shot" DurationType="OneShot" DurationMin="0.598912" DurationMax="0.598912">
 					<IncludedMemoryFiles>
 						<File Id="535581265" Language="SFX">
 							<ShortName>AK_Shot.wav</ShortName>
 							<Path>SFX\AK_Shot_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="784302017" Name="Play_Damage" ObjectPath="\Events\Default Work Unit\Play_Damage" DurationType="OneShot" DurationMin="0.313469" DurationMax="0.313469">
+					<IncludedMemoryFiles>
+						<File Id="249507041" Language="SFX">
+							<ShortName>Damage.wav</ShortName>
+							<Path>SFX\Damage_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1886652945" Name="Play_Pistol_Reload" ObjectPath="\Events\Default Work Unit\Play_Pistol_Reload" DurationType="OneShot" DurationMin="1.34232" DurationMax="1.34232">
+					<IncludedMemoryFiles>
+						<File Id="785160989" Language="SFX">
+							<ShortName>Pistol_Reload.wav</ShortName>
+							<Path>SFX\Pistol_Reload_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -37,11 +69,27 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="720751001" Name="Play_Sniper_Reload" ObjectPath="\Events\Default Work Unit\Play_Sniper_Reload" DurationType="OneShot" DurationMin="1.986796" DurationMax="1.986796">
+					<IncludedMemoryFiles>
+						<File Id="133270173" Language="SFX">
+							<ShortName>Sniper_Reload.wav</ShortName>
+							<Path>SFX\Sniper_Reload_95FA4CE5.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3312516170" Name="Play_Sniper_Shot" ObjectPath="\Events\Default Work Unit\Play_Sniper_Shot" DurationType="OneShot" DurationMin="0.672222" DurationMax="0.672222">
 					<IncludedMemoryFiles>
 						<File Id="731804848" Language="SFX">
 							<ShortName>Sniper_Shot.wav</ShortName>
 							<Path>SFX\Sniper_Shot_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3189657012" Name="Play_UI_Confirmation" ObjectPath="\Events\Default Work Unit\Play_UI_Confirmation" DurationType="OneShot" DurationMin="1.323379" DurationMax="1.323379">
+					<IncludedMemoryFiles>
+						<File Id="285739471" Language="SFX">
+							<ShortName>UI_Confirmation.wav</ShortName>
+							<Path>SFX\UI_Confirmation_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

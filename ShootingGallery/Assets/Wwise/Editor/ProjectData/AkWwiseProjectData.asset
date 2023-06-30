@@ -94,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 86686d83e2b28c4590eba52a6b048c42
     GuidInternal: 
-    m_lastTime: -8585134550640611654
+    m_lastTime: -8585134466872399001
     List:
+    - name: Play_Add_Score
+      guid: 17b864b721de01449dd23bbd620b7f46
+      id: 1516424628
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 86686d83e2b28c4590eba52a6b048c42
+      - ElementName: Play_Add_Score
+        ObjectType: 3
+        guid: 17b864b721de01449dd23bbd620b7f46
+      Path: Events\Default Work Unit\Play_Add_Score
+      maxAttenuation: 0
+      maxDuration: 1.750204
+      minDuration: 1.750204
+    - name: Play_AK_Reload
+      guid: 1b70fecfdbd5794a9242a34329db5567
+      id: 1659688562
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 86686d83e2b28c4590eba52a6b048c42
+      - ElementName: Play_AK_Reload
+        ObjectType: 3
+        guid: 1b70fecfdbd5794a9242a34329db5567
+      Path: Events\Default Work Unit\Play_AK_Reload
+      maxAttenuation: 0
+      maxDuration: 3.491315
+      minDuration: 3.491315
     - name: Play_AK_Shot
       guid: 4af54cc22ef1bc4a9492b6a939fd1b6e
       id: 583523301
@@ -113,6 +147,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.598912
       minDuration: 0.598912
+    - name: Play_Damage
+      guid: 00df86fe52e3f948955763312617723e
+      id: 784302017
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 86686d83e2b28c4590eba52a6b048c42
+      - ElementName: Play_Damage
+        ObjectType: 3
+        guid: 00df86fe52e3f948955763312617723e
+      Path: Events\Default Work Unit\Play_Damage
+      maxAttenuation: 0
+      maxDuration: 0.313469
+      minDuration: 0.313469
+    - name: Play_Pistol_Reload
+      guid: 19e0673255525f4593dd420182c86e65
+      id: 1886652945
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 86686d83e2b28c4590eba52a6b048c42
+      - ElementName: Play_Pistol_Reload
+        ObjectType: 3
+        guid: 19e0673255525f4593dd420182c86e65
+      Path: Events\Default Work Unit\Play_Pistol_Reload
+      maxAttenuation: 0
+      maxDuration: 1.34232
+      minDuration: 1.34232
     - name: Play_Pistol_Shot
       guid: 6abbbfeb6d209741a56bcbcf02be9954
       id: 80894466
@@ -130,6 +198,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.460771
       minDuration: 0.460771
+    - name: Play_Sniper_Reload
+      guid: d3fe76626aaa9e4c9bd97a605f8ebfb0
+      id: 720751001
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 86686d83e2b28c4590eba52a6b048c42
+      - ElementName: Play_Sniper_Reload
+        ObjectType: 3
+        guid: d3fe76626aaa9e4c9bd97a605f8ebfb0
+      Path: Events\Default Work Unit\Play_Sniper_Reload
+      maxAttenuation: 0
+      maxDuration: 1.986796
+      minDuration: 1.986796
     - name: Play_Sniper_Shot
       guid: 1eedf1ea0f0d9d43885cef8d5f09eed9
       id: 3312516170
@@ -147,6 +232,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.672222
       minDuration: 0.672222
+    - name: Play_UI_Confirmation
+      guid: 0250cd0b93bc904f89379a6b79a50f7d
+      id: 3189657012
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 86686d83e2b28c4590eba52a6b048c42
+      - ElementName: Play_UI_Confirmation
+        ObjectType: 3
+        guid: 0250cd0b93bc904f89379a6b79a50f7d
+      Path: Events\Default Work Unit\Play_UI_Confirmation
+      maxAttenuation: 0
+      maxDuration: 1.323379
+      minDuration: 1.323379
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -204,7 +306,7 @@ MonoBehaviour:
     m_lastTime: -8585134570655676531
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c00000048000000490000008600000087000000
+  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c000000290000002a0000004800000049000000560000005700000086000000870000009100000092000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

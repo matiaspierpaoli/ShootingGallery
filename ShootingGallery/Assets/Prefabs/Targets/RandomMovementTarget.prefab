@@ -112,9 +112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ecac293f8edc644b69cf8a09e95573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _gameManager: {fileID: 0}
+  player: {fileID: 0}
+  gameManager: {fileID: 0}
   maxHealth: 0
+  audioManager: {fileID: 0}
+  dieSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9ee4b9875a912e448bbce597d929c229, type: 2}
+  damageSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 467ed1d9d805def47b6ffb53dffb2bf2, type: 2}
 --- !u!114 &2132034006128641544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,4 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: []
-  timeToReachPos: 0
+  speed: 1

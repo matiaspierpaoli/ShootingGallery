@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1670d892aa837ba40ba5481a65b9838d, type: 3}
+  m_Name: C24CF54A-F12E-4ABC-9492-B6A939FD1B6E
+  m_EditorClassIdentifier: 
+  objectName: Play_AK_Shot
+  id: 583523301
+  guid: C24CF54A-F12E-4ABC-9492-B6A939FD1B6E

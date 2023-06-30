@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E6208B84-1973-4701-9EB1-21695351E6F7}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{E6208B84-1973-4701-9EB1-21695351E6F7}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="AK_Shot" ID="{0ED5A5B6-7B60-40D7-B60A-584BF66AAD18}" ShortID="618290776">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="AK_Shot" ID="{E1535B2F-DDDA-4DE1-9A1F-B28E93B11EDA}">
+							<Language>SFX</Language>
+							<AudioFile>AK_Shot.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="535581265"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="AK_Shot" ID="{E1535B2F-DDDA-4DE1-9A1F-B28E93B11EDA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Pistol_Shot" ID="{FF525E00-D3D8-45D4-A73F-D65A237EC445}" ShortID="798254580">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pistol_Shot" ID="{30C8DC76-6076-46C1-B7D9-ED5E85060E00}">
+							<Language>SFX</Language>
+							<AudioFile>Pistol_Shot.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="698934907"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Pistol_Shot" ID="{30C8DC76-6076-46C1-B7D9-ED5E85060E00}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Sniper_Shot" ID="{E5CCF351-1B17-46D5-8315-893E19E3CC20}" ShortID="1003693125">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{81D188D3-0070-4F31-9DD9-F3387AAF0916}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4B012A78-65E1-441D-B090-F43057B32D29}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Sniper_Shot" ID="{41DCA6C2-7359-4C86-8322-72C93B618934}">
+							<Language>SFX</Language>
+							<AudioFile>Sniper_Shot.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="731804848"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Sniper_Shot" ID="{41DCA6C2-7359-4C86-8322-72C93B618934}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

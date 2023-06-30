@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	583523301	Play_AK_Shot			\Default Work Unit\Play_AK_Shot	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	535581265	AK_Shot	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Mac\SFX\AK_Shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\AK_Shot		52888
+

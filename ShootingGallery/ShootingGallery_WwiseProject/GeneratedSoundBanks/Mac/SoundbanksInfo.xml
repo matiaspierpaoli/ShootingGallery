@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="4072029455" Language="SFX" Hash="148192648">
+			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBank</ObjectPath>
+			<ShortName>New_SoundBank</ShortName>
+			<Path>New_SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="583523301" Name="Play_AK_Shot" ObjectPath="\Events\Default Work Unit\Play_AK_Shot" DurationType="OneShot" DurationMin="0.598912" DurationMax="0.598912">
+					<IncludedMemoryFiles>
+						<File Id="535581265" Language="SFX">
+							<ShortName>AK_Shot.wav</ShortName>
+							<Path>SFX\AK_Shot_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

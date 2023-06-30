@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{836D6886-B2E2-458C-90EB-A52A6B048C42}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{836D6886-B2E2-458C-90EB-A52A6B048C42}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_AK_Shot" ID="{C24CF54A-F12E-4ABC-9492-B6A939FD1B6E}">
+					<ChildrenList>
+						<Action Name="" ID="{92720F06-E256-4BAD-97FF-C4E0BD5C9E93}" ShortID="65554403">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AK_Shot" ID="{0ED5A5B6-7B60-40D7-B60A-584BF66AAD18}" WorkUnitID="{E6208B84-1973-4701-9EB1-21695351E6F7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Pistol_Shot" ID="{EBBFBB6A-206D-4197-A56B-CBCF02BE9954}">
+					<ChildrenList>
+						<Action Name="" ID="{910E8C21-60A0-4DA4-9D27-316E0CD15A1B}" ShortID="906587643">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pistol_Shot" ID="{FF525E00-D3D8-45D4-A73F-D65A237EC445}" WorkUnitID="{E6208B84-1973-4701-9EB1-21695351E6F7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sniper_Shot" ID="{EAF1ED1E-0D0F-439D-885C-EF8D5F09EED9}">
+					<ChildrenList>
+						<Action Name="" ID="{3375A447-DE6C-48AC-B5BA-D00265E19EF0}" ShortID="155845315">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sniper_Shot" ID="{E5CCF351-1B17-46D5-8315-893E19E3CC20}" WorkUnitID="{E6208B84-1973-4701-9EB1-21695351E6F7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,10 @@
+Event	ID	Name			Wwise Object Path	Notes
+	80894466	Play_Pistol_Shot			\Default Work Unit\Play_Pistol_Shot	
+	583523301	Play_AK_Shot			\Default Work Unit\Play_AK_Shot	
+	3312516170	Play_Sniper_Shot			\Default Work Unit\Play_Sniper_Shot	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	535581265	AK_Shot	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\AK_Shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\AK_Shot		52888
+	698934907	Pistol_Shot	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Pistol_Shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pistol_Shot		40704
+	731804848	Sniper_Shot	D:\MyUnity\ShootingGallery\ShootingGallery\ShootingGallery\ShootingGallery_WwiseProject\.cache\Windows\SFX\Sniper_Shot_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sniper_Shot		59354
+

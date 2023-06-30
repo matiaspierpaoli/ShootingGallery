@@ -13,6 +13,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private string raycastGunTagName;
     [SerializeField] private string instanceGunTagName;
 
+    [SerializeField] private WwisePlayEvent audioManager;
+    [SerializeField] private AK.Wwise.Event shootSFX;
+
     public InputActionReference holdShootingActionReference;
 
     private Coroutine shootingCoroutine;
@@ -86,6 +89,8 @@ public class Gun : MonoBehaviour
             _gunData.currentAmmo--;
             if (_gunData.currentAmmo <= 0)
                 _gunData.currentAmmo = 0;
+
+            audioManager.PlaySoundEvent(shootSFX, gameObject);
 
             yield return new WaitForSeconds(_gunData.fireRate);
         }

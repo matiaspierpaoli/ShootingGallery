@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxTime;
     [SerializeField] private float maxEnemiesToDefeat;
 
+    [SerializeField] private GameObject escapeCollider;
+
     private ChallengeState currentState = ChallengeState.Inactive;
 
     private void Start()
@@ -95,6 +97,8 @@ public class GameManager : MonoBehaviour
         _UIManager.IsExitChallengeButtonEnabled = false;
         _UIManager.IsVictoryTextEnabled = false;
         _UIManager.IsDefeatTextEnabled = false;
+
+        escapeCollider.SetActive(false);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -172,5 +176,10 @@ public class GameManager : MonoBehaviour
             _shopManager.SetState(ShopState.Active);
         else
             _shopManager.SetState(ShopState.Inactive);
+    }
+
+    public void HandleEscapeCollider(bool active)
+    {
+        escapeCollider.SetActive(active);
     }
 }

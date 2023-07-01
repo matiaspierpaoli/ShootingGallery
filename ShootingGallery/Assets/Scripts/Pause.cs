@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;
+    private bool isPaused = false;
 
     private void OnEnable()
     {
@@ -18,11 +19,16 @@ public class Pause : MonoBehaviour
 
     public void OnPause()
     {
-        PauseScreen();
+        bool newPausedState = !isPaused;
+        if (newPausedState)
+            PauseScreen();
+        else
+            UnPauseScreen();
     }
 
     public void PauseScreen()
     {
+        isPaused = true;
         Cursor.visible = true;
         FreezeTime();
         Cursor.lockState = CursorLockMode.Confined;
@@ -31,6 +37,7 @@ public class Pause : MonoBehaviour
 
     public void UnPauseScreen()
     {
+        isPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         UnfreezeTime();

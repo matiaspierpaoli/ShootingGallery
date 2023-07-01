@@ -54,7 +54,7 @@ public class Gun : MonoBehaviour
     #region Shooting
     private void OnHoldStarted(InputAction.CallbackContext context)
     {
-        if (_gunData.currentAmmo != 0)
+        if (_gunData.currentAmmo != 0 && !_gunData.reloading)
         {
             if (shootingCoroutine == null)
             {

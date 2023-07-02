@@ -5,25 +5,32 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    [Header("Object type References")]
     [SerializeField] private GunData _gunData;
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Transform firePoint;
     [SerializeField] private BulletController bulletController;
-    
+
+    [Header("Weapon Tags")]
     [SerializeField] private string raycastGunTagName;
     [SerializeField] private string instanceGunTagName;
 
+    [Header("Audio")]
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private AK.Wwise.Event shootSFX;
     [SerializeField] private AK.Wwise.Event reloadSFX;
 
+    [Header("Animation")]
+    [SerializeField] private string defaultStateName;
+    [SerializeField] private string recoilName;
+    [SerializeField] private float recoilAnimationDuration;
+
+    [Header("Shooting")]
     public InputActionReference holdShootingActionReference;
-
     private Coroutine shootingCoroutine;
-
+    
     public static event System.Action ReloadEvent;
     public static event System.Action ShootEvent;
-
 
     private void Awake()
     {
@@ -59,7 +66,6 @@ public class Gun : MonoBehaviour
             if (shootingCoroutine == null)
             {
                 shootingCoroutine = StartCoroutine(ShootCoroutiune());
-                ShootEvent?.Invoke();
             }
         }
     }
@@ -74,24 +80,29 @@ public class Gun : MonoBehaviour
     }
 
     public IEnumerator ShootCoroutiune()
-    {
+    {        
         while (true)
         {
-            if (GameObject.FindGameObjectWithTag(instanceGunTagName))
+            if (_gunData.currentAmmo > 0)
             {
-                if (_gunData.currentAmmo > 0)
-                    bulletController.CreateBullet(firePoint);
+                if (GameObject.FindGameObjectWithTag(instanceGunTagName))
+                {
+                    bulletController.CreateBullet(firePoint);                
+                }
+                else if (GameObject.FindGameObjectWithTag(raycastGunTagName))
+                {                  
+                    RaycastShoot();
+                }
+
+                _gunData.currentAmmo--;
+                ShootEvent?.Invoke();
+                StartCoroutine(StartRecoil());
+                audioManager.PlaySoundEvent(shootSFX, gameObject);
             }
-            else if (GameObject.FindGameObjectWithTag(raycastGunTagName))
+            else
             {
-                RaycastShoot();
+                yield break;
             }
-
-            _gunData.currentAmmo--;
-            if (_gunData.currentAmmo <= 0)
-                _gunData.currentAmmo = 0;
-
-            audioManager.PlaySoundEvent(shootSFX, gameObject);
 
             yield return new WaitForSeconds(_gunData.fireRate);
         }
@@ -137,6 +148,17 @@ public class Gun : MonoBehaviour
 
         return dir.normalized;
     }
+    #endregion
+
+    #region Recoil
+
+    IEnumerator StartRecoil()
+    {
+        gameObject.GetComponent<Animator>().Play(recoilName);
+        yield return new WaitForSeconds(recoilAnimationDuration); 
+        gameObject.GetComponent<Animator>().Play(defaultStateName);
+    }
+
     #endregion
 
     public void OnReload(InputValue context)

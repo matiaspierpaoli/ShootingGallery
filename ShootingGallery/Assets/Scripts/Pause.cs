@@ -1,11 +1,9 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;
-    private bool isPaused = false;
+    [SerializeField] private string _sceneName;
 
     private void OnEnable()
     {
@@ -19,29 +17,25 @@ public class Pause : MonoBehaviour
 
     public void OnPause()
     {
-        bool newPausedState = !isPaused;
-        if (newPausedState)
-            PauseScreen();
-        else
-            UnPauseScreen();
+        PauseScreen();
     }
 
     public void PauseScreen()
     {
-        isPaused = true;
+
         Cursor.visible = true;
         FreezeTime();
         Cursor.lockState = CursorLockMode.Confined;
-        _sceneLoader.LoadLevelAdditive(5);
+        _sceneLoader.LoadLevelAdditive(_sceneName);
     }
 
     public void UnPauseScreen()
     {
-        isPaused = false;
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         UnfreezeTime();
-        SceneManager.UnloadSceneAsync(5);
+        _sceneLoader.UnloadScene(_sceneName);
     }
 
     public void FreezeTime()

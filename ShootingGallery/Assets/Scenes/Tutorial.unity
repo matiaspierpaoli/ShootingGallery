@@ -2261,6 +2261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 1592338808}
+  _sceneName: PauseScene
 --- !u!4 &399005429
 Transform:
   m_ObjectHideFlags: 0

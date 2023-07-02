@@ -27,6 +27,7 @@ public class InputManager : MonoBehaviour
 
     public void OnPause(InputValue context)
     {
-        PauseEvent?.Invoke();
+        if (context.isPressed)
+            PauseEvent?.Invoke();
     }
 }

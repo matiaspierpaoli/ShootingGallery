@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 50dcd0a994aa37a4ca4543d15c4183d0
   - enabled: 1
     path: Assets/Scenes/LevelSelector.unity
     guid: 41b6b441e0ec16144b5bc5ca9b1aead4
   - enabled: 1
-    path: Assets/Scenes/Main Scene.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Credits.unity
@@ -21,12 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay.unity
     guid: b2ce90c5bde969d479b13896cb271057
   - enabled: 1
-    path: Assets/Scenes/Pause Scene.unity
+    path: Assets/Scenes/PauseScene.unity
     guid: b609981dacec1b54989ba51d53d1ffc3
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: d7c021a70bc816948a41fc6dd083a5d2
   - enabled: 1
-    path: Assets/Scenes/Options Scene.unity
+    path: Assets/Scenes/OptionsScene.unity
     guid: b64f774302bf3c448ac7729ac8b39fec
   m_configObjects: {}

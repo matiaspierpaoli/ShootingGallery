@@ -1046,10 +1046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5dbe2378a43fe40812aa636161b743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSensitivityText: {fileID: 758294301}
-  verticalSensitivityText: {fileID: 2140148667}
-  horizontalSlider: {fileID: 611469788}
-  verticalSlider: {fileID: 1173545207}
 --- !u!4 &706840543
 Transform:
   m_ObjectHideFlags: 0
@@ -2670,13 +2666,13 @@ MonoBehaviour:
       - m_Target: {fileID: 2028671724}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadLevel
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1906817841}
@@ -3044,6 +3040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 2028671724}
+  _sceneName: PauseScene
 --- !u!4 &1906817842
 Transform:
   m_ObjectHideFlags: 0
@@ -3465,7 +3462,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2113328190}
   - component: {fileID: 2113328189}
-  - component: {fileID: 2113328188}
+  - component: {fileID: 2113328192}
+  - component: {fileID: 2113328191}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3473,14 +3471,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &2113328188
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113328187}
-  m_Enabled: 1
 --- !u!20 &2113328189
 Camera:
   m_ObjectHideFlags: 0
@@ -3539,6 +3529,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113328191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113328187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e72902e222ae44ab275d9126e36734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &2113328192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113328187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207d5575c72f12940953c5c7ed8a1682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &2140148664
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,13 @@ public enum ChallengeState
     Active
 }
 
+public enum DifficultyLevel
+{
+    Easy,
+    Medium,
+    Hard
+}
+
 /// <summary>
 /// Using states, manage challenge methods such as StartChallenge/Replay/Exit 
 /// </summary>
@@ -25,6 +32,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxEnemiesToDefeat;
 
     [SerializeField] private GameObject escapeCollider;
+
+    [SerializeField] private DifficultyLevel currentDifficulty;
+    [SerializeField] private float easyDifficultyTime;
+    [SerializeField] private float mediumDifficultyTime;
+    [SerializeField] private float hardDifficultyTime;
+    [SerializeField] private float easyDifficultyEnemies;
+    [SerializeField] private float mediumDifficultyEnemies;
+    [SerializeField] private float hardDifficultyEnemies;
 
     private ChallengeState currentState = ChallengeState.Inactive;
 
@@ -74,20 +89,25 @@ public class GameManager : MonoBehaviour
         currentState = newState;
     }
 
-    public void StartChallenge()
+    public void StartChallenge(DifficultyLevel difficulty)
     {
         _gameData.challengeStarted = true;
-        SetState(ChallengeState.Active);       
+        SetState(ChallengeState.Active);
+        currentDifficulty = difficulty;
+        SetTimeLimit(difficulty);
+        SetEnemiesAmmount(difficulty);
         _UIManager.EnableChallengeTexts();
         UpdateShopState();
     }
 
     private void ResetGameData()
     {
+        currentDifficulty = DifficultyLevel.Easy;
+
         _gameData.currentTime = 0f;
+        SetTimeLimit(currentDifficulty);
         _gameData.currentEnemiesDefeated = 0f;
-        _gameData.maxTime = maxTime;
-        _gameData.maxEnemiesToDefeat = maxEnemiesToDefeat;
+        SetEnemiesAmmount(currentDifficulty);
         _gameData.victory = false;
         _gameData.defeat = false;
         _gameData.challengeStarted = false;
@@ -182,4 +202,46 @@ public class GameManager : MonoBehaviour
     {
         escapeCollider.SetActive(active);
     }
+
+    private void SetTimeLimit(DifficultyLevel difficulty)
+    {
+        switch (difficulty)
+        {
+            case DifficultyLevel.Easy:
+                _gameData.maxTime = easyDifficultyTime;
+                break;
+            case DifficultyLevel.Medium:
+                _gameData.maxTime = mediumDifficultyTime;
+                break;
+            case DifficultyLevel.Hard:
+                _gameData.maxTime = hardDifficultyTime;
+                break;
+            default:
+                _gameData.maxTime = easyDifficultyTime; 
+                break;
+        }
+    }
+
+    private void SetEnemiesAmmount(DifficultyLevel difficulty)
+    {
+        switch (difficulty)
+        {
+            case DifficultyLevel.Easy:
+                _gameData.maxEnemiesToDefeat = easyDifficultyEnemies;
+                break;
+            case DifficultyLevel.Medium:
+                _gameData.maxEnemiesToDefeat = mediumDifficultyEnemies;
+                break;
+            case DifficultyLevel.Hard:
+                _gameData.maxEnemiesToDefeat = hardDifficultyEnemies;
+                break;
+            default:
+                _gameData.maxEnemiesToDefeat = easyDifficultyEnemies;
+                break;
+        }
+    }
+
+    public void OnEasyButtonClicked() => StartChallenge(DifficultyLevel.Easy);
+    public void OnMediumButtonClicked() => StartChallenge(DifficultyLevel.Medium);
+    public void OnHardButtonClicked() => StartChallenge(DifficultyLevel.Hard);
 }

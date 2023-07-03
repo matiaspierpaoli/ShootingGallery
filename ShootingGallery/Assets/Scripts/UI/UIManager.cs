@@ -62,16 +62,16 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         WeaponSwitching.SwitchWeaponEvent += OnSwitchWeapon;
-        Gun.ReloadEvent += OnReload;
-        Gun.ShootEvent += OnShoot;
+        Gun.ReloadStartedEvent += OnReload;
+        Gun.ShootingStartedEvent += OnShoot;
         LevelManager.ChangeAreaEvent += OnChangeArea;
     }
 
     private void OnDisable()
     {
         WeaponSwitching.SwitchWeaponEvent -= OnSwitchWeapon;
-        Gun.ReloadEvent -= OnReload;
-        Gun.ShootEvent -= OnShoot;
+        Gun.ReloadStartedEvent -= OnReload;
+        Gun.ShootingStartedEvent -= OnShoot;
         LevelManager.ChangeAreaEvent -= OnChangeArea;
     }
 

@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pistol
   availiable: 1
+  isInstanceType: 0
+  isRaycastType: 1
   damage: 20
   maxDistance: 200
   currentAmmo: 18

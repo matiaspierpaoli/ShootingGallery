@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RaycastGun
-  - InstanceBulletGun
   - EnemySpawner
   - EnemyLinearMovement
   - EnemyRandomMovement
@@ -13,6 +11,7 @@ TagManager:
   - Pistol Practice Area
   - Ak Practice Area
   - Sniper Practice Area
+  - ChallengeArea
   layers:
   - Default
   - TransparentFX

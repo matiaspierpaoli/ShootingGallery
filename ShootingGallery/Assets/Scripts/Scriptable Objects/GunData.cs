@@ -8,6 +8,8 @@ public class GunData : ScriptableObject
     [Header ("Info")]
     public new string name;
     public bool availiable;
+    public bool isInstanceType;
+    public bool isRaycastType;
 
     [Header("Shooting")]
     public float damage;

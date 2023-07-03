@@ -11,26 +11,17 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private BulletController bulletController;
 
-    [Header("Weapon Tags")]
-    [SerializeField] private string raycastGunTagName;
-    [SerializeField] private string instanceGunTagName;
-
     [Header("Audio")]
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private AK.Wwise.Event shootSFX;
     [SerializeField] private AK.Wwise.Event reloadSFX;
 
-    [Header("Animation")]
-    [SerializeField] private string defaultStateName;
-    [SerializeField] private string recoilName;
-    [SerializeField] private float recoilAnimationDuration;
-
     [Header("Shooting")]
     public InputActionReference holdShootingActionReference;
     private Coroutine shootingCoroutine;
-    
-    public static event System.Action ReloadEvent;
-    public static event System.Action ShootEvent;
+
+    public static event System.Action ReloadStartedEvent;
+    public static event System.Action ShootingStartedEvent;
 
     private void Awake()
     {
@@ -65,7 +56,7 @@ public class Gun : MonoBehaviour
         {
             if (shootingCoroutine == null)
             {
-                shootingCoroutine = StartCoroutine(ShootCoroutiune());
+                shootingCoroutine = StartCoroutine(ShootCoroutine());
             }
         }
     }
@@ -79,32 +70,19 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public IEnumerator ShootCoroutiune()
+    public IEnumerator ShootCoroutine()
     {        
         while (true)
         {
-            if (_gunData.currentAmmo > 0)
-            {
-                if (GameObject.FindGameObjectWithTag(instanceGunTagName))
-                {
-                    bulletController.CreateBullet(firePoint);                
-                }
-                else if (GameObject.FindGameObjectWithTag(raycastGunTagName))
-                {                  
-                    RaycastShoot();
-                }
+            if (_gunData.isInstanceType)
+                bulletController.CreateBullet(firePoint);
 
-                _gunData.currentAmmo--;
-                ShootEvent?.Invoke();
-                StartCoroutine(StartRecoil());
-                audioManager.PlaySoundEvent(shootSFX, gameObject);
-            }
-            else
-            {
-                yield break;
-            }
+            if (_gunData.isRaycastType)
+                RaycastShoot();
 
-            yield return new WaitForSeconds(_gunData.fireRate);
+            _gunData.currentAmmo--;
+            audioManager.PlaySoundEvent(shootSFX, gameObject);
+            yield return StartRecoil(_gunData.fireRate);
         }
     }
 
@@ -152,25 +130,20 @@ public class Gun : MonoBehaviour
 
     #region Recoil
 
-    IEnumerator StartRecoil()
+    IEnumerator StartRecoil(float firePeriod)
     {
-        gameObject.GetComponent<Animator>().Play(recoilName);
-        yield return new WaitForSeconds(recoilAnimationDuration); 
-        gameObject.GetComponent<Animator>().Play(defaultStateName);
+        ShootingStartedEvent?.Invoke();
+        yield return new WaitForSeconds(firePeriod);
     }
 
     #endregion
 
     public void OnReload(InputValue context)
     {
-        Debug.Log(_gunData.name + " started realoading");
-        StartReload();
-    }
-
-    public void StartReload()
-    {
-        if (!_gunData.reloading)
+        if (!_gunData.reloading && _gunData.currentAmmo < _gunData.magSize)
         {
+            if(shootingCoroutine != null)
+                StopCoroutine(shootingCoroutine);
             StartCoroutine(Reload());
             audioManager.PlaySoundEvent(reloadSFX, gameObject);
         }
@@ -178,16 +151,15 @@ public class Gun : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        Debug.Log(_gunData.name + " started realoading");
         _gunData.reloading = true;
+        ReloadStartedEvent?.Invoke();
         yield return new WaitForSeconds(_gunData.reloadTime);
 
         Debug.Log(_gunData.name + " finished realoading");
 
         _gunData.currentAmmo = _gunData.magSize;
-        _gunData.reloading = false;
-
-
-        ReloadEvent?.Invoke();
+        _gunData.reloading = false;       
     }
 
     private void ResetWeaponStats()

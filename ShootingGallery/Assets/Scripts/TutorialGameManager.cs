@@ -35,14 +35,6 @@ public class TutorialGameManager : MonoBehaviour
         {
             _gunData[i].availiable = true;
         }
-
-        for (int i = 0; i < weaponsGO.Length; i++)
-        {
-            if (i == 0)
-                weaponsGO[i].SetActive(true);
-            else
-                weaponsGO[i].SetActive(false);
-        }
     }
 
     public void OnMove(InputValue context)
@@ -88,6 +80,15 @@ public class TutorialGameManager : MonoBehaviour
                 {
                     _tutorialData.isShootingAvailable = true;
                     _tutorialData.finishedMovingCamera = true;
+
+
+                    for (int i = 0; i < weaponsGO.Length; i++)
+                    {
+                        if (i == 0)
+                            weaponsGO[i].SetActive(true);
+                        else
+                            weaponsGO[i].SetActive(false);
+                    }
 
                     currentTutorialTimePractice = 0f;
 
@@ -139,9 +140,10 @@ public class TutorialGameManager : MonoBehaviour
                     currentTutorialTimePractice = 0f;
 
                     DisplayNextStepText();
-                    SetNewAmmoText();
                 }
             }
+                    
+            SetNewAmmoText();
         }
     }
 

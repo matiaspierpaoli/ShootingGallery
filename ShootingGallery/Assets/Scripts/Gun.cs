@@ -21,6 +21,7 @@ public class Gun : MonoBehaviour
     private Coroutine shootingCoroutine;
 
     public static event System.Action ReloadStartedEvent;
+    public static event System.Action ReloadFinishedEvent;
     public static event System.Action ShootingStartedEvent;
 
     private void Awake()
@@ -56,6 +57,7 @@ public class Gun : MonoBehaviour
         {
             if (shootingCoroutine == null)
             {
+                _gunData.holdingShootingAction = true;
                 shootingCoroutine = StartCoroutine(ShootCoroutine());
             }
         }
@@ -68,12 +70,15 @@ public class Gun : MonoBehaviour
             StopCoroutine(shootingCoroutine);
             shootingCoroutine = null;
         }
+
+        _gunData.holdingShootingAction = false;
     }
 
     public IEnumerator ShootCoroutine()
-    {        
-        while (true)
+    {
+        while (_gunData.currentAmmo > 0)
         {
+
             if (_gunData.isInstanceType)
                 bulletController.CreateBullet(firePoint);
 
@@ -83,10 +88,11 @@ public class Gun : MonoBehaviour
             _gunData.currentAmmo--;
             audioManager.PlaySoundEvent(shootSFX, gameObject);
             yield return StartRecoil(_gunData.fireRate);
+
         }
     }
 
-    private bool RaycastShoot() 
+    private bool RaycastShoot()
     {
         RaycastHit hit;
 
@@ -142,7 +148,7 @@ public class Gun : MonoBehaviour
     {
         if (!_gunData.reloading && _gunData.currentAmmo < _gunData.magSize)
         {
-            if(shootingCoroutine != null)
+            if (shootingCoroutine != null)
                 StopCoroutine(shootingCoroutine);
             StartCoroutine(Reload());
             audioManager.PlaySoundEvent(reloadSFX, gameObject);
@@ -159,7 +165,8 @@ public class Gun : MonoBehaviour
         Debug.Log(_gunData.name + " finished realoading");
 
         _gunData.currentAmmo = _gunData.magSize;
-        _gunData.reloading = false;       
+        _gunData.reloading = false;
+        ReloadFinishedEvent?.Invoke();
     }
 
     private void ResetWeaponStats()

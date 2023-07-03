@@ -1815,7 +1815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 349676897}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3497,14 +3497,50 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f2dcb829473ff32409c3b0dcfe4f4329, type: 2}
+    - target: {fileID: -7281723813889328989, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -6884815727347347827, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -6774364355915842968, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -5258702405851712898, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -1626044824814639598, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -556124938658378620, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
       propertyPath: m_Name
       value: sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4531912228224351498, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f2dcb829473ff32409c3b0dcfe4f4329, type: 2}
+    - target: {fileID: 5195066292892710417, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953606483559150473, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b9dc10827ac2140a7ddee83cf426a6, type: 3}
 --- !u!1001 &669902168
@@ -3895,7 +3931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 797529052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5318,7 +5354,8 @@ GameObject:
   - component: {fileID: 999573940}
   - component: {fileID: 999573939}
   - component: {fileID: 999573941}
-  m_Layer: 0
+  - component: {fileID: 999573942}
+  m_Layer: 11
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5397,10 +5434,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4b5ae95983c431f42b0167d40a0d2da5, type: 2}
-  defaultStateName: New State
-  recoilName: PistolRecoil
-  reloadName: 
-  animator: {fileID: 0}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!95 &999573941
 Animator:
@@ -5412,7 +5445,7 @@ Animator:
   m_GameObject: {fileID: 999573937}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4c7f8ef2e0878d4e8cc5fb5af2bdfa6, type: 2}
+  m_Controller: {fileID: 9100000, guid: c92cf36e1940b1845858ae2304caad00, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5422,6 +5455,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &999573942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999573937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  defaultStateName: Empty
+  recoilName: PistolRecoil
+  reloadName: 
 --- !u!1 &1018484278
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,7 +6379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161830445}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7051,7 +7100,8 @@ GameObject:
   - component: {fileID: 1343835899}
   - component: {fileID: 1343835900}
   - component: {fileID: 1343835901}
-  m_Layer: 0
+  - component: {fileID: 1343835902}
+  m_Layer: 11
   m_Name: Assault Rifle Instance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7100,10 +7150,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 372340e032f1ebd4e8c881dc002a9d85, type: 2}
-  defaultStateName: New State
-  recoilName: AkRecoil
-  reloadName: AkReload
-  animator: {fileID: 0}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!114 &1343835900
 MonoBehaviour:
@@ -7145,7 +7191,7 @@ Animator:
   m_GameObject: {fileID: 1343835897}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3923e3dbe1fa85a4d8b12b7d39619628, type: 2}
+  m_Controller: {fileID: 9100000, guid: c92cf36e1940b1845858ae2304caad00, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7155,6 +7201,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1343835902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343835897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  defaultStateName: Empty
+  recoilName: AkRecoil
+  reloadName: AkReload
 --- !u!1 &1350484289
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,13 +7360,14 @@ GameObject:
   - component: {fileID: 1387921006}
   - component: {fileID: 1387921005}
   - component: {fileID: 1387921007}
-  m_Layer: 0
+  - component: {fileID: 1387921008}
+  m_Layer: 11
   m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1387921004
 Transform:
   m_ObjectHideFlags: 0
@@ -7377,10 +7440,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: eb7f32c520c0a8b4fa224976f467af04, type: 2}
-  defaultStateName: New State
-  recoilName: SniperRecoil
-  reloadName: SniperReload
-  animator: {fileID: 0}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!95 &1387921007
 Animator:
@@ -7402,6 +7461,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1387921008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387921003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  defaultStateName: Empty
+  recoilName: SniperRecoil
+  reloadName: SniperReload
 --- !u!1 &1403861024
 GameObject:
   m_ObjectHideFlags: 0
@@ -7923,7 +7998,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -8727,9 +8802,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 258acf616390a4b48853f9bb2a4e62d4, type: 2}
+    - target: {fileID: -1599826595754709761, guid: 270348fcce9c69d408029f4181d27e2e, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 270348fcce9c69d408029f4181d27e2e, type: 3}
       propertyPath: m_Name
       value: 9mmPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 270348fcce9c69d408029f4181d27e2e, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 270348fcce9c69d408029f4181d27e2e, type: 3}

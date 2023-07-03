@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1316835011}
+    m_SelectOnDown: {fileID: 657532291}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -518,8 +518,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 27437978}
+    m_SelectOnDown: {fileID: 1316835011}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -948,8 +948,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 657532291}
+    m_SelectOnDown: {fileID: 27437978}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1308,6 +1308,7 @@ MonoBehaviour:
   pistolData: {fileID: 0}
   akData: {fileID: 0}
   sniperData: {fileID: 0}
+  playerData: {fileID: 0}
   currentTimeText: {fileID: 0}
   currentAmmoText: {fileID: 0}
   selectedWeapons: []

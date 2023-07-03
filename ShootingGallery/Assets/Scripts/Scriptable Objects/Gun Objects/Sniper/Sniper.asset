@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   name: Sniper Rifle
-  availiable: 0
+  availiable: 1
+  isInstanceType: 0
+  isRaycastType: 1
   damage: 100
   maxDistance: 200
-  currentAmmo: 5
+  currentAmmo: 2
   magSize: 5
   fireRate: 3
   reloadTime: 2

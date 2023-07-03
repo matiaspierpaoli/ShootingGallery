@@ -63,6 +63,7 @@ public class UIManager : MonoBehaviour
     {
         WeaponSwitching.SwitchWeaponEvent += OnSwitchWeapon;
         Gun.ReloadStartedEvent += OnReload;
+        Gun.ReloadFinishedEvent += OnReload;
         Gun.ShootingStartedEvent += OnShoot;
         LevelManager.ChangeAreaEvent += OnChangeArea;
     }
@@ -71,6 +72,7 @@ public class UIManager : MonoBehaviour
     {
         WeaponSwitching.SwitchWeaponEvent -= OnSwitchWeapon;
         Gun.ReloadStartedEvent -= OnReload;
+        Gun.ReloadFinishedEvent -= OnReload;
         Gun.ShootingStartedEvent -= OnShoot;
         LevelManager.ChangeAreaEvent -= OnChangeArea;
     }

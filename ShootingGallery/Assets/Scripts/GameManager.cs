@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxTime;
     [SerializeField] private float maxEnemiesToDefeat;
 
-    [SerializeField] private GameObject escapeCollider;
+    [SerializeField] private GameObject[] escapeColliders;
+    [SerializeField] private GameObject challengeEscapeCollider;
 
     [SerializeField] private DifficultyLevel currentDifficulty;
     [SerializeField] private float easyDifficultyTime;
@@ -42,6 +43,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float hardDifficultyEnemies;
 
     private ChallengeState currentState = ChallengeState.Inactive;
+
+    private void OnEnable()
+    {
+        AnimationController.AnimationEvent += HandleEscapeColliders;
+    }
+
+    private void OnDisable()
+    {
+        AnimationController.AnimationEvent -= HandleEscapeColliders;
+    }
 
     private void Start()
     {
@@ -91,6 +102,8 @@ public class GameManager : MonoBehaviour
 
     public void StartChallenge(DifficultyLevel difficulty)
     {
+        ResetGameData();
+
         _gameData.challengeStarted = true;
         SetState(ChallengeState.Active);
         currentDifficulty = difficulty;
@@ -118,7 +131,10 @@ public class GameManager : MonoBehaviour
         _UIManager.IsVictoryTextEnabled = false;
         _UIManager.IsDefeatTextEnabled = false;
 
-        escapeCollider.SetActive(false);
+        for (int i = 0; i < escapeColliders.Length; i++)
+        {
+            escapeColliders[i].SetActive(false);
+        }
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -198,9 +214,17 @@ public class GameManager : MonoBehaviour
             _shopManager.SetState(ShopState.Inactive);
     }
 
-    public void HandleEscapeCollider(bool active)
+    public void HandleChallengeEscapeCollider(bool active)
     {
-        escapeCollider.SetActive(active);
+        challengeEscapeCollider.SetActive(active);
+    }
+
+    public void HandleEscapeColliders(bool active)
+    {
+        for (int i = 0; i < escapeColliders.Length; i++)
+        {
+            escapeColliders[i].SetActive(active);
+        }
     }
 
     private void SetTimeLimit(DifficultyLevel difficulty)

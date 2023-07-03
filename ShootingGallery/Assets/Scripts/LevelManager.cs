@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GunData pistolData;
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
+    [SerializeField] private PlayerStats playerData;
 
     [SerializeField] private TMP_Text currentTimeText;
     [SerializeField] private TMP_Text currentAmmoText;
@@ -55,6 +56,7 @@ public class LevelManager : MonoBehaviour
             gameData.challengeStarted = floorSettings.challengeStarted;
             gameData.currentEnemiesDefeated = 0;
             gameData.currentTime = 0;
+            playerData.points = 0;
 
             currentTimeText.enabled = floorSettings.currentTimeTextEnabled;
             currentAmmoText.enabled = floorSettings.currentAmmoTextEnabled;

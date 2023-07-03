@@ -114,8 +114,11 @@ public class TutorialGameManager : MonoBehaviour
                     currentTutorialTimePractice = 0f;
 
                     DisplayNextStepText();
+                    
                 }
             }
+
+            SetNewAmmoText();
         }
     }
 
@@ -136,6 +139,7 @@ public class TutorialGameManager : MonoBehaviour
                     currentTutorialTimePractice = 0f;
 
                     DisplayNextStepText();
+                    SetNewAmmoText();
                 }
             }
         }
@@ -181,6 +185,7 @@ public class TutorialGameManager : MonoBehaviour
             }
 
             DisplayNextStepText();
+            SetNewAmmoText();
         }
     }
 
@@ -199,6 +204,7 @@ public class TutorialGameManager : MonoBehaviour
             }
 
             DisplayNextStepText();
+            SetNewAmmoText();
         }
     }
 
@@ -217,6 +223,7 @@ public class TutorialGameManager : MonoBehaviour
             }
 
             DisplayNextStepText();
+            SetNewAmmoText();
         }
     }
 

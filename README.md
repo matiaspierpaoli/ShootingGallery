@@ -17,8 +17,6 @@ Dependencies
 
 This project has the following dependencies: 
 Unity 2021.3.8f or later: Download Unity. 
-Any additional assets or packages used in the project should be listed here.
-
 
 Getting Started
 

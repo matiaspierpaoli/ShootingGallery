@@ -24,6 +24,8 @@ public class Gun : MonoBehaviour
     public static event System.Action ReloadFinishedEvent;
     public static event System.Action ShootingStartedEvent;
 
+    private bool canShoot = true;
+
     private void Awake()
     {
         ResetWeaponStats();
@@ -53,7 +55,7 @@ public class Gun : MonoBehaviour
     #region Shooting
     private void OnHoldStarted(InputAction.CallbackContext context)
     {
-        if (_gunData.currentAmmo != 0 && !_gunData.reloading)
+        if (_gunData.currentAmmo != 0 && !_gunData.reloading && canShoot)
         {
             if (shootingCoroutine == null)
             {
@@ -69,6 +71,7 @@ public class Gun : MonoBehaviour
         {
             StopCoroutine(shootingCoroutine);
             shootingCoroutine = null;
+            StartCoroutine(ShootCooldown());
         }
 
         _gunData.holdingShootingAction = false;
@@ -78,7 +81,6 @@ public class Gun : MonoBehaviour
     {
         while (_gunData.currentAmmo > 0)
         {
-
             if (_gunData.isInstanceType)
                 bulletController.CreateBullet(firePoint);
 
@@ -87,9 +89,15 @@ public class Gun : MonoBehaviour
 
             _gunData.currentAmmo--;
             audioManager.PlaySoundEvent(shootSFX, gameObject);
-            yield return StartRecoil(_gunData.fireRate);
-
+            yield return StartRecoil(_gunData.shootCooldown);
         }
+    }
+
+    private IEnumerator ShootCooldown()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(_gunData.shootCooldown);
+        canShoot = true;
     }
 
     private bool RaycastShoot()
@@ -140,6 +148,7 @@ public class Gun : MonoBehaviour
     {
         ShootingStartedEvent?.Invoke();
         yield return new WaitForSeconds(firePeriod);
+        
     }
 
     #endregion

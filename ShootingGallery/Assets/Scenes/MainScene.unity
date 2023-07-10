@@ -29009,7 +29009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   defaultStateName: Empty
-  recoilName: AkRecoil
+  recoilName: 
   reloadName: AkReload
 --- !u!1 &1350484289
 GameObject:

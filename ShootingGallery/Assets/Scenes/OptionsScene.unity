@@ -1160,6 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1071436768}
   - component: {fileID: 1071436767}
+  - component: {fileID: 1071436769}
   m_Layer: 5
   m_Name: Vertical Sensitivity Slider
   m_TagString: Untagged
@@ -1217,19 +1218,7 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1322483066}
-        m_TargetAssemblyTypeName: CameraSensitivity, Assembly-CSharp
-        m_MethodName: OnVerticalSensitivityChange
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &1071436768
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1253,6 +1242,18 @@ RectTransform:
   m_AnchoredPosition: {x: 423.0001, y: -64.12197}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1071436769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071436766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2574e846b8d9e9948b968a9f16d06ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1231936729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,8 +1769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSensitivityText: {fileID: 1252429295}
   verticalSensitivityText: {fileID: 845725144}
-  horizontalSlider: {fileID: 1372133852}
-  verticalSlider: {fileID: 1071436767}
 --- !u!4 &1322483067
 Transform:
   m_ObjectHideFlags: 0
@@ -1795,6 +1794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372133851}
   - component: {fileID: 1372133852}
+  - component: {fileID: 1372133853}
   m_Layer: 5
   m_Name: Horizontal Sensitivity Slider
   m_TagString: Untagged
@@ -1875,19 +1875,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1322483066}
-        m_TargetAssemblyTypeName: CameraSensitivity, Assembly-CSharp
-        m_MethodName: OnHorizontalSensitivityChange
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1372133853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372133850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec96ebfc83f41544aa440be6ba30a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1384378962
 GameObject:
   m_ObjectHideFlags: 0

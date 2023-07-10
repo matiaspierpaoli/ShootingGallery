@@ -18,9 +18,10 @@ MonoBehaviour:
   isRaycastType: 1
   damage: 100
   maxDistance: 200
-  currentAmmo: 2
+  holdingShootingAction: 0
+  currentAmmo: 0
   magSize: 5
-  fireRate: 3
+  shootCooldown: 1.2
   reloadTime: 2
   reloading: 0
   cost: 20

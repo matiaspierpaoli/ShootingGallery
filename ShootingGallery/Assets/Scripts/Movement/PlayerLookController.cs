@@ -24,6 +24,8 @@ public class PlayerLookController : MonoBehaviour
     private void OnDisable()
     {
         InputManager.LookEvent -= OnLook;
+        CameraSensitivity.SensChangeEvent -= OnCameraSensitivityChangeX;
+        CameraSensitivity.SensChangeEvent -= OnCameraSensitivityChangeY;
     }
 
     private void Start()

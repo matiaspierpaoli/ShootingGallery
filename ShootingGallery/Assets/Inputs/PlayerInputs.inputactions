@@ -242,28 +242,6 @@
                 },
                 {
                     "name": "",
-                    "id": "9a989029-c116-488d-b0f1-d02c0529a271",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "95ef19b6-9b17-4aa7-89e7-e7f5ccea0960",
-                    "path": "<DualShockGamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "682289e4-d16c-456d-8c43-6b27f2b27f7a",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -457,6 +435,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ChangeWeapon3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41fd357f-9363-4c80-93f8-8d5d57d83f39",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b131aac-129f-4530-bfc6-08b2e86064f5",
+                    "path": "<DualShockGamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

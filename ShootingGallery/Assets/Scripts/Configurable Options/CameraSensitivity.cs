@@ -12,12 +12,6 @@ public class CameraSensitivity : MonoBehaviour
     private float horizontalSensitivity;
     private float verticalSensitivity;
 
-    private float defaultHorizontalSensitivity = 75f;
-    private float defaultVerticalSensitivity = 75f;
-
-    public Slider horizontalSlider;
-    public Slider verticalSlider;
-
     private float minSensitivity;
     private float maxSensitivity;
 
@@ -27,35 +21,45 @@ public class CameraSensitivity : MonoBehaviour
     {
         minSensitivity = 0.2f;
         maxSensitivity = 150f;
-
-        horizontalSensitivity = PlayerPrefs.GetFloat("horizontalSensitivity", defaultHorizontalSensitivity);
-        verticalSensitivity = PlayerPrefs.GetFloat("verticalSensitivity", defaultVerticalSensitivity);
-
-        horizontalSlider.value = horizontalSensitivity;
-        verticalSlider.value = verticalSensitivity;
     }
 
-    public void OnHorizontalSensitivityChange()
+    private void OnEnable()
     {
-        horizontalSensitivity = horizontalSlider.value;
-        horizontalSensitivityText.text = horizontalSlider.value.ToString();
+        HorizontalSensitivitySider.OnValueChanged += OnHorizontalSensitivityChange;
+        VerticalSensitivitySlider.OnValueChanged += OnVerticalSensitivityChange;
+
+    }
+
+    private void OnDisable()
+    {
+        HorizontalSensitivitySider.OnValueChanged -= OnHorizontalSensitivityChange;
+        VerticalSensitivitySlider.OnValueChanged -= OnVerticalSensitivityChange;
+    }
+
+    private void OnHorizontalSensitivityChange(float value)
+    {
+        horizontalSensitivity = value;
+        horizontalSensitivityText.text = value.ToString();
 
         horizontalSensitivity = Mathf.Clamp(horizontalSensitivity, minSensitivity, maxSensitivity);
         
         PlayerPrefs.SetFloat("horizontalSensitivity", horizontalSensitivity);
+        Debug.Log("Horizontal sens set to:" + value);
         PlayerPrefs.Save();
 
         SensChangeEvent?.Invoke();
     }
 
-    public void OnVerticalSensitivityChange()
+    private void OnVerticalSensitivityChange(float value)
     {
-        verticalSensitivity = verticalSlider.value;
-        verticalSensitivityText.text = verticalSlider.value.ToString();
+        // Error here - if value is > 0, verticalSensitivity will still be 0
+        verticalSensitivity = value;
+        verticalSensitivityText.text = value.ToString();
 
         verticalSensitivity = Mathf.Clamp(verticalSensitivity, minSensitivity, maxSensitivity);
 
         PlayerPrefs.SetFloat("verticalSensitivity", verticalSensitivity);
+        Debug.Log("Vertical sens set to:" + value);
         PlayerPrefs.Save();
 
         SensChangeEvent?.Invoke();

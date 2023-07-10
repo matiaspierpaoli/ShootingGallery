@@ -1,39 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CameraSensitivity : MonoBehaviour
 {
     [SerializeField] private TMP_Text horizontalSensitivityText;
     [SerializeField] private TMP_Text verticalSensitivityText;
+    [SerializeField] private SensitivitySlider horizontalSensitivitySlider;
+    [SerializeField] private SensitivitySlider verticalSensitivitySlider;
+
+    [SerializeField] private float minSensitivity;
+    [SerializeField] private float maxSensitivity;
 
     private float horizontalSensitivity;
     private float verticalSensitivity;
 
-    private float minSensitivity;
-    private float maxSensitivity;
-
     public static event System.Action SensChangeEvent;
-
-    private void Start()
-    {
-        minSensitivity = 0.2f;
-        maxSensitivity = 150f;
-    }
 
     private void OnEnable()
     {
-        HorizontalSensitivitySider.OnValueChanged += OnHorizontalSensitivityChange;
-        VerticalSensitivitySlider.OnValueChanged += OnVerticalSensitivityChange;
-
+        horizontalSensitivitySlider.OnValueChanged += OnHorizontalSensitivityChange;
+        verticalSensitivitySlider.OnValueChanged += OnVerticalSensitivityChange;
     }
 
     private void OnDisable()
     {
-        HorizontalSensitivitySider.OnValueChanged -= OnHorizontalSensitivityChange;
-        VerticalSensitivitySlider.OnValueChanged -= OnVerticalSensitivityChange;
+        horizontalSensitivitySlider.OnValueChanged -= OnHorizontalSensitivityChange;
+        verticalSensitivitySlider.OnValueChanged -= OnVerticalSensitivityChange;
     }
 
     private void OnHorizontalSensitivityChange(float value)
@@ -52,7 +44,6 @@ public class CameraSensitivity : MonoBehaviour
 
     private void OnVerticalSensitivityChange(float value)
     {
-        // Error here - if value is > 0, verticalSensitivity will still be 0
         verticalSensitivity = value;
         verticalSensitivityText.text = value.ToString();
 

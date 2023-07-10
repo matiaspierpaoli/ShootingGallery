@@ -7,7 +7,9 @@ using UnityEngine;
 public class PlayerLookController : MonoBehaviour
 {
     [SerializeField] private Transform orientation;
-    
+    [SerializeField] private string playerPrefHorSensitivityString;
+    [SerializeField] private string playerPrefVerSensitivityString;
+
     private float sensX;
     private float sensY;
 
@@ -30,8 +32,8 @@ public class PlayerLookController : MonoBehaviour
 
     private void Start()
     {
-        sensX = PlayerPrefs.GetFloat("horizontalSensitivity", 75f);
-        sensY = PlayerPrefs.GetFloat("verticalSensitivity", 75f);
+        sensX = PlayerPrefs.GetFloat(playerPrefHorSensitivityString, 75f);
+        sensY = PlayerPrefs.GetFloat(playerPrefVerSensitivityString, 75f);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -44,12 +46,12 @@ public class PlayerLookController : MonoBehaviour
 
     public void OnCameraSensitivityChangeX()
     {
-        sensX = PlayerPrefs.GetFloat("horizontalSensitivity", 75f);
+        sensX = PlayerPrefs.GetFloat(playerPrefHorSensitivityString, 75f);
     }
 
     public void OnCameraSensitivityChangeY()
     {
-        sensY = PlayerPrefs.GetFloat("verticalSensitivity", 75f);
+        sensY = PlayerPrefs.GetFloat(playerPrefVerSensitivityString, 75f);
     }
 
     public void ProcessLook(Vector2 cameraInput)

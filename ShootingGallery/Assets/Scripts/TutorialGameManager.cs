@@ -23,6 +23,18 @@ public class TutorialGameManager : MonoBehaviour
     private float currentTutorialTimePractice = 0f;
     [SerializeField] private float maxTutorialTimePractice;
 
+    private void OnEnable()
+    {
+        Gun.ReloadFinishedEvent += SetNewAmmoText;
+        Gun.ShootingStartedEvent += SetNewAmmoText;
+    }
+
+    private void OnDisable()
+    {
+        Gun.ReloadFinishedEvent -= SetNewAmmoText;
+        Gun.ShootingStartedEvent -= SetNewAmmoText;
+    }
+
     private void Start()
     {
         ResetTutorialData();
@@ -118,8 +130,6 @@ public class TutorialGameManager : MonoBehaviour
                     
                 }
             }
-
-            SetNewAmmoText();
         }
     }
 
@@ -142,8 +152,6 @@ public class TutorialGameManager : MonoBehaviour
                     DisplayNextStepText();
                 }
             }
-                    
-            SetNewAmmoText();
         }
     }
 

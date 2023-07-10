@@ -746,6 +746,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 981092348}
+  playerPrefHorSensitivityString: horizontalSensitivity
+  playerPrefVerSensitivityString: verticalSensitivity
 --- !u!1 &168127150
 GameObject:
   m_ObjectHideFlags: 0
@@ -7215,7 +7217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   defaultStateName: Empty
-  recoilName: AkRecoil
+  recoilName: 
   reloadName: AkReload
 --- !u!1 &1350484289
 GameObject:

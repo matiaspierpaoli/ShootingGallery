@@ -3014,6 +3014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 981092348}
+  playerPrefHorSensitivityString: horizontalSensitivity
+  playerPrefVerSensitivityString: verticalSensitivity
 --- !u!1 &156165704
 GameObject:
   m_ObjectHideFlags: 0
@@ -12544,12 +12546,12 @@ MonoBehaviour:
   - {fileID: 1314171087}
   challengeEscapeCollider: {fileID: 96107391}
   currentDifficulty: 0
-  easyDifficultyTime: 120
-  mediumDifficultyTime: 100
-  hardDifficultyTime: 80
-  easyDifficultyEnemies: 20
-  mediumDifficultyEnemies: 30
-  hardDifficultyEnemies: 40
+  easyDifficultyTime: 150
+  mediumDifficultyTime: 135
+  hardDifficultyTime: 110
+  easyDifficultyEnemies: 15
+  mediumDifficultyEnemies: 25
+  hardDifficultyEnemies: 35
 --- !u!4 &585211204
 Transform:
   m_ObjectHideFlags: 0

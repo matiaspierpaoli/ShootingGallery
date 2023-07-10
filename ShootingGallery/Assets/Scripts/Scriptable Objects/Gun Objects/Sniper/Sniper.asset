@@ -21,7 +21,7 @@ MonoBehaviour:
   holdingShootingAction: 0
   currentAmmo: 0
   magSize: 5
-  shootCooldown: 1.2
+  shootCooldown: 0.8
   reloadTime: 2
   reloading: 0
   cost: 20

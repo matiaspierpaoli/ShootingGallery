@@ -33,7 +33,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
+                    "name": "LookMouse",
                     "type": "Value",
                     "id": "03237d84-6479-488b-918e-e2bd075154df",
                     "expectedControlType": "Vector2",
@@ -88,9 +88,18 @@
                 },
                 {
                     "name": "Pause",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "4e911b99-e8a0-42de-a376-29a55d6b7c00",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LookController",
+                    "type": "Value",
+                    "id": "1eb27e85-a431-4ae7-aa43-9ed9455b55d1",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -236,7 +245,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "LookMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -445,7 +454,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "LookController",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -456,7 +465,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "LookController",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

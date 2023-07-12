@@ -11,10 +11,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text defeatText;
     [SerializeField] private PlayerStats playerData;
 
-    [SerializeField] private GameObject mainMenuButton;
-    [SerializeField] private GameObject replayButton;
-    [SerializeField] private GameObject exitChallengeButton;
-
     [SerializeField] private GameObject[] weapons;
 
     [SerializeField] private GunData pistolData;
@@ -44,21 +40,6 @@ public class UIManager : MonoBehaviour
         set { if (defeatText != null) defeatText.enabled = value;}
     }
 
-    public bool IsMainMenuButtonEnabled
-    {       
-        set { if (mainMenuButton != null) mainMenuButton.SetActive(value);}        
-    }
-
-    public bool IsReplayButtonEnabled
-    {
-        set { if (replayButton != null) replayButton.SetActive(value);}      
-    }
-
-    public bool IsExitChallengeButtonEnabled
-    {
-        set { if (exitChallengeButton != null) exitChallengeButton.SetActive(value);}       
-    }
-
     private void OnEnable()
     {
         WeaponSwitching.SwitchWeaponEvent += OnSwitchWeapon;
@@ -81,10 +62,6 @@ public class UIManager : MonoBehaviour
     {
         IsVictoryTextEnabled = false;
         IsDefeatTextEnabled = false;
-
-        IsMainMenuButtonEnabled = false;
-        IsReplayButtonEnabled = false;
-        IsExitChallengeButtonEnabled = false;
 
         for (int i = 0; i < selectedWeapons.Length; i++)
         {

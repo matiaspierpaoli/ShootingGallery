@@ -6,13 +6,11 @@ using UnityEngine;
 public class TutorialData : ScriptableObject
 {
     public bool isMovingPlayerAvailable;
-    public bool isMovingCameraAvailable;
     public bool isShootingAvailable;
     public bool isReloadingAvailable;
     public bool isPausingAvailable;
     public bool isChanginWeaponsAvailable;
 
-    public bool finishedMovingCamera;
     public bool finishedMovingPlayer;
     public bool finishedShooting;
     public bool finishedReloading;

@@ -25,14 +25,20 @@ public class InputManager : MonoBehaviour
         MoveEvent?.Invoke(movementInput);
     }
 
-    public void OnLook(InputValue context)
+    public void OnLookMouse(InputValue context)
+    {
+        var lookInput = context.Get<Vector2>();
+        LookEvent?.Invoke(lookInput);
+    }
+
+    public void OnLookController(InputValue context)
     {
         lookInput = context.Get<Vector2>();
     }
 
     public void OnPause(InputValue context)
     {
-        if (context.isPressed)
+        if (context.Get<float>() > 0.0f)
             PauseEvent?.Invoke();
     }
 }

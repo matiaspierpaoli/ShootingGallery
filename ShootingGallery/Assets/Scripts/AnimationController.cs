@@ -9,8 +9,6 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private string recoilName;
     [SerializeField] private string reloadName;
 
-    public static event System.Action<bool> AnimationEvent;
-
     private void OnEnable()
     {
         Gun.ReloadStartedEvent += OnReloadStarted;
@@ -25,13 +23,12 @@ public class AnimationController : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();        
     }
 
     private void OnReloadStarted()
     {
         animator.Play(reloadName);
-        AnimationEvent?.Invoke(true);
 
         StartCoroutine(CheckAnimationState());
     }
@@ -39,7 +36,6 @@ public class AnimationController : MonoBehaviour
     private void OnShootingStarted()
     {
         animator.Play(recoilName);
-        AnimationEvent?.Invoke(true);
 
         StartCoroutine(CheckAnimationState());
     }
@@ -52,7 +48,10 @@ public class AnimationController : MonoBehaviour
         {
             yield return null;
         }
+    }
 
-        AnimationEvent?.Invoke(false);
+    public void SetDefaultAnimationState()
+    {
+        animator.Play(defaultStateName);
     }
 }

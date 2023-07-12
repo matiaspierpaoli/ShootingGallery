@@ -5,6 +5,8 @@ public class Pause : MonoBehaviour
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private string _sceneName;
 
+    public static event System.Action FinishedPause;
+
     private void OnEnable()
     {
         InputManager.PauseEvent += OnPause;
@@ -22,7 +24,6 @@ public class Pause : MonoBehaviour
 
     public void PauseScreen()
     {
-
         Cursor.visible = true;
         FreezeTime();
         Cursor.lockState = CursorLockMode.Confined;
@@ -36,6 +37,7 @@ public class Pause : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         UnfreezeTime();
         _sceneLoader.UnloadScene(_sceneName);
+        FinishedPause?.Invoke();
     }
 
     public void FreezeTime()

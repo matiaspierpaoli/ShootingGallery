@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     [Header("Shooting")]
     public InputActionReference holdShootingActionReference;
     private Coroutine shootingCoroutine;
+    private Coroutine reloadingCoroutine;
 
     public static event System.Action ReloadStartedEvent;
     public static event System.Action ReloadFinishedEvent;
@@ -44,12 +45,22 @@ public class Gun : MonoBehaviour
     {
         holdShootingActionReference.action.started += OnHoldStarted;
         holdShootingActionReference.action.canceled += OnHoldCanceled;
+
+        canShoot = true;
+        _gunData.reloading = false;
+        
     }
 
     private void OnDisable()
     {
         holdShootingActionReference.action.started -= OnHoldStarted;
         holdShootingActionReference.action.canceled -= OnHoldCanceled;
+
+        if (reloadingCoroutine != null)
+        {
+            StopCoroutine(reloadingCoroutine);
+            reloadingCoroutine = null;
+        }
     }
 
     #region Shooting
@@ -159,7 +170,9 @@ public class Gun : MonoBehaviour
         {
             if (shootingCoroutine != null)
                 StopCoroutine(shootingCoroutine);
-            StartCoroutine(Reload());
+            if (reloadingCoroutine != null)
+                StopCoroutine(reloadingCoroutine);
+            reloadingCoroutine = StartCoroutine(Reload());
             audioManager.PlaySoundEvent(reloadSFX, gameObject);
         }
     }

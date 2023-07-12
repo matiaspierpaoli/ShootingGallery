@@ -57,7 +57,7 @@ namespace Inputs
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look"",
+                    ""name"": ""LookMouse"",
                     ""type"": ""Value"",
                     ""id"": ""03237d84-6479-488b-918e-e2bd075154df"",
                     ""expectedControlType"": ""Vector2"",
@@ -112,9 +112,18 @@ namespace Inputs
                 },
                 {
                     ""name"": ""Pause"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""4e911b99-e8a0-42de-a376-29a55d6b7c00"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LookController"",
+                    ""type"": ""Value"",
+                    ""id"": ""1eb27e85-a431-4ae7-aa43-9ed9455b55d1"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -260,7 +269,7 @@ namespace Inputs
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Look"",
+                    ""action"": ""LookMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -469,7 +478,7 @@ namespace Inputs
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Look"",
+                    ""action"": ""LookController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -480,7 +489,7 @@ namespace Inputs
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Look"",
+                    ""action"": ""LookController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -522,13 +531,14 @@ namespace Inputs
             m_World_Move = m_World.FindAction("Move", throwIfNotFound: true);
             m_World_Jump = m_World.FindAction("Jump", throwIfNotFound: true);
             m_World_Sprint = m_World.FindAction("Sprint", throwIfNotFound: true);
-            m_World_Look = m_World.FindAction("Look", throwIfNotFound: true);
+            m_World_LookMouse = m_World.FindAction("LookMouse", throwIfNotFound: true);
             m_World_Shoot = m_World.FindAction("Shoot", throwIfNotFound: true);
             m_World_Reload = m_World.FindAction("Reload", throwIfNotFound: true);
             m_World_ChangeWeapon1 = m_World.FindAction("ChangeWeapon1", throwIfNotFound: true);
             m_World_ChangeWeapon2 = m_World.FindAction("ChangeWeapon2", throwIfNotFound: true);
             m_World_ChangeWeapon3 = m_World.FindAction("ChangeWeapon3", throwIfNotFound: true);
             m_World_Pause = m_World.FindAction("Pause", throwIfNotFound: true);
+            m_World_LookController = m_World.FindAction("LookController", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -594,13 +604,14 @@ namespace Inputs
         private readonly InputAction m_World_Move;
         private readonly InputAction m_World_Jump;
         private readonly InputAction m_World_Sprint;
-        private readonly InputAction m_World_Look;
+        private readonly InputAction m_World_LookMouse;
         private readonly InputAction m_World_Shoot;
         private readonly InputAction m_World_Reload;
         private readonly InputAction m_World_ChangeWeapon1;
         private readonly InputAction m_World_ChangeWeapon2;
         private readonly InputAction m_World_ChangeWeapon3;
         private readonly InputAction m_World_Pause;
+        private readonly InputAction m_World_LookController;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -608,13 +619,14 @@ namespace Inputs
             public InputAction @Move => m_Wrapper.m_World_Move;
             public InputAction @Jump => m_Wrapper.m_World_Jump;
             public InputAction @Sprint => m_Wrapper.m_World_Sprint;
-            public InputAction @Look => m_Wrapper.m_World_Look;
+            public InputAction @LookMouse => m_Wrapper.m_World_LookMouse;
             public InputAction @Shoot => m_Wrapper.m_World_Shoot;
             public InputAction @Reload => m_Wrapper.m_World_Reload;
             public InputAction @ChangeWeapon1 => m_Wrapper.m_World_ChangeWeapon1;
             public InputAction @ChangeWeapon2 => m_Wrapper.m_World_ChangeWeapon2;
             public InputAction @ChangeWeapon3 => m_Wrapper.m_World_ChangeWeapon3;
             public InputAction @Pause => m_Wrapper.m_World_Pause;
+            public InputAction @LookController => m_Wrapper.m_World_LookController;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -633,9 +645,9 @@ namespace Inputs
                     @Sprint.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnSprint;
                     @Sprint.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnSprint;
                     @Sprint.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnSprint;
-                    @Look.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
-                    @Look.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
-                    @Look.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnLook;
+                    @LookMouse.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookMouse;
+                    @LookMouse.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookMouse;
+                    @LookMouse.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookMouse;
                     @Shoot.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
                     @Shoot.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
                     @Shoot.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnShoot;
@@ -654,6 +666,9 @@ namespace Inputs
                     @Pause.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnPause;
                     @Pause.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnPause;
                     @Pause.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnPause;
+                    @LookController.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookController;
+                    @LookController.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookController;
+                    @LookController.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookController;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -667,9 +682,9 @@ namespace Inputs
                     @Sprint.started += instance.OnSprint;
                     @Sprint.performed += instance.OnSprint;
                     @Sprint.canceled += instance.OnSprint;
-                    @Look.started += instance.OnLook;
-                    @Look.performed += instance.OnLook;
-                    @Look.canceled += instance.OnLook;
+                    @LookMouse.started += instance.OnLookMouse;
+                    @LookMouse.performed += instance.OnLookMouse;
+                    @LookMouse.canceled += instance.OnLookMouse;
                     @Shoot.started += instance.OnShoot;
                     @Shoot.performed += instance.OnShoot;
                     @Shoot.canceled += instance.OnShoot;
@@ -688,6 +703,9 @@ namespace Inputs
                     @Pause.started += instance.OnPause;
                     @Pause.performed += instance.OnPause;
                     @Pause.canceled += instance.OnPause;
+                    @LookController.started += instance.OnLookController;
+                    @LookController.performed += instance.OnLookController;
+                    @LookController.canceled += instance.OnLookController;
                 }
             }
         }
@@ -730,13 +748,14 @@ namespace Inputs
             void OnMove(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnSprint(InputAction.CallbackContext context);
-            void OnLook(InputAction.CallbackContext context);
+            void OnLookMouse(InputAction.CallbackContext context);
             void OnShoot(InputAction.CallbackContext context);
             void OnReload(InputAction.CallbackContext context);
             void OnChangeWeapon1(InputAction.CallbackContext context);
             void OnChangeWeapon2(InputAction.CallbackContext context);
             void OnChangeWeapon3(InputAction.CallbackContext context);
             void OnPause(InputAction.CallbackContext context);
+            void OnLookController(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

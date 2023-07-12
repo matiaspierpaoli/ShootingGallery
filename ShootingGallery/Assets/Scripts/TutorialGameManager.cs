@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class TutorialGameManager : MonoBehaviour
 {
-    [SerializeField] private Pause _pauseManager;
     [SerializeField] private GameObject[] weaponsGO;
     [SerializeField] private GunData[] _gunData;
 
@@ -23,16 +22,28 @@ public class TutorialGameManager : MonoBehaviour
     private float currentTutorialTimePractice = 0f;
     [SerializeField] private float maxTutorialTimePractice;
 
+    private bool isPaused = false;
+
     private void OnEnable()
     {
+        InputManager.MoveEvent += OnMove;
+        InputManager.PauseEvent += OnPause;
         Gun.ReloadFinishedEvent += SetNewAmmoText;
         Gun.ShootingStartedEvent += SetNewAmmoText;
+        Gun.ReloadFinishedEvent += OnReload;
+        Gun.ShootingStartedEvent += OnShoot;
+        Pause.FinishedPause += OnUnPause;
     }
 
     private void OnDisable()
     {
+        InputManager.MoveEvent -= OnMove;
+        InputManager.PauseEvent -= OnPause;
+        Gun.ReloadFinishedEvent -= OnReload;
+        Gun.ShootingStartedEvent -= OnShoot;
         Gun.ReloadFinishedEvent -= SetNewAmmoText;
         Gun.ShootingStartedEvent -= SetNewAmmoText;
+        Pause.FinishedPause -= OnUnPause;
     }
 
     private void Start()
@@ -49,11 +60,10 @@ public class TutorialGameManager : MonoBehaviour
         }
     }
 
-    public void OnMove(InputValue context)
+    private void OnMove(Vector2 movementInput)
     {
         if (_tutorialData.isMovingPlayerAvailable)
         {
-            var movementInput = context.Get<Vector2>();
             _characterMovement.SetMovementDir(movementInput);
 
             if (!_tutorialData.finishedMovingPlayer)
@@ -64,35 +74,10 @@ public class TutorialGameManager : MonoBehaviour
 
                 if (currentTutorialTimePractice >= maxTutorialTimePractice)
                 {
-                    _tutorialData.isMovingCameraAvailable = true;
+                    _tutorialData.isShootingAvailable = true;
                     _tutorialData.finishedMovingPlayer = true;
 
                     currentTutorialTimePractice = 0f;
-
-                    DisplayNextStepText();
-                }
-            }
-        }
-    }
-
-    public void OnLook(InputValue context)
-    {
-        if (_tutorialData.isMovingCameraAvailable)
-        {
-            var movementInput = context.Get<Vector2>();
-            _playerLook.ProcessLook(movementInput);
-
-            if (!_tutorialData.finishedMovingCamera)
-            {
-                currentTutorialTimePractice += Time.deltaTime;
-
-                Debug.Log("Correctly Moved Camera");
-
-                if (currentTutorialTimePractice >= maxTutorialTimePractice)
-                {
-                    _tutorialData.isShootingAvailable = true;
-                    _tutorialData.finishedMovingCamera = true;
-
 
                     for (int i = 0; i < weaponsGO.Length; i++)
                     {
@@ -102,15 +87,13 @@ public class TutorialGameManager : MonoBehaviour
                             weaponsGO[i].SetActive(false);
                     }
 
-                    currentTutorialTimePractice = 0f;
-
                     DisplayNextStepText();
                 }
             }
         }
     }
 
-    public void OnShoot(InputValue context)
+    private void OnShoot()
     {
         if (_tutorialData.isShootingAvailable)
         {
@@ -133,7 +116,7 @@ public class TutorialGameManager : MonoBehaviour
         }
     }
 
-    public void OnReload(InputValue context)
+    private void OnReload()
     {
         if (_tutorialData.isReloadingAvailable)
         {
@@ -155,7 +138,7 @@ public class TutorialGameManager : MonoBehaviour
         }
     }
 
-    public void OnPause(InputValue context)
+    private void OnPause()
     {
         if (_tutorialData.isPausingAvailable)
         {
@@ -176,13 +159,15 @@ public class TutorialGameManager : MonoBehaviour
                 }
             }
             else
-                _pauseManager.PauseScreen();
+            {
+                isPaused = true;
+            }
         }
     }
 
     public void OnChangeWeapon1(InputValue context)
     {
-        if (_tutorialData.isChanginWeaponsAvailable)
+        if (_tutorialData.isChanginWeaponsAvailable && !isPaused)
         {
             Debug.Log("Correctly Changed Weapon to 1");
 
@@ -201,7 +186,7 @@ public class TutorialGameManager : MonoBehaviour
 
     public void OnChangeWeapon2(InputValue context)
     {
-        if (_tutorialData.isChanginWeaponsAvailable)
+        if (_tutorialData.isChanginWeaponsAvailable && !isPaused)
         {
             Debug.Log("Correctly Changed Weapon to 2");
 
@@ -220,7 +205,7 @@ public class TutorialGameManager : MonoBehaviour
 
     public void OnChangeWeapon3(InputValue context)
     {
-        if (_tutorialData.isChanginWeaponsAvailable)
+        if (_tutorialData.isChanginWeaponsAvailable && !isPaused)
         {
             Debug.Log("Correctly Changed Weapon to 3");
 
@@ -251,14 +236,12 @@ public class TutorialGameManager : MonoBehaviour
         currentStepIndex = 0;
 
         _tutorialData.isMovingPlayerAvailable = false;
-        _tutorialData.isMovingCameraAvailable = false;
         _tutorialData.isShootingAvailable = false;
         _tutorialData.isReloadingAvailable = false;
         _tutorialData.isPausingAvailable = false;
         _tutorialData.isChanginWeaponsAvailable = false;
 
         _tutorialData.finishedMovingPlayer = false;
-        _tutorialData.finishedMovingCamera = false;
         _tutorialData.finishedShooting = false;
         _tutorialData.finishedReloading = false;
         _tutorialData.finishedPausing = false;
@@ -280,5 +263,10 @@ public class TutorialGameManager : MonoBehaviour
         }
 
         currentStepIndex++;
+    }
+
+    private void OnUnPause()
+    {
+        isPaused = false;
     }
 }

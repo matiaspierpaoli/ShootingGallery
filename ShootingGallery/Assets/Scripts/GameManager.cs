@@ -26,12 +26,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GunData[] weapons;
     [SerializeField] private PlayerStats player;
     [SerializeField] private ShopManager _shopManager;
+    [SerializeField] private GameObject pauseManager;
+    [SerializeField] private GameObject challengeButtons;
     [SerializeField] private string pistolName;
 
     [SerializeField] private float maxTime;
     [SerializeField] private float maxEnemiesToDefeat;
 
-    [SerializeField] private GameObject[] escapeColliders;
     [SerializeField] private GameObject challengeEscapeCollider;
 
     [SerializeField] private DifficultyLevel currentDifficulty;
@@ -43,16 +44,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float hardDifficultyEnemies;
 
     private ChallengeState currentState = ChallengeState.Inactive;
-
-    private void OnEnable()
-    {
-        AnimationController.AnimationEvent += HandleEscapeColliders;
-    }
-
-    private void OnDisable()
-    {
-        AnimationController.AnimationEvent -= HandleEscapeColliders;
-    }
 
     private void Start()
     {
@@ -124,17 +115,10 @@ public class GameManager : MonoBehaviour
         _gameData.victory = false;
         _gameData.defeat = false;
         _gameData.challengeStarted = false;
-
-        _UIManager.IsMainMenuButtonEnabled = false;
-        _UIManager.IsReplayButtonEnabled = false;
-        _UIManager.IsExitChallengeButtonEnabled = false;
         _UIManager.IsVictoryTextEnabled = false;
         _UIManager.IsDefeatTextEnabled = false;
-
-        for (int i = 0; i < escapeColliders.Length; i++)
-        {
-            escapeColliders[i].SetActive(false);
-        }
+        challengeButtons.SetActive(false);
+        pauseManager.SetActive(true);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -176,10 +160,8 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         _pauseManager.FreezeTime();
 
-
-        _UIManager.IsMainMenuButtonEnabled = true;
-        _UIManager.IsReplayButtonEnabled = true;
-        _UIManager.IsExitChallengeButtonEnabled = true;
+        challengeButtons.SetActive(true);
+        pauseManager.SetActive(false);
 
         _gameData.defeat = true;
         _gameData.challengeStarted = false;
@@ -217,14 +199,6 @@ public class GameManager : MonoBehaviour
     public void HandleChallengeEscapeCollider(bool active)
     {
         challengeEscapeCollider.SetActive(active);
-    }
-
-    public void HandleEscapeColliders(bool active)
-    {
-        for (int i = 0; i < escapeColliders.Length; i++)
-        {
-            escapeColliders[i].SetActive(active);
-        }
     }
 
     private void SetTimeLimit(DifficultyLevel difficulty)

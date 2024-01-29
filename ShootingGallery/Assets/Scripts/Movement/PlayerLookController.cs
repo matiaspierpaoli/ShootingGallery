@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
-/// Get movement input through events and new input system and rotate tranform
+/// Get movement input through events and new input system and rotate transform
 /// </summary>
 public class PlayerLookController : MonoBehaviour
 {

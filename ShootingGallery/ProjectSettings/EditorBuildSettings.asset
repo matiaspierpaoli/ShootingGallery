@@ -13,6 +13,9 @@ EditorBuildSettings:
     guid: 41b6b441e0ec16144b5bc5ca9b1aead4
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
+    guid: edc81a5f7fdef5c40b40608fd0593472
+  - enabled: 1
+    path: Assets/Scenes/PracticeAreaScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Credits.unity

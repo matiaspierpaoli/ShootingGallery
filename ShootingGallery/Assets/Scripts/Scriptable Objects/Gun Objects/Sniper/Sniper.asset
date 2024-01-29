@@ -19,7 +19,7 @@ MonoBehaviour:
   damage: 100
   maxDistance: 200
   holdingShootingAction: 0
-  currentAmmo: 0
+  currentAmmo: 5
   magSize: 5
   shootCooldown: 0.8
   reloadTime: 2

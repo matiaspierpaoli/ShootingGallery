@@ -5,6 +5,7 @@ public class EnemyWithFov : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float viewRadius;
     [SerializeField] private float angleThreshold;
+    [SerializeField] private float yOffset;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float shootDelay;
@@ -55,9 +56,11 @@ public class EnemyWithFov : MonoBehaviour
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
+                Vector3 shootingPoint = transform.position + Vector3.up * yOffset;
+
+                if (!Physics.Raycast(shootingPoint, directionToTarget, distanceToTarget, obstacleMask))
                 {
-                    Debug.DrawRay(transform.position, directionToTarget * distanceToTarget, Color.green);
+                    Debug.DrawRay(shootingPoint, directionToTarget * distanceToTarget, Color.green);
                     return true;
                 }
                 else

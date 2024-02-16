@@ -11,7 +11,7 @@ public class EnemyWithFov : MonoBehaviour
     [SerializeField] private float shootDelay;
     [SerializeField] private Color fovColor;
 
-    private bool playerInSight;
+    public bool PlayerInSight { get; private set; }
     private bool isShooting;
 
     private void Start()
@@ -23,23 +23,23 @@ public class EnemyWithFov : MonoBehaviour
     {
         if (CanSeePlayer())
         {
-            if (!playerInSight && !isShooting)
+            if (!PlayerInSight && !isShooting)
             {
                 // Player entered the FOV
                 StartShooting();
             }
 
-            playerInSight = true;
+            PlayerInSight = true;
         }
         else
         {
-            if (playerInSight && isShooting)
+            if (PlayerInSight && isShooting)
             {
                 // Player left the FOV
                 StopShooting();
             }
 
-            playerInSight = false;
+            PlayerInSight = false;
         }
     }
 

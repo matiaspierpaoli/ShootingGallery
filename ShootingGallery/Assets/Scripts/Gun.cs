@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Gun : MonoBehaviour
 {
     [Header("Object type References")]
-    [SerializeField] private GunData _gunData;
+    public GunData _gunData;
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Transform firePoint;
     [SerializeField] private BulletController bulletController;

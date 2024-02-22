@@ -2,21 +2,26 @@ using UnityEngine;
 
 public class EnemyWithFov : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform soldier;
     [SerializeField] private float viewRadius;
     [SerializeField] private float angleThreshold;
+    [SerializeField] private float xOffset;
     [SerializeField] private float yOffset;
+    [SerializeField] private float zOffset;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float shootDelay;
     [SerializeField] private Color fovColor;
-
+    
+    public EnemyWeapon enemyWeapon;
     public bool PlayerInSight { get; private set; }
     private bool isShooting;
 
     private void Start()
     {
         InvokeRepeating("CheckPlayerInFOV", 0f, 0.5f);
+
+        enemyWeapon = GetComponentInChildren<EnemyWeapon>();
     }
 
     private void CheckPlayerInFOV()
@@ -45,18 +50,18 @@ public class EnemyWithFov : MonoBehaviour
 
     private bool CanSeePlayer()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, viewRadius, playerMask);
+        Collider[] hits = Physics.OverlapSphere(soldier.position, viewRadius, playerMask);
 
         if (hits.Length > 0)
         {
             Transform target = hits[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
+            Vector3 directionToTarget = (target.position - soldier.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angleThreshold)
+            if (Vector3.Angle(soldier.forward, directionToTarget) < angleThreshold)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                float distanceToTarget = Vector3.Distance(soldier.position, target.position);
 
-                Vector3 shootingPoint = transform.position + Vector3.up * yOffset;
+                Vector3 shootingPoint = soldier.position + Vector3.up * yOffset + Vector3.right * xOffset + Vector3.forward * zOffset;
 
                 if (!Physics.Raycast(shootingPoint, directionToTarget, distanceToTarget, obstacleMask))
                 {
@@ -65,7 +70,7 @@ public class EnemyWithFov : MonoBehaviour
                 }
                 else
                 {
-                    Debug.DrawRay(transform.position, directionToTarget * distanceToTarget, Color.red);
+                    Debug.DrawRay(shootingPoint, directionToTarget * distanceToTarget, Color.red);
                 }
             }
         }
@@ -88,6 +93,7 @@ public class EnemyWithFov : MonoBehaviour
     private void ShootPlayer()
     {
         Debug.Log("Shooting at player!");
+        enemyWeapon.Shoot();
     }
 
     private void OnDrawGizmosSelected()
@@ -104,8 +110,8 @@ public class EnemyWithFov : MonoBehaviour
         Vector3 rightBoundary = DirFromAngle(angleThreshold, false);
 
         // Draw lines connecting the boundaries to the player (left and right)
-        Debug.DrawLine(transform.position, transform.position + leftBoundary * viewRadius, fovColor);
-        Debug.DrawLine(transform.position, transform.position + rightBoundary * viewRadius, fovColor);
+        Debug.DrawLine(soldier.position, soldier.position + leftBoundary * viewRadius, fovColor);
+        Debug.DrawLine(soldier.position, soldier.position + rightBoundary * viewRadius, fovColor);
     }
 
     private Vector3 DirFromAngle(float angleInDegrees, bool isGlobal)

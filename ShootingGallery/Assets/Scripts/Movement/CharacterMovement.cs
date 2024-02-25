@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("SetUp")]
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private Transform orientation;
+    [SerializeField] private float gravity;
 
     [Header("Movement")]
     [SerializeField] private float speed;
@@ -40,7 +41,12 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         moveDir = orientation.forward * _movementDirection.y + orientation.right * _movementDirection.x;
-        rigidBody.velocity = new Vector3(moveDir.x * speed, 0, moveDir.z * speed);
+
+        Vector3 gravityVector = Vector3.down * gravity;
+
+        Vector3 velocity = new Vector3(moveDir.x * speed, rigidBody.velocity.y, moveDir.z * speed);
+
+        rigidBody.velocity = velocity + gravityVector;
     }
 
     private void OnMove(Vector2 movementInput)

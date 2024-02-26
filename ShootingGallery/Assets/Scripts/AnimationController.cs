@@ -11,14 +11,20 @@ public class AnimationController : MonoBehaviour
 
     private void OnEnable()
     {
-        Gun.ReloadStartedEvent += OnReloadStarted;
-        Gun.ShootingStartedEvent += OnShootingStarted;
+        //Gun.ReloadStartedEvent += OnReloadStarted;
+        //Gun.ShootingStartedEvent += OnShootingStarted;
+
+        Weapon.ReloadStartedEvent += OnReloadStarted;
+        Weapon.ShootingStartedEvent += OnShootingStarted;
     }
 
     private void OnDisable()
     {
-        Gun.ReloadStartedEvent -= OnReloadStarted;
-        Gun.ShootingStartedEvent -= OnShootingStarted;
+        //Gun.ReloadStartedEvent -= OnReloadStarted;
+        //Gun.ShootingStartedEvent -= OnShootingStarted;
+
+        Weapon.ReloadStartedEvent -= OnReloadStarted;
+        Weapon.ShootingStartedEvent -= OnShootingStarted;
     }
 
     private void Awake()

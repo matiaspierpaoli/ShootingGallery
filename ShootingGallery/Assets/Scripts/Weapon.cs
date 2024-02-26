@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,6 +19,10 @@ public class Weapon : MonoBehaviour
 
     [Header("Shooting")]
     public InputActionReference holdShootingActionReference;
+
+    public static event System.Action ReloadStartedEvent;
+    public static event System.Action ReloadFinishedEvent;
+    public static event System.Action ShootingStartedEvent;
 
     private Coroutine shootingCoroutine;
     private Coroutine reloadingCoroutine;
@@ -54,7 +59,7 @@ public class Weapon : MonoBehaviour
             holdShootingActionReference.action.started += OnHoldStarted;
             holdShootingActionReference.action.canceled += OnHoldCanceled;
         }
-        
+
         canShoot = true;
         gunData.reloading = false;
     }
@@ -120,7 +125,7 @@ public class Weapon : MonoBehaviour
         while (gunData.currentAmmo > 0)
         {
             Shoot();
-            yield return new WaitForSeconds(gunData.shootCooldown);
+            yield return StartRecoil(gunData.shootCooldown);
         }
     }
 
@@ -208,15 +213,26 @@ public class Weapon : MonoBehaviour
         return dir.normalized;
     }
 
+    IEnumerator StartRecoil(float firePeriod)
+    {
+        if (gunData.isPlayerControlled)
+            ShootingStartedEvent?.Invoke();
+        yield return new WaitForSeconds(firePeriod);
+    }
+
     private IEnumerator Reload()
     {
         Debug.Log(gunData.name + " started reloading");
+        if (gunData.isPlayerControlled)
+            ReloadStartedEvent?.Invoke();
         gunData.reloading = true;
         yield return new WaitForSeconds(gunData.reloadTime);
         Debug.Log(gunData.name + " finished reloading");
 
         gunData.currentAmmo = gunData.magSize;
         gunData.reloading = false;
+
+        ReloadFinishedEvent?.Invoke();
     }
 
     private void ResetWeaponStats()

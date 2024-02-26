@@ -42,7 +42,7 @@ public class EnemyWeapon : MonoBehaviour
         return newGunData;
     }
 
-    public void Shoot()
+    public void Shoot(PlayerStatsController psc)
     {
         if (gunData.currentAmmo > 0 && !gunData.reloading)
         {
@@ -52,6 +52,28 @@ public class EnemyWeapon : MonoBehaviour
 
             if (gunData.isInstanceType)
                 bulletController.CreateBullet(firePoint);
+
+            if (gunData.currentAmmo == 0)
+            {
+                reloadingCoroutine = StartCoroutine(Reload());
+            }
+        }
+        else if (!gunData.reloading)
+        {
+            Reload();
+        }
+    }
+
+    public void Shoot(Vector3 missDirection)
+    {
+        if (gunData.currentAmmo > 0 && !gunData.reloading)
+        {
+            gunData.currentAmmo--;
+
+            Debug.Log("Enemy shot!");
+
+            if (gunData.isInstanceType)
+                bulletController.CreateBullet(firePoint, missDirection);
 
             if (gunData.currentAmmo == 0)
             {

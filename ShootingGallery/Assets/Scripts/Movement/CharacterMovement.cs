@@ -15,6 +15,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float speed;
 
     private Vector3 moveDir;
+    private Vector3 originalPos;
+    private Quaternion originalRot;
 
     private Vector2 _movementDirection;
 
@@ -31,6 +33,12 @@ public class CharacterMovement : MonoBehaviour
     private void OnValidate()
     {
         rigidBody ??= GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        originalPos = transform.position;
+        originalRot = transform.rotation;
     }
 
     private void Update()
@@ -68,5 +76,11 @@ public class CharacterMovement : MonoBehaviour
             Vector3 limitedVel = flatVel.normalized * speed;
             rigidBody.velocity = new Vector3(limitedVel.x, rigidBody.velocity.y, limitedVel.z); 
         }
+    }
+
+    public void ResetTransform()
+    {
+        transform.position = originalPos;
+        transform.rotation = originalRot;
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 671572544548678892}
   - component: {fileID: 151494042084636241}
+  - component: {fileID: 3275078305121385223}
   m_Layer: 0
   m_Name: Enemy Sniper
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151494042084636246}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b646233a9754d648baededd5136b4b4, type: 3}
   m_Name: 
@@ -54,6 +55,33 @@ MonoBehaviour:
   gunData: {fileID: 11400000, guid: 173ab866f27ca164d81d23342e3af7fe, type: 2}
   firePoint: {fileID: 3529497001134759455}
   bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  isInstanceType: 0
+--- !u!114 &3275078305121385223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151494042084636246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46d1bcd9719ece48b37cb18847a513c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: 173ab866f27ca164d81d23342e3af7fe, type: 2}
+  firePoint: {fileID: 3529497001134759455}
+  cameraTransform: {fileID: 0}
+  bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  audioManager: {fileID: 0}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 20050180e25a73d49bf1021735e38f08, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eb7f32c520c0a8b4fa224976f467af04, type: 2}
+  holdShootingActionReference: {fileID: 0}
 --- !u!1 &1452762805967549348
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6944522982072415375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.109, z: 1.162}
+  m_LocalPosition: {x: 0, y: 0.10899998, z: 1.1619998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

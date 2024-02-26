@@ -24,6 +24,13 @@ public class BulletController : MonoBehaviour
         bulletController.Fire(firePoint.forward);
     }
 
+    public void CreateBullet(Transform firePoint, Vector3 direction)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(direction));
+        BulletController bulletController = bullet.GetComponent<BulletController>();
+        bulletController.Fire(direction);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.TryGetComponent(out IDamageable damageable))

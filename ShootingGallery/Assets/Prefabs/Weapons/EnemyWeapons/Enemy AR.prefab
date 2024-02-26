@@ -770,7 +770,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8148013756244182185}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -4.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -788,6 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8186554929324682468}
   - component: {fileID: 8851733778506102367}
+  - component: {fileID: 7098041358545400485}
   m_Layer: 0
   m_Name: Enemy AR
   m_TagString: Untagged
@@ -828,7 +829,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8851733778506102366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b646233a9754d648baededd5136b4b4, type: 3}
   m_Name: 
@@ -837,6 +838,32 @@ MonoBehaviour:
   firePoint: {fileID: 6660693468061092903}
   bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
   isInstanceType: 1
+--- !u!114 &7098041358545400485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8851733778506102366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46d1bcd9719ece48b37cb18847a513c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: 11aab16b3722bd3468e31f119d3d20dd, type: 2}
+  firePoint: {fileID: 6660693468061092903}
+  cameraTransform: {fileID: 0}
+  bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
+  audioManager: {fileID: 0}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 87f2b938a8066614d9bcab32f98089d9, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 372340e032f1ebd4e8c881dc002a9d85, type: 2}
+  holdShootingActionReference: {fileID: 0}
 --- !u!1 &9001385626693850910
 GameObject:
   m_ObjectHideFlags: 0

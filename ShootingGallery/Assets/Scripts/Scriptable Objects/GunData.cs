@@ -10,6 +10,7 @@ public class GunData : ScriptableObject
     public bool availiable;
     public bool isInstanceType;
     public bool isRaycastType;
+    public bool isPlayerControlled;
 
     [Header("Shooting")]
     public float damage;

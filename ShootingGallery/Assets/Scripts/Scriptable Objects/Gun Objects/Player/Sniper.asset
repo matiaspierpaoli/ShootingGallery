@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   name: Sniper Rifle
-  availiable: 1
+  availiable: 0
   isInstanceType: 0
   isRaycastType: 1
+  isPlayerControlled: 1
   damage: 100
   maxDistance: 200
   holdingShootingAction: 0

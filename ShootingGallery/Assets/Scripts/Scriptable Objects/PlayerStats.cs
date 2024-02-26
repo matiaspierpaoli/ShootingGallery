@@ -6,4 +6,6 @@ using UnityEngine;
 public class PlayerStats : ScriptableObject
 {
     public float points;
+    public float health;
+    public float maxHealth;
 }

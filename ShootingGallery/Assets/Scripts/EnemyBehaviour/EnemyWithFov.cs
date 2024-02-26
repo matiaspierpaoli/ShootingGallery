@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyWithFov : MonoBehaviour
 {
     [SerializeField] private Transform soldier;
+    [SerializeField] private PlayerStatsController playerStatsController;
     [SerializeField] private float viewRadius;
     [SerializeField] private float angleThreshold;
     [SerializeField] private float xOffset;
@@ -12,16 +13,37 @@ public class EnemyWithFov : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float shootDelay;
     [SerializeField] private Color fovColor;
-    
-    public EnemyWeapon enemyWeapon;
+    [SerializeField] GameData gameData;
+
+    public Weapon enemyWeapon;
     public bool PlayerInSight { get; private set; }
     private bool isShooting;
+    private float aimingProbability = 1.0f;
+    private float inaccuracyAngle = 1.0f;
 
     private void Start()
     {
         InvokeRepeating("CheckPlayerInFOV", 0f, 0.5f);
 
-        enemyWeapon = GetComponentInChildren<EnemyWeapon>();
+        enemyWeapon = GetComponentInChildren<Weapon>();
+
+        switch (gameData.difficulty)    
+        {
+            case DifficultyLevel.Easy:
+                aimingProbability = gameData.easyLevelAimingProbability;
+                inaccuracyAngle = gameData.easyLevelInaccuracyAngle;
+                break;
+            case DifficultyLevel.Medium:
+                aimingProbability = gameData.mediumLevelAimingProbability;
+                inaccuracyAngle = gameData.mediumLevelInaccuracyAngle;
+                break;
+            case DifficultyLevel.Hard:
+                aimingProbability = gameData.hardLevelAimingProbability;
+                inaccuracyAngle = gameData.hardLevelInaccuracyAngle;
+                break;
+            default:
+                break;
+        }
     }
 
     private void CheckPlayerInFOV()
@@ -93,7 +115,17 @@ public class EnemyWithFov : MonoBehaviour
     private void ShootPlayer()
     {
         Debug.Log("Shooting at player!");
-        enemyWeapon.Shoot();
+
+        if (Random.value < aimingProbability)
+        {
+            enemyWeapon.Shoot(playerStatsController); // Shoot with full accuracy
+        }
+        else
+        {
+            // Simulate misplaced shot within a certain range
+            Vector3 misplacedDirection = soldier.forward + Random.insideUnitSphere * inaccuracyAngle;
+            enemyWeapon.Shoot(null, misplacedDirection);
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -16,6 +16,7 @@ MonoBehaviour:
   availiable: 1
   isInstanceType: 0
   isRaycastType: 1
+  isPlayerControlled: 1
   damage: 20
   maxDistance: 200
   holdingShootingAction: 0

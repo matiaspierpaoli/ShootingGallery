@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
         }
 
         player.points = 0;
+        player.health = player.maxHealth;
 
         UpdateShopState();
     }
@@ -149,6 +150,8 @@ public class GameManager : MonoBehaviour
     private bool CheckDefeatCondition()
     {
         if (_gameData.currentTime >= _gameData.maxTime)
+            return true;
+        else if (player.health == 0)
             return true;
         else
             return false;
@@ -242,4 +245,19 @@ public class GameManager : MonoBehaviour
     public void OnEasyButtonClicked() => StartChallenge(DifficultyLevel.Easy);
     public void OnMediumButtonClicked() => StartChallenge(DifficultyLevel.Medium);
     public void OnHardButtonClicked() => StartChallenge(DifficultyLevel.Hard);
+
+    public void SetEasyDifficulty()
+    {
+        _gameData.difficulty = DifficultyLevel.Easy;
+    }
+
+    public void SetMediumDifficulty()
+    {
+        _gameData.difficulty = DifficultyLevel.Medium;
+    }
+
+    public void SetHardDifficulty()
+    {
+        _gameData.difficulty = DifficultyLevel.Hard;
+    }
 }

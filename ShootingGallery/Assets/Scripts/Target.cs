@@ -53,7 +53,8 @@ public class Target : MonoBehaviour, IDamageable
                 gameManager.AddOneEnemyDefeated();
             
             gameObject.SetActive(false);
-            Debug.Log(transform.parent.gameObject.name + " eliminated in " + transform.parent.gameObject.tag);
+            if (transform.parent)
+                Debug.Log(transform.parent.gameObject.name + " eliminated in " + transform.parent.gameObject.tag);
             Invoke("Respawn", timeToRespawn);
         }
     }
@@ -61,7 +62,8 @@ public class Target : MonoBehaviour, IDamageable
     private void Respawn()
     {
         gameObject.SetActive(true);
-        Debug.Log(transform.parent.gameObject.name + " respawned in " + transform.parent.gameObject.tag);
+        if (transform.parent)
+            Debug.Log(transform.parent.gameObject.name + " respawned in " + transform.parent.gameObject.tag);
         currentHealth = maxHealth;
     }
 }

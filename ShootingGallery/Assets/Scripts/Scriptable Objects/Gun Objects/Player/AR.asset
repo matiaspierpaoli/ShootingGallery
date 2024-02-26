@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: AR
   m_EditorClassIdentifier: 
   name: Asault Rifle
-  availiable: 1
+  availiable: 0
   isInstanceType: 1
   isRaycastType: 0
+  isPlayerControlled: 1
   damage: 20
   maxDistance: 500
   holdingShootingAction: 0

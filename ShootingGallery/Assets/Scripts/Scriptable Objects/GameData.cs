@@ -1,5 +1,21 @@
 using UnityEngine;
 
+[System.Serializable]
+public class WeaponProbabilities
+{
+    public DifficultyProbabilities easyProbabilities;
+    public DifficultyProbabilities mediumProbabilities;
+    public DifficultyProbabilities hardProbabilities;
+}
+
+[System.Serializable]
+public class DifficultyProbabilities
+{
+    public int pistolProbability;
+    public int akProbability;
+    public int sniperProbability;
+}
+
 [CreateAssetMenu(fileName = "GameData", menuName = "GameData")]
 public class GameData : ScriptableObject
 {
@@ -10,5 +26,15 @@ public class GameData : ScriptableObject
     public bool victory;
     public bool defeat;
     public bool challengeStarted;
+    public DifficultyLevel difficulty;
+    public WeaponProbabilities weaponProbabilities;
+
+    public float easyLevelAimingProbability;
+    public float mediumLevelAimingProbability;
+    public float hardLevelAimingProbability;
+
+    public float easyLevelInaccuracyAngle;
+    public float mediumLevelInaccuracyAngle;
+    public float hardLevelInaccuracyAngle;
 
 }

@@ -7,15 +7,13 @@ public class EnemyWeaponManager : MonoBehaviour
     [SerializeField] private GameObject akPrefab;
     [SerializeField] private GameObject sniperPrefab;
 
-    [SerializeField, Range(0, 100)] private int pistolProbability = 50;
-    [SerializeField, Range(0, 100)] private int akProbability = 30;
-    [SerializeField, Range(0, 100)] private int sniperProbability = 20;
-
     [SerializeField] private Transform pistolSpawn;
     [SerializeField] private Transform akSpawn;
     [SerializeField] private Transform sniperSpawn;
 
     [SerializeField] private Transform weaponHolderTransform;
+
+    [SerializeField] private GameData gameData;
 
     private void Awake()
     {
@@ -57,13 +55,32 @@ public class EnemyWeaponManager : MonoBehaviour
 
     private GameObject ChooseWeaponPrefab()
     {
-        int randomValue = Random.Range(1, 101);
+        DifficultyProbabilities probabilities;
 
-        if (randomValue <= pistolProbability)
+        switch (gameData.difficulty)
+        {
+            case DifficultyLevel.Easy:
+                probabilities = gameData.weaponProbabilities.easyProbabilities;
+                break;
+            case DifficultyLevel.Medium:
+                probabilities = gameData.weaponProbabilities.mediumProbabilities;
+                break;
+            case DifficultyLevel.Hard:
+                probabilities = gameData.weaponProbabilities.hardProbabilities;
+                break;
+            default:
+                probabilities = gameData.weaponProbabilities.easyProbabilities; 
+                break;
+        }
+
+        int totalProbability = probabilities.pistolProbability + probabilities.akProbability + probabilities.sniperProbability;
+        int randomValue = Random.Range(1, totalProbability + 1);
+
+        if (randomValue <= probabilities.pistolProbability)
         {
             return pistolPrefab;
         }
-        else if (randomValue <= pistolProbability + akProbability)
+        else if (randomValue <= probabilities.pistolProbability + probabilities.akProbability)
         {
             return akPrefab;
         }

@@ -9,6 +9,9 @@ public class InputManager : MonoBehaviour
     public static event System.Action<Vector2> MoveEvent;
     public static event System.Action<Vector2> LookEvent;
     public static event System.Action PauseEvent;
+    public static event System.Action NextLevelEvent;
+    public static event System.Action GodModeEvent;
+    public static event System.Action FlashEvent;
 
     private Vector2 lookInput;
 
@@ -40,5 +43,23 @@ public class InputManager : MonoBehaviour
     {
         if (context.Get<float>() > 0.0f)
             PauseEvent?.Invoke();
+    }
+    
+    public void OnNextLevelCheat(InputValue context)
+    {
+        if (context.Get<float>() > 0.0f)
+            NextLevelEvent?.Invoke();
+    }
+
+    public void OnGodModeCheat(InputValue context)
+    {
+        if (context.Get<float>() > 0.0f)
+            GodModeEvent?.Invoke();
+    }
+    
+    public void OnFlashCheat(InputValue context)
+    {
+        if (context.Get<float>() > 0.0f)
+            FlashEvent?.Invoke();
     }
 }

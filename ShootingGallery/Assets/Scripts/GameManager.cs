@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject challengeEscapeCollider;
 
-    [SerializeField] private DifficultyLevel currentDifficulty;
+    //[SerializeField] private DifficultyLevel currentDifficulty;
     [SerializeField] private float easyDifficultyTime;
     [SerializeField] private float mediumDifficultyTime;
     [SerializeField] private float hardDifficultyTime;
@@ -44,6 +44,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float hardDifficultyEnemies;
 
     private ChallengeState currentState = ChallengeState.Inactive;
+
+    public event System.Action ReplayEvent;
+
+    private void OnEnable()
+    {
+        if (_gameData.isNextLevelCheatAvailiable)
+            InputManager.NextLevelEvent += NextLevelCheat;
+    }
+
+    private void OnDisable()
+    {
+        if (_gameData.isNextLevelCheatAvailiable)
+            InputManager.NextLevelEvent -= NextLevelCheat;
+    }
 
     private void Start()
     {
@@ -97,7 +111,7 @@ public class GameManager : MonoBehaviour
 
         _gameData.challengeStarted = true;
         SetState(ChallengeState.Active);
-        currentDifficulty = difficulty;
+        _gameData.difficulty = difficulty;
         SetTimeLimit(difficulty);
         SetEnemiesAmmount(difficulty);
         _UIManager.EnableChallengeTexts();
@@ -106,12 +120,12 @@ public class GameManager : MonoBehaviour
 
     private void ResetGameData()
     {
-        currentDifficulty = DifficultyLevel.Easy;
+        //_gameData.difficulty = DifficultyLevel.Easy;
 
         _gameData.currentTime = 0f;
-        SetTimeLimit(currentDifficulty);
+        SetTimeLimit(_gameData.difficulty);
         _gameData.currentEnemiesDefeated = 0f;
-        SetEnemiesAmmount(currentDifficulty);
+        SetEnemiesAmmount(_gameData.difficulty);
         _gameData.victory = false;
         _gameData.defeat = false;
         _gameData.challengeStarted = false;
@@ -179,6 +193,7 @@ public class GameManager : MonoBehaviour
 
     public void Replay()
     {
+        ReplayEvent?.Invoke();
         ResetGameData();
         _gameData.challengeStarted = true;
         SetState(ChallengeState.Active);
@@ -259,5 +274,24 @@ public class GameManager : MonoBehaviour
     public void SetHardDifficulty()
     {
         _gameData.difficulty = DifficultyLevel.Hard;
+    }
+
+    private void NextLevelCheat()
+    {
+        switch(_gameData.difficulty)
+        {
+            case DifficultyLevel.Easy:
+                _gameData.difficulty = DifficultyLevel.Medium;
+                Debug.Log("Changed Difficulty to Medium");
+                break;
+            case DifficultyLevel.Medium:
+                _gameData.difficulty = DifficultyLevel.Hard;
+                Debug.Log("Changed Difficulty to Hard");
+                break;
+            default:
+                break;
+        }
+
+        Replay();
     }
 }

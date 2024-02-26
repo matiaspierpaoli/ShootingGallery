@@ -127,6 +127,33 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""GodModeCheat"",
+                    ""type"": ""Button"",
+                    ""id"": ""73c8e061-6bc9-41ad-8d56-6b53ddc6746e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FlashCheat"",
+                    ""type"": ""Button"",
+                    ""id"": ""18b38bee-0def-4f58-b935-0db596f46771"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextLevelCheat"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d8932be-cc76-46d4-b8db-98fa97e115a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -492,6 +519,39 @@ namespace Inputs
                     ""action"": ""LookController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""982a5a7a-1d30-4872-89b3-41a77ff613e8"",
+                    ""path"": ""<Keyboard>/f10"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GodModeCheat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dfe2a08e-7f8e-4acb-a9ca-8c5a4148a84e"",
+                    ""path"": ""<Keyboard>/f11"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FlashCheat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4783d9fa-a0a0-4c6f-972f-afcc7aebdaf1"",
+                    ""path"": ""<Keyboard>/f9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextLevelCheat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -539,6 +599,9 @@ namespace Inputs
             m_World_ChangeWeapon3 = m_World.FindAction("ChangeWeapon3", throwIfNotFound: true);
             m_World_Pause = m_World.FindAction("Pause", throwIfNotFound: true);
             m_World_LookController = m_World.FindAction("LookController", throwIfNotFound: true);
+            m_World_GodModeCheat = m_World.FindAction("GodModeCheat", throwIfNotFound: true);
+            m_World_FlashCheat = m_World.FindAction("FlashCheat", throwIfNotFound: true);
+            m_World_NextLevelCheat = m_World.FindAction("NextLevelCheat", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -612,6 +675,9 @@ namespace Inputs
         private readonly InputAction m_World_ChangeWeapon3;
         private readonly InputAction m_World_Pause;
         private readonly InputAction m_World_LookController;
+        private readonly InputAction m_World_GodModeCheat;
+        private readonly InputAction m_World_FlashCheat;
+        private readonly InputAction m_World_NextLevelCheat;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -627,6 +693,9 @@ namespace Inputs
             public InputAction @ChangeWeapon3 => m_Wrapper.m_World_ChangeWeapon3;
             public InputAction @Pause => m_Wrapper.m_World_Pause;
             public InputAction @LookController => m_Wrapper.m_World_LookController;
+            public InputAction @GodModeCheat => m_Wrapper.m_World_GodModeCheat;
+            public InputAction @FlashCheat => m_Wrapper.m_World_FlashCheat;
+            public InputAction @NextLevelCheat => m_Wrapper.m_World_NextLevelCheat;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -669,6 +738,15 @@ namespace Inputs
                     @LookController.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookController;
                     @LookController.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookController;
                     @LookController.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnLookController;
+                    @GodModeCheat.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnGodModeCheat;
+                    @GodModeCheat.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnGodModeCheat;
+                    @GodModeCheat.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnGodModeCheat;
+                    @FlashCheat.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnFlashCheat;
+                    @FlashCheat.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnFlashCheat;
+                    @FlashCheat.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnFlashCheat;
+                    @NextLevelCheat.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnNextLevelCheat;
+                    @NextLevelCheat.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnNextLevelCheat;
+                    @NextLevelCheat.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnNextLevelCheat;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -706,6 +784,15 @@ namespace Inputs
                     @LookController.started += instance.OnLookController;
                     @LookController.performed += instance.OnLookController;
                     @LookController.canceled += instance.OnLookController;
+                    @GodModeCheat.started += instance.OnGodModeCheat;
+                    @GodModeCheat.performed += instance.OnGodModeCheat;
+                    @GodModeCheat.canceled += instance.OnGodModeCheat;
+                    @FlashCheat.started += instance.OnFlashCheat;
+                    @FlashCheat.performed += instance.OnFlashCheat;
+                    @FlashCheat.canceled += instance.OnFlashCheat;
+                    @NextLevelCheat.started += instance.OnNextLevelCheat;
+                    @NextLevelCheat.performed += instance.OnNextLevelCheat;
+                    @NextLevelCheat.canceled += instance.OnNextLevelCheat;
                 }
             }
         }
@@ -756,6 +843,9 @@ namespace Inputs
             void OnChangeWeapon3(InputAction.CallbackContext context);
             void OnPause(InputAction.CallbackContext context);
             void OnLookController(InputAction.CallbackContext context);
+            void OnGodModeCheat(InputAction.CallbackContext context);
+            void OnFlashCheat(InputAction.CallbackContext context);
+            void OnNextLevelCheat(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

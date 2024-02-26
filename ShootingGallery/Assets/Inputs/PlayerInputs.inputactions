@@ -103,6 +103,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "GodModeCheat",
+                    "type": "Button",
+                    "id": "73c8e061-6bc9-41ad-8d56-6b53ddc6746e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FlashCheat",
+                    "type": "Button",
+                    "id": "18b38bee-0def-4f58-b935-0db596f46771",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextLevelCheat",
+                    "type": "Button",
+                    "id": "4d8932be-cc76-46d4-b8db-98fa97e115a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -466,6 +493,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "LookController",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "982a5a7a-1d30-4872-89b3-41a77ff613e8",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GodModeCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfe2a08e-7f8e-4acb-a9ca-8c5a4148a84e",
+                    "path": "<Keyboard>/f11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlashCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4783d9fa-a0a0-4c6f-972f-afcc7aebdaf1",
+                    "path": "<Keyboard>/f9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextLevelCheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

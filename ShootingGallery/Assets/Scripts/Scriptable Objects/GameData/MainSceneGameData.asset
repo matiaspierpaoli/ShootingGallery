@@ -33,6 +33,7 @@ MonoBehaviour:
       pistolProbability: 20
       akProbability: 30
       sniperProbability: 50
+  isNextLevelCheatAvailiable: 1
   easyLevelAimingProbability: 0.3
   mediumLevelAimingProbability: 0.6
   hardLevelAimingProbability: 0.9

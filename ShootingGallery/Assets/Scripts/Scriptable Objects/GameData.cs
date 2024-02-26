@@ -28,6 +28,7 @@ public class GameData : ScriptableObject
     public bool challengeStarted;
     public DifficultyLevel difficulty;
     public WeaponProbabilities weaponProbabilities;
+    public bool isNextLevelCheatAvailiable;
 
     public float easyLevelAimingProbability;
     public float mediumLevelAimingProbability;

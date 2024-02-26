@@ -5,13 +5,29 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> enemies; // List of enemies in the scene
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private GameData gameData;
     [SerializeField] private int easyDifficultyEnemies;
     [SerializeField] private int mediumDifficultyEnemies;
     [SerializeField] private int hardDifficultyEnemies;
 
+    private void OnEnable()
+    {
+        gameManager.ReplayEvent += TurnOnRandomEnemiesBasedOnDifficulty;
+    }
+
+    private void OnDisable()
+    {
+        gameManager.ReplayEvent -= TurnOnRandomEnemiesBasedOnDifficulty;
+    }
+
     public void TurnOnRandomEnemiesBasedOnDifficulty()
     {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            enemies[i].SetActive(false);
+        }
+
         int numEnemiesToTurnOff = GetNumEnemiesToTurnOff();
 
         ShuffleEnemiesList();

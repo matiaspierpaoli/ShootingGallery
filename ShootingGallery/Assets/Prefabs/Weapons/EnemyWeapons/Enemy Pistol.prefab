@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 4922872345447196731}
   - component: {fileID: 8358212265575868318}
   - component: {fileID: 6060334972855030612}
-  - component: {fileID: 8333449959563194538}
   - component: {fileID: 3285005150779085201}
   m_Layer: 0
   m_Name: Enemy Pistol
@@ -201,22 +200,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8333449959563194538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5699972716061864577}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b646233a9754d648baededd5136b4b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: 74a4fe567bee4a440a37d83ca155ea52, type: 2}
-  firePoint: {fileID: 4040598905410533090}
-  bulletController: {fileID: 8412020769080719790, guid: ad7380c6a2a8bb14cb8dcdbf6978bfc0, type: 3}
-  isInstanceType: 0
 --- !u!114 &3285005150779085201
 MonoBehaviour:
   m_ObjectHideFlags: 0

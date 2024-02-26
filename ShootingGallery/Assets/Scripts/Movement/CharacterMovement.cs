@@ -13,21 +13,35 @@ public class CharacterMovement : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float speed;
+    [SerializeField] private float flashSpeed;
+    [SerializeField] private bool isflashSpeedEnabled;
+
+    [SerializeField] GameManager gameManager;
+    [SerializeField] GameData gameData;
 
     private Vector3 moveDir;
     private Vector3 originalPos;
     private Quaternion originalRot;
+    private float originalSpeed;
 
     private Vector2 _movementDirection;
 
     private void OnEnable()
     {
         InputManager.MoveEvent += OnMove;
+        InputManager.FlashEvent += OnFlashCheat;
+
+        if (gameData.isNextLevelCheatAvailiable)
+            gameManager.ReplayEvent += ResetTransform;
     }
 
     private void OnDisable()
     {
         InputManager.MoveEvent -= OnMove;
+        InputManager.FlashEvent -= OnFlashCheat;
+
+        if (gameData.isNextLevelCheatAvailiable)
+            gameManager.ReplayEvent += ResetTransform;
     }
 
     private void OnValidate()
@@ -39,6 +53,7 @@ public class CharacterMovement : MonoBehaviour
     {
         originalPos = transform.position;
         originalRot = transform.rotation;
+        originalSpeed = speed;
     }
 
     private void Update()
@@ -82,5 +97,21 @@ public class CharacterMovement : MonoBehaviour
     {
         transform.position = originalPos;
         transform.rotation = originalRot;
+    }
+
+    public void OnFlashCheat()
+    {
+        isflashSpeedEnabled = !isflashSpeedEnabled;
+
+        if (isflashSpeedEnabled)
+        {
+            speed = flashSpeed;
+            Debug.Log("Flash Mode Enabled");
+        }
+        else
+        {
+            speed = originalSpeed;
+            Debug.Log("Flash Mode Disabled");
+        }
     }
 }

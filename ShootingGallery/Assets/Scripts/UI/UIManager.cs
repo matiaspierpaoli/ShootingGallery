@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text bulletsText;
     [SerializeField] private TMP_Text victoryText;
     [SerializeField] private TMP_Text defeatText;
+    [SerializeField] private TMP_Text healthText;
     [SerializeField] private PlayerStats playerData;
 
     [SerializeField] private GameObject[] weapons;
@@ -43,19 +44,21 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         WeaponSwitching.SwitchWeaponEvent += OnSwitchWeapon;
-        Gun.ReloadStartedEvent += OnReload;
-        Gun.ReloadFinishedEvent += OnReload;
-        Gun.ShootingStartedEvent += OnShoot;
+        Weapon.ReloadStartedEvent += OnReload;
+        Weapon.ReloadFinishedEvent += OnReload;
+        Weapon.ShootingStartedEvent += OnShoot;
         LevelManager.ChangeAreaEvent += OnChangeArea;
+        PlayerStatsController.TakeDamageEvent += OnTakeDamage;
     }
 
     private void OnDisable()
     {
         WeaponSwitching.SwitchWeaponEvent -= OnSwitchWeapon;
-        Gun.ReloadStartedEvent -= OnReload;
-        Gun.ReloadFinishedEvent -= OnReload;
-        Gun.ShootingStartedEvent -= OnShoot;
+        Weapon.ReloadStartedEvent -= OnReload;
+        Weapon.ReloadFinishedEvent -= OnReload;
+        Weapon.ShootingStartedEvent -= OnShoot;
         LevelManager.ChangeAreaEvent -= OnChangeArea;
+        PlayerStatsController.TakeDamageEvent += OnTakeDamage;
     }
 
     private void Start()
@@ -75,6 +78,7 @@ public class UIManager : MonoBehaviour
 
         GetCurrentPointsText();
         GetCurrentAmmoText();
+        GetCurrentHealth();
 
         GetCurrentPointsForAkText();
         GetCurrentPointsForSniperText();
@@ -89,6 +93,7 @@ public class UIManager : MonoBehaviour
         GetCurrentTimeText();          
         GetCurrentEnemiesDefeatedText();                
         GetCurrentAmmoText();
+        GetCurrentHealth();
     }
 
     public void EnableChallengeTexts()
@@ -96,6 +101,7 @@ public class UIManager : MonoBehaviour
         pointsText.enabled = true;
         currentTimeText.enabled = true;
         enemiesDefeatedText.enabled = true;
+        healthText.enabled = true;
 
         pointsForAKText.enabled = true;
         pointsForSniperText.enabled = true;
@@ -106,6 +112,7 @@ public class UIManager : MonoBehaviour
         pointsText.enabled = false;
         currentTimeText.enabled = false;
         enemiesDefeatedText.enabled = false;
+        healthText.enabled = false;
 
         pointsForAKText.enabled = false;
         pointsForSniperText.enabled = false;
@@ -164,6 +171,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void GetCurrentHealth()
+    {
+        healthText.text = playerData.health + "/" + playerData.maxHealth;
+    }
+
     private void GetCurrentTimeText()
     {
         int currentTime = (int)_gameData.currentTime;
@@ -189,6 +201,11 @@ public class UIManager : MonoBehaviour
     {
         SetSelectedWeaponImage(weaponSelected);
         GetCurrentAmmoText();
+    }
+
+    private void OnTakeDamage()
+    {
+        GetCurrentHealth();
     }
 
     public void SetSelectedWeaponImage(int weaponSelected)

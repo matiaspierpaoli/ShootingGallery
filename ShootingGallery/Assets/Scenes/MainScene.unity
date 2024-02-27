@@ -3095,6 +3095,18 @@ MonoBehaviour:
           m_StringArgument: MainScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 93048966}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &93048966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14947,7 +14959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 420399439}
   defaultStateName: Empty
   recoilName: SniperRecoil
   reloadName: SniperReload
@@ -45905,7 +45916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1269584061}
   defaultStateName: Empty
   recoilName: PistolRecoil
   reloadName: 
@@ -51252,7 +51262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1423397462}
   defaultStateName: Empty
   recoilName: 
   reloadName: AkReload
@@ -71522,7 +71531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 93048964}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &2052210190

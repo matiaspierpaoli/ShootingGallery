@@ -187,7 +187,7 @@ public class Weapon : MonoBehaviour
         Vector3 shootDir = GetShotDir(transform);
         if (Physics.Raycast(transform.position, shootDir, out hit, gunData.maxDistance))
         {
-            Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.red, 2f);
+            Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.red, 0.1f);
             Button button = hit.collider.GetComponent<Button>();
             if (button != null)
             {

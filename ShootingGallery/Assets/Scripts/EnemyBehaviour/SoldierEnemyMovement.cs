@@ -82,7 +82,11 @@ public class SoldierEnemyMovement : MonoBehaviour
     {
         Vector3 directionToPlayer = (player.position - transform.position).normalized;
         Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        
+        Quaternion yzRotationOnly = Quaternion.Euler(0f, targetRotation.eulerAngles.y, targetRotation.eulerAngles.z);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, yzRotationOnly, rotationSpeed * Time.deltaTime);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     private void ResetRotation()

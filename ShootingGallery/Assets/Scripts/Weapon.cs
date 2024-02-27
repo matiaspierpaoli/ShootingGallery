@@ -243,6 +243,7 @@ public class Weapon : MonoBehaviour
         if (gunData.isPlayerControlled)
             ReloadStartedEvent?.Invoke();
         gunData.reloading = true;
+        audioManager.PlaySoundEvent(reloadSFX, gameObject);
         yield return new WaitForSeconds(gunData.reloadTime);
         Debug.Log(gunData.name + " finished reloading");
 

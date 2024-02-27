@@ -1221,6 +1221,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -4247,6 +4251,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -4867,6 +4875,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -5581,6 +5593,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -6406,6 +6422,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: -8250478658166684929, guid: ba364a4b48814d04084adc991c0b0091, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -7000,6 +7020,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -7109,6 +7133,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -7250,6 +7278,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -7543,6 +7575,7 @@ MonoBehaviour:
   bulletsText: {fileID: 92424354}
   victoryText: {fileID: 716325926}
   defeatText: {fileID: 1707251918}
+  healthText: {fileID: 0}
   playerData: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
   weapons:
   - {fileID: 999573937}
@@ -7655,6 +7688,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -10221,6 +10258,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -10650,6 +10691,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -11211,6 +11256,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -11639,6 +11688,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -12458,13 +12511,7 @@ MonoBehaviour:
   pistolName: Pistol
   maxTime: 200
   maxEnemiesToDefeat: 50
-  escapeColliders:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   challengeEscapeCollider: {fileID: 96107391}
-  currentDifficulty: 0
   easyDifficultyTime: 150
   mediumDifficultyTime: 135
   hardDifficultyTime: 110
@@ -13397,6 +13444,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -16922,6 +16973,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -19064,6 +19119,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -20061,7 +20120,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 929458442}
   orientation: {fileID: 981092348}
+  gravity: 0
   speed: 20
+  flashSpeed: 0
+  isflashSpeedEnabled: 0
+  gameData: {fileID: 11400000, guid: a3a53423b537a0a4a86ff846cb565994, type: 2}
 --- !u!114 &929458444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20075,6 +20138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
+  postProcessingAnimator: {fileID: 0}
+  redScreenBoolName: 
+  redScreenTime: 0
+  yellowScreenVignette: {fileID: 0}
 --- !u!136 &929458445
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21354,6 +21421,7 @@ GameObject:
   - component: {fileID: 999573942}
   - component: {fileID: 999573939}
   - component: {fileID: 999573941}
+  - component: {fileID: 999573943}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -21415,7 +21483,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999573937}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 831d675f40652014fa3676b9e5082b05, type: 3}
   m_Name: 
@@ -21466,10 +21534,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 999573941}
   defaultStateName: Empty
   recoilName: PistolRecoil
   reloadName: 
+--- !u!114 &999573943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999573937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46d1bcd9719ece48b37cb18847a513c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
+  firePoint: {fileID: 1161830445}
+  cameraTransform: {fileID: 1043293247}
+  bulletController: {fileID: 8412020769080719790, guid: d707a051f73bb374a8403a22514c90d7, type: 3}
+  audioManager: {fileID: 2032052567}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 396f3c5817fdc564bbc9302597658262, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4b5ae95983c431f42b0167d40a0d2da5, type: 2}
+  holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!1001 &1003245006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21939,6 +22033,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -23049,6 +23147,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -23835,6 +23937,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -24116,6 +24222,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -26851,7 +26961,7 @@ MonoBehaviour:
   pistolData: {fileID: 11400000, guid: c117ade681d7a674fbafa030ec22c117, type: 2}
   akData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
   sniperData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
-  playerData: {fileID: 0}
+  playerData: {fileID: 11400000, guid: 3b7dabccb5c48e14d9b6cfed3b552269, type: 2}
   currentTimeText: {fileID: 2104535637}
   currentAmmoText: {fileID: 92424354}
   selectedWeapons: []
@@ -28013,6 +28123,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -28768,6 +28882,7 @@ GameObject:
   - component: {fileID: 1343835902}
   - component: {fileID: 1343835900}
   - component: {fileID: 1343835901}
+  - component: {fileID: 1343835903}
   m_Layer: 0
   m_Name: Assault Rifle Instance
   m_TagString: Untagged
@@ -28799,7 +28914,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343835897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 831d675f40652014fa3676b9e5082b05, type: 3}
   m_Name: 
@@ -28880,10 +28995,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1343835901}
   defaultStateName: Empty
   recoilName: 
   reloadName: AkReload
+--- !u!114 &1343835903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343835897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46d1bcd9719ece48b37cb18847a513c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: 4ca57f7855e866f4581ebd3f57c79b56, type: 2}
+  firePoint: {fileID: 797529052}
+  cameraTransform: {fileID: 1043293247}
+  bulletController: {fileID: 8412020769080719790, guid: d707a051f73bb374a8403a22514c90d7, type: 3}
+  audioManager: {fileID: 2032052567}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 87f2b938a8066614d9bcab32f98089d9, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 372340e032f1ebd4e8c881dc002a9d85, type: 2}
+  holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!1 &1350484289
 GameObject:
   m_ObjectHideFlags: 0
@@ -29875,6 +30016,7 @@ GameObject:
   - component: {fileID: 1387921008}
   - component: {fileID: 1387921005}
   - component: {fileID: 1387921007}
+  - component: {fileID: 1387921009}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Untagged
@@ -29936,7 +30078,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387921003}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 831d675f40652014fa3676b9e5082b05, type: 3}
   m_Name: 
@@ -29987,10 +30129,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee6a9e522c8772408c993c805aebcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1387921007}
   defaultStateName: Empty
   recoilName: SniperRecoil
   reloadName: SniperReload
+--- !u!114 &1387921009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387921003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46d1bcd9719ece48b37cb18847a513c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: fd3e0139efc919845ad9dda669d403ee, type: 2}
+  firePoint: {fileID: 349676897}
+  cameraTransform: {fileID: 1043293247}
+  bulletController: {fileID: 8412020769080719790, guid: d707a051f73bb374a8403a22514c90d7, type: 3}
+  audioManager: {fileID: 2032052567}
+  shootSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 20050180e25a73d49bf1021735e38f08, type: 2}
+  reloadSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eb7f32c520c0a8b4fa224976f467af04, type: 2}
+  holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
 --- !u!4 &1389495122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6505687648206948003, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
@@ -30469,6 +30637,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -31208,6 +31380,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -32055,6 +32231,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -36325,6 +36505,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -36892,6 +37076,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -40712,6 +40900,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -41828,6 +42020,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585211203}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 585211203}
@@ -42482,6 +42678,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 
@@ -44358,6 +44558,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 585211203}
+    - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 929458444}
     - target: {fileID: 6756069110804499460, guid: aec17c6196ca25948a9001a6a32b773b, type: 3}
       propertyPath: _gameManager
       value: 

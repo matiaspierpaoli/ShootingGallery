@@ -84,12 +84,14 @@ public class PlayerStatsController : MonoBehaviour, IPointsProvider, IDamageable
         if (_playerStats.isInmortal)
         {
             Debug.Log("God Mode Enabled");
-            yellowScreenVignette.weight = 1;
+            if (yellowScreenVignette)
+                yellowScreenVignette.weight = 1;
         }
         else
         {
             Debug.Log("God Mode Disabled");
-            yellowScreenVignette.weight = 0;
+            if (yellowScreenVignette)
+                yellowScreenVignette.weight = 0;
         }
     }
 }

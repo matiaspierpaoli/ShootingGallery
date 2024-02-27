@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   name: Sniper Rifle
-  availiable: 0
+  availiable: 1
   isInstanceType: 0
   isRaycastType: 1
   isPlayerControlled: 1
   damage: 100
   maxDistance: 200
   holdingShootingAction: 0
-  currentAmmo: 5
+  currentAmmo: 0
   magSize: 5
   shootCooldown: 0.8
   reloadTime: 2
-  reloading: 0
+  reloading: 1
   cost: 20

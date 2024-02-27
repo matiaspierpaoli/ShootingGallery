@@ -4,11 +4,12 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     [Header("Animation")]
-    [SerializeField] private Animator animator;
     [SerializeField] private string defaultStateName;
     [SerializeField] private string recoilName;
     [SerializeField] private string reloadName;
 
+    private Animator animator;
+    
     private void OnEnable()
     {
         //Gun.ReloadStartedEvent += OnReloadStarted;

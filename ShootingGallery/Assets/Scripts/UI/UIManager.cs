@@ -101,7 +101,9 @@ public class UIManager : MonoBehaviour
         pointsText.enabled = true;
         currentTimeText.enabled = true;
         enemiesDefeatedText.enabled = true;
-        healthText.enabled = true;
+
+        if (healthText)
+            healthText.enabled = true;
 
         pointsForAKText.enabled = true;
         pointsForSniperText.enabled = true;
@@ -112,7 +114,9 @@ public class UIManager : MonoBehaviour
         pointsText.enabled = false;
         currentTimeText.enabled = false;
         enemiesDefeatedText.enabled = false;
-        healthText.enabled = false;
+
+        if (healthText)
+            healthText.enabled = false;
 
         pointsForAKText.enabled = false;
         pointsForSniperText.enabled = false;
@@ -173,7 +177,8 @@ public class UIManager : MonoBehaviour
 
     private void GetCurrentHealth()
     {
-        healthText.text = playerData.health + "/" + playerData.maxHealth;
+        if (healthText)
+            healthText.text = playerData.health + "/" + playerData.maxHealth;
     }
 
     private void GetCurrentTimeText()

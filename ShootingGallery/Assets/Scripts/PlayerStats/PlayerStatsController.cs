@@ -36,6 +36,16 @@ public class PlayerStatsController : MonoBehaviour, IPointsProvider, IDamageable
         _playerStats.points += newPoints;
     }
 
+    public void SetLastEliminationTime(float lastEliminationTime)
+    {
+        _playerStats.lastEliminationTime = lastEliminationTime;
+    }
+
+    public float GetLastEliminationTime()
+    {
+        return _playerStats.lastEliminationTime;
+    }
+
     public void Damage(float damage)
     {
         if (!_playerStats.isInmortal)

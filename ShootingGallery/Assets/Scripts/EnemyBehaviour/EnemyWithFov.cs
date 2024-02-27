@@ -116,16 +116,19 @@ public class EnemyWithFov : MonoBehaviour
     {
         Debug.Log("Shooting at player!");
 
-        if (Random.value < aimingProbability)
+        if (gameObject.activeSelf)
         {
-            enemyWeapon.Shoot(playerStatsController); // Shoot with full accuracy
-        }
-        else
-        {
-            // Simulate misplaced shot within a certain range
-            Vector3 misplacedDirection = soldier.forward + Random.insideUnitSphere * inaccuracyAngle;
-            enemyWeapon.Shoot(null, misplacedDirection);
-        }
+            if (Random.value < aimingProbability)
+            {
+                enemyWeapon.Shoot(playerStatsController); // Shoot with full accuracy
+            }
+            else
+            {
+                // Simulate misplaced shot within a certain range
+                Vector3 misplacedDirection = soldier.forward + Random.insideUnitSphere * inaccuracyAngle;
+                enemyWeapon.Shoot(null, misplacedDirection);
+            }
+        }       
     }
 
     private void OnDrawGizmosSelected()

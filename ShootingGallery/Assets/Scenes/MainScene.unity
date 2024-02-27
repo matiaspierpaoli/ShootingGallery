@@ -9995,8 +9995,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1133370918}
+  playerStats: {fileID: 1133370921}
   gameManager: {fileID: 806950325}
   maxHealth: 100
+  eliminationCooldown: 5
   audioManager: {fileID: 300137245}
   dieSFX:
     idInternal: 0
@@ -17951,7 +17953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: d6d67c7c8a8719742bfee26a7efa92eb, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 6016bfb88a9d49e4f83955110238503b, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 0
@@ -20038,8 +20040,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1133370918}
+  playerStats: {fileID: 1133370921}
   gameManager: {fileID: 806950325}
   maxHealth: 100
+  eliminationCooldown: 5
   audioManager: {fileID: 300137245}
   dieSFX:
     idInternal: 0
@@ -44990,8 +44994,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1133370918}
+  playerStats: {fileID: 1133370921}
   gameManager: {fileID: 806950325}
   maxHealth: 100
+  eliminationCooldown: 5
   audioManager: {fileID: 300137245}
   dieSFX:
     idInternal: 0
@@ -49470,8 +49476,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1133370918}
+  playerStats: {fileID: 1133370921}
   gameManager: {fileID: 806950325}
   maxHealth: 100
+  eliminationCooldown: 5
   audioManager: {fileID: 300137245}
   dieSFX:
     idInternal: 0
@@ -58372,8 +58380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1133370918}
+  playerStats: {fileID: 1133370921}
   gameManager: {fileID: 806950325}
   maxHealth: 100
+  eliminationCooldown: 5
   audioManager: {fileID: 300137245}
   dieSFX:
     idInternal: 0
@@ -75332,8 +75342,8 @@ GameObject:
   - component: {fileID: 919132147634966019}
   - component: {fileID: 919132147634966021}
   - component: {fileID: 919132147634966020}
-  - component: {fileID: 919132147634966022}
   - component: {fileID: 919132147634966023}
+  - component: {fileID: 919132147634966024}
   m_Layer: 0
   m_Name: Soldier Enemy 1
   m_TagString: Untagged
@@ -75416,30 +75426,6 @@ MonoBehaviour:
   fovColor: {r: 1, g: 0.8291087, b: 0, a: 1}
   gameData: {fileID: 11400000, guid: a96de33adb21f744fa0da514211260d2, type: 2}
   enemyWeapon: {fileID: 0}
---- !u!114 &919132147634966022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147634966018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75ecac293f8edc644b69cf8a09e95573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1133370918}
-  gameManager: {fileID: 806950325}
-  maxHealth: 100
-  audioManager: {fileID: 300137245}
-  dieSFX:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9ee4b9875a912e448bbce597d929c229, type: 2}
-  damageSFX:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 467ed1d9d805def47b6ffb53dffb2bf2, type: 2}
 --- !u!65 &919132147634966023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75453,6 +75439,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.8942451, y: 8.16313, z: 3.7662277}
   m_Center: {x: 0.33514345, y: 4.011546, z: 0.08264941}
+--- !u!114 &919132147634966024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147634966018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ecac293f8edc644b69cf8a09e95573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1133370918}
+  playerStats: {fileID: 1133370921}
+  gameManager: {fileID: 806950325}
+  maxHealth: 100
+  eliminationCooldown: 5
+  audioManager: {fileID: 300137245}
+  dieSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9ee4b9875a912e448bbce597d929c229, type: 2}
+  damageSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 467ed1d9d805def47b6ffb53dffb2bf2, type: 2}
 --- !u!1 &919132148393529357
 GameObject:
   m_ObjectHideFlags: 0

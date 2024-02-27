@@ -8,5 +8,6 @@ public class PlayerStats : ScriptableObject
     public float points;
     public float health;
     public float maxHealth;
+    public float lastEliminationTime;
     public bool isInmortal;
 }

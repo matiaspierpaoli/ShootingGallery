@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032593856c7d4ed4bbd3be3c3a245353, type: 3}
   m_Name: MainSceneGameData
   m_EditorClassIdentifier: 
-  currentTime: 16.655672
-  currentEnemiesDefeated: 0
+  currentTime: 16.509008
+  currentEnemiesDefeated: 1
   maxTime: 300
   maxEnemiesToDefeat: 10
   victory: 0
-  defeat: 0
-  challengeStarted: 1
+  defeat: 1
+  challengeStarted: 0
   difficulty: 0
   weaponProbabilities:
     easyProbabilities:
@@ -37,6 +37,6 @@ MonoBehaviour:
   easyLevelAimingProbability: 0.3
   mediumLevelAimingProbability: 0.6
   hardLevelAimingProbability: 0.9
-  easyLevelInaccuracyAngle: 0.3
-  mediumLevelInaccuracyAngle: 0.2
-  hardLevelInaccuracyAngle: 0.1
+  easyLevelInaccuracyAngle: 0.09
+  mediumLevelInaccuracyAngle: 0.06
+  hardLevelInaccuracyAngle: 0.03

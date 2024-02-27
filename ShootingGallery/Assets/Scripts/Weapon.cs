@@ -33,6 +33,37 @@ public class Weapon : MonoBehaviour
         ResetWeaponStats();
     }
 
+    private void OnEnable()
+    {
+        if (gunData.isPlayerControlled)
+        {
+            holdShootingActionReference.action.started += OnHoldStarted;
+            holdShootingActionReference.action.canceled += OnHoldCanceled;
+        }
+
+        canShoot = true;
+        gunData.reloading = false;
+
+        GameManager.ReplayEvent += ResetWeaponStats;
+    }
+
+    private void OnDisable()
+    {
+        if (gunData.isPlayerControlled)
+        {
+            holdShootingActionReference.action.started -= OnHoldStarted;
+            holdShootingActionReference.action.canceled -= OnHoldCanceled;
+        }
+
+        if (reloadingCoroutine != null)
+        {
+            StopCoroutine(reloadingCoroutine);
+            reloadingCoroutine = null;
+        }
+
+        GameManager.ReplayEvent += ResetWeaponStats;
+    }
+
     private void Start()
     {
         if (!gunData.isPlayerControlled)
@@ -49,33 +80,6 @@ public class Weapon : MonoBehaviour
         {
             gameObject.SetActive(false);
             Debug.Log(gunData.name + " deactivated");
-        }
-    }
-
-    private void OnEnable()
-    {
-        if (gunData.isPlayerControlled)
-        {
-            holdShootingActionReference.action.started += OnHoldStarted;
-            holdShootingActionReference.action.canceled += OnHoldCanceled;
-        }
-
-        canShoot = true;
-        gunData.reloading = false;
-    }
-
-    private void OnDisable()
-    {
-        if (gunData.isPlayerControlled)
-        {
-            holdShootingActionReference.action.started -= OnHoldStarted;
-            holdShootingActionReference.action.canceled -= OnHoldCanceled;
-        }
-
-        if (reloadingCoroutine != null)
-        {
-            StopCoroutine(reloadingCoroutine);
-            reloadingCoroutine = null;
         }
     }
 
@@ -188,18 +192,31 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(transform.position, shootDir, out hit, gunData.maxDistance))
         {
             Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.red, 0.1f);
-            Button button = hit.collider.GetComponent<Button>();
-            if (button != null)
-            {
-                button.onClick.Invoke();
-                Debug.Log("Button hit with raycast shot");
-            }
-
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-            if (damageable != null)
+            IPlayer player = hit.collider.GetComponent<IPlayer>();
+            IEnemy enemy = hit.collider.GetComponent<IEnemy>();
+
+            if (gunData.isPlayerControlled)
             {
-                damageable.Damage(gunData.damage);
-                Debug.Log("Target hit with raycast shot");
+                Button button = hit.collider.GetComponent<Button>();
+                if (button != null)
+                {
+                    button.onClick.Invoke();
+                    Debug.Log("Button hit with raycast shot");
+                }                              
+                else if (enemy != null && damageable != null)
+                {
+                    damageable.Damage(gunData.damage);
+                    Debug.Log("Enemy hit with raycast shot");
+                }
+            }
+            else
+            {
+                if (player != null && damageable != null)
+                {
+                    damageable.Damage(gunData.damage);
+                    Debug.Log("Player hit with raycast shot");
+                }
             }
         }
     }

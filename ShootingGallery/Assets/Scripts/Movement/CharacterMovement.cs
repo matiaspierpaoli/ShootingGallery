@@ -16,7 +16,6 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float flashSpeed;
     [SerializeField] private bool isflashSpeedEnabled;
 
-    [SerializeField] GameManager gameManager;
     [SerializeField] GameData gameData;
 
     private Vector3 moveDir;
@@ -32,7 +31,7 @@ public class CharacterMovement : MonoBehaviour
         InputManager.FlashEvent += OnFlashCheat;
 
         if (gameData.isNextLevelCheatAvailiable)
-            gameManager.ReplayEvent += ResetTransform;
+            GameManager.ReplayEvent += ResetTransform;
     }
 
     private void OnDisable()
@@ -41,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
         InputManager.FlashEvent -= OnFlashCheat;
 
         if (gameData.isNextLevelCheatAvailiable)
-            gameManager.ReplayEvent += ResetTransform;
+            GameManager.ReplayEvent += ResetTransform;
     }
 
     private void OnValidate()

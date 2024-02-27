@@ -12,6 +12,8 @@ TagManager:
   - Ak Practice Area
   - Sniper Practice Area
   - ChallengeArea
+  - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

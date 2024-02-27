@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> enemies; // List of enemies in the scene
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private GameData gameData;
     [SerializeField] private int easyDifficultyEnemies;
     [SerializeField] private int mediumDifficultyEnemies;
@@ -13,12 +12,12 @@ public class EnemiesManager : MonoBehaviour
 
     private void OnEnable()
     {
-        gameManager.ReplayEvent += TurnOnRandomEnemiesBasedOnDifficulty;
+        GameManager.ReplayEvent += TurnOnRandomEnemiesBasedOnDifficulty;
     }
 
     private void OnDisable()
     {
-        gameManager.ReplayEvent -= TurnOnRandomEnemiesBasedOnDifficulty;
+        GameManager.ReplayEvent -= TurnOnRandomEnemiesBasedOnDifficulty;
     }
 
     public void TurnOnRandomEnemiesBasedOnDifficulty()

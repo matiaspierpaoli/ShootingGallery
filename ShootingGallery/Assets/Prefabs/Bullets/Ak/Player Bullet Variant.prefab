@@ -262,8 +262,8 @@ GameObject:
   - component: {fileID: 1036334624589562993}
   - component: {fileID: 8412020769080719790}
   m_Layer: 0
-  m_Name: Bullet Variant
-  m_TagString: Untagged
+  m_Name: Player Bullet Variant
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,4 +330,6 @@ MonoBehaviour:
   speed: 80
   rb: {fileID: 1803796027765474654}
   damage: 25
+  playerBulletTag: PlayerBullet
+  enemyBulletTag: EnemyBullet
   bulletPrefab: {fileID: 7224738747996949258}

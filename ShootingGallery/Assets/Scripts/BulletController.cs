@@ -9,6 +9,8 @@ public class BulletController : MonoBehaviour
     [SerializeField] float speed = 10;
     [SerializeField] Rigidbody rb;
     [SerializeField] private float damage;
+    [SerializeField] private string playerBulletTag;
+    [SerializeField] private string enemyBulletTag;
 
     [SerializeField] private GameObject bulletPrefab;
 
@@ -33,21 +35,31 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.TryGetComponent(out IDamageable damageable))
+        if (gameObject.CompareTag(playerBulletTag))
         {
-            damageable.Damage(damage);
+            if (collision.collider.TryGetComponent(out Button button))
+            {
+                button.onClick.Invoke();
 
-            Debug.Log("Target hit with bullet rigidbody");
+                Debug.Log("Button hit with bullet rigidbody");
+            }
+            else if (collision.collider.TryGetComponent(out IDamageable damageable) && collision.collider.TryGetComponent(out IEnemy enemy))
+            {
+                damageable.Damage(damage); 
+
+                Debug.Log("Enemy hit with bullet rigidbody");
+            }
 
         }
-
-        if (collision.collider.TryGetComponent(out Button button))
+        else if (gameObject.CompareTag(enemyBulletTag))
         {
-            button.onClick.Invoke();
+            if (collision.collider.TryGetComponent(out IDamageable damageable) && collision.collider.TryGetComponent(out IPlayer player))
+            {
+                damageable.Damage(damage);
 
-            Debug.Log("Button hit with bullet rigidbody");
+                Debug.Log("Enemy hit with bullet rigidbody");
+            }
         }
-
         Destroy(gameObject);
     }
 }

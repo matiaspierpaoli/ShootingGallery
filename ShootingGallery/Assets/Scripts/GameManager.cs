@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Playables;
 
 public enum ChallengeState
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     private ChallengeState currentState = ChallengeState.Inactive;
 
-    public event System.Action ReplayEvent;
+    public static event System.Action ReplayEvent;
 
     private void OnEnable()
     {

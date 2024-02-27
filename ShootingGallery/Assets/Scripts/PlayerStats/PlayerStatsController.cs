@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class PlayerStatsController : MonoBehaviour, IPointsProvider, IDamageable
+public class PlayerStatsController : MonoBehaviour, IPointsProvider, IDamageable, IPlayer
 {
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private Animator postProcessingAnimator;

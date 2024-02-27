@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Target : MonoBehaviour, IDamageable
+public class Target : MonoBehaviour, IDamageable, IEnemy
 {
     [SerializeField] private GameObject player;
     [SerializeField] private PlayerStatsController playerStats;

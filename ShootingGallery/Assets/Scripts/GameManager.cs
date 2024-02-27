@@ -198,6 +198,7 @@ public class GameManager : MonoBehaviour
         ResetGameData();
         _gameData.challengeStarted = true;
         SetState(ChallengeState.Active);
+        HandleChallengeEscapeCollider(true);
     }
 
     public void ExitChallenge()
@@ -293,6 +294,8 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        Replay();
+        ReplayEvent?.Invoke();
+        ResetGameData();
+        HandleChallengeEscapeCollider(false);
     }
 }

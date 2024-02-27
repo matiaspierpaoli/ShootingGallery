@@ -40,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
         InputManager.FlashEvent -= OnFlashCheat;
 
         if (gameData.isNextLevelCheatAvailiable)
-            GameManager.ReplayEvent += ResetTransform;
+            GameManager.ReplayEvent -= ResetTransform;
     }
 
     private void OnValidate()

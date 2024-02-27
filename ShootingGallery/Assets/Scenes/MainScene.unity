@@ -3083,65 +3083,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 806950325}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Replay
-        m_Mode: 1
+      - m_Target: {fileID: 1219540944}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainScene
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 93048966}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 160762506}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: UnfreezeTime
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1133370922}
-        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
-        m_MethodName: ResetTransform
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2100075335}
-        m_TargetAssemblyTypeName: SceneObjectManager, Assembly-CSharp
-        m_MethodName: ToggleObjects
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &93048966
 MonoBehaviour:
@@ -13969,7 +13921,6 @@ GameObject:
   - component: {fileID: 386740745}
   - component: {fileID: 386740744}
   - component: {fileID: 386740747}
-  - component: {fileID: 386740748}
   m_Layer: 9
   m_Name: Start Collider
   m_TagString: Untagged
@@ -14069,18 +14020,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToToggle:
   - {fileID: 386740742}
---- !u!114 &386740748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386740742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f811c82e820991c4c8b449032ae3faa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &388320107
 GameObject:
   m_ObjectHideFlags: 0
@@ -28668,7 +28607,7 @@ MonoBehaviour:
   pistolName: Pistol
   maxTime: 0
   maxEnemiesToDefeat: 0
-  challengeEscapeCollider: {fileID: 0}
+  challengeEscapeCollider: {fileID: 386740742}
   easyDifficultyTime: 300
   mediumDifficultyTime: 200
   hardDifficultyTime: 100

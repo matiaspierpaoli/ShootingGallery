@@ -4,6 +4,7 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
 {
     [SerializeField] private GameObject player;
     [SerializeField] private PlayerStatsController playerStats;
+    [SerializeField] private DynamicCrosshair dynamicCrosshair;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private float maxHealth;
     [SerializeField] private float eliminationCooldown = 5f;
@@ -43,10 +44,13 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
         if (hasAudioManager)
             audioManager.PlaySoundEvent(damageSFX, gameObject);
 
+        dynamicCrosshair.OnHit();
+
         if (currentHealth <= 0)
         {
             if (hasPlayer && pointsProvider != null)
             {
+                dynamicCrosshair.OnKill();
                 if (Time.time - playerStats.GetLastEliminationTime() <= eliminationCooldown)
                 {
                     pointsProvider.AddPoints(2);

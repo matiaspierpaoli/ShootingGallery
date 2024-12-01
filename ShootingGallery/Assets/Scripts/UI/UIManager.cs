@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text defeatText;
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private PlayerStats playerData;
+    [SerializeField] private Image reticle;
 
     [SerializeField] private GameObject[] weapons;
 
@@ -231,5 +232,10 @@ public class UIManager : MonoBehaviour
                 unselectedWeapons[i].enabled = true;
             }
         }      
+    }
+
+    public Image GetReticle()
+    {
+        return reticle;
     }
 }

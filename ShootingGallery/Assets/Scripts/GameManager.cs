@@ -180,6 +180,7 @@ public class GameManager : MonoBehaviour
 
         challengeButtons.SetActive(true);
         pauseManager.SetActive(false);
+        _UIManager.GetReticle().gameObject.SetActive(false);
 
         _gameData.defeat = true;
         _gameData.challengeStarted = false;

@@ -131,7 +131,7 @@ public class Gun : MonoBehaviour
 
             if (damageable != null)
             {
-                damageable.Damage(_gunData.damage);
+                //damageable.Damage(_gunData.damage);
                 Debug.Log("Target hit with raycast shot");
             }
 

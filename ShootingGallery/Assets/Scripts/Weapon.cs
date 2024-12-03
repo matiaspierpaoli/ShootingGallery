@@ -12,6 +12,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private BulletController bulletController;
 
+    [Header("Body parts tags")]
+    [SerializeField] private const string normalTag = "lowerBody";
+    [SerializeField] private const string chestTag = "chest";
+    [SerializeField] private const string headTag = "head";
+
     [Header("Audio")]
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private AK.Wwise.Event shootSFX;
@@ -20,13 +25,13 @@ public class Weapon : MonoBehaviour
     [Header("Shooting")]
     public InputActionReference holdShootingActionReference;
 
-    public static event System.Action ReloadStartedEvent;
-    public static event System.Action ReloadFinishedEvent;
-    public static event System.Action ShootingStartedEvent;
+    public event System.Action ReloadStartedEvent;
+    public event System.Action ReloadFinishedEvent;
+    public event System.Action ShootingStartedEvent;
 
     private Coroutine shootingCoroutine;
     private Coroutine reloadingCoroutine;
-    private bool canShoot = true;
+    public bool canShoot = true;
 
     private void Awake()
     {
@@ -88,7 +93,9 @@ public class Weapon : MonoBehaviour
         GunData newGunData = ScriptableObject.CreateInstance<GunData>();
 
         newGunData.name = gunData.name;
-        newGunData.damage = gunData.damage;
+        newGunData.normalDamage = gunData.normalDamage;
+        newGunData.chestDamage = gunData.chestDamage;
+        newGunData.headDamage = gunData.headDamage;
         newGunData.maxDistance = gunData.maxDistance;
         newGunData.shootCooldown = gunData.shootCooldown;
         newGunData.reloadTime = gunData.reloadTime;
@@ -103,6 +110,16 @@ public class Weapon : MonoBehaviour
 
     private void OnHoldStarted(InputAction.CallbackContext context)
     {
+        StartShooting();
+    }
+
+    private void OnHoldCanceled(InputAction.CallbackContext context)
+    {
+        StopShooting();
+    }
+
+    public void StartShooting()
+    {
         if (gunData.currentAmmo != 0 && !gunData.reloading && canShoot)
         {
             if (shootingCoroutine == null)
@@ -113,7 +130,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void OnHoldCanceled(InputAction.CallbackContext context)
+    public void StopShooting()
     {
         if (shootingCoroutine != null)
         {
@@ -146,7 +163,7 @@ public class Weapon : MonoBehaviour
         {
             if (!gunData.reloading)
             {
-                Reload();
+                StartCoroutine(Reload());
             }
             return;
         }
@@ -191,10 +208,10 @@ public class Weapon : MonoBehaviour
         Vector3 shootDir = GetShotDir(transform);
         if (Physics.Raycast(transform.position, shootDir, out hit, gunData.maxDistance))
         {
-            Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.red, 0.1f);
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            if (damageable == null) damageable = hit.collider.GetComponentInParent<IDamageable>();
             IPlayer player = hit.collider.GetComponent<IPlayer>();
-            IEnemy enemy = hit.collider.GetComponent<IEnemy>();
+            IEnemy enemy = hit.collider.gameObject.GetComponentInParent<IEnemy>();
 
             if (gunData.isPlayerControlled)
             {
@@ -203,10 +220,25 @@ public class Weapon : MonoBehaviour
                 {
                     button.onClick.Invoke();
                     Debug.Log("Button hit with raycast shot");
+                    Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.green, 0.1f);
                 }                              
                 else if (enemy != null && damageable != null)
                 {
-                    damageable.Damage(gunData.damage);
+                    switch (hit.collider.gameObject.tag)
+                    {
+                        case normalTag:
+                            damageable.Damage(gunData.normalDamage);
+                            break;
+                        case chestTag:
+                            damageable.Damage(gunData.chestDamage);
+                            break;
+                        case headTag:
+                            damageable.Damage(gunData.headDamage);
+                            break;
+                        default:
+                            break;
+                    }
+                    Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.green, 0.1f);
                     Debug.Log("Enemy hit with raycast shot");
                 }
             }
@@ -214,10 +246,19 @@ public class Weapon : MonoBehaviour
             {
                 if (player != null && damageable != null)
                 {
-                    damageable.Damage(gunData.damage);
+                    damageable.Damage(gunData.normalDamage);
                     Debug.Log("Player hit with raycast shot");
+                    Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.green, 0.1f);
+                }
+                else
+                {
+                    Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.red, 0.1f);
                 }
             }
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.red, 0.1f);
         }
     }
 
@@ -240,7 +281,6 @@ public class Weapon : MonoBehaviour
     private IEnumerator Reload()
     {
         Debug.Log(gunData.name + " started reloading");
-        if (gunData.isPlayerControlled)
             ReloadStartedEvent?.Invoke();
         gunData.reloading = true;
         audioManager.PlaySoundEvent(reloadSFX, gameObject);

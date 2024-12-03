@@ -17,7 +17,9 @@ MonoBehaviour:
   isInstanceType: 1
   isRaycastType: 0
   isPlayerControlled: 1
-  damage: 20
+  normalDamage: 30
+  chestDamage: 40
+  headDamage: 50
   maxDistance: 500
   holdingShootingAction: 0
   currentAmmo: 30

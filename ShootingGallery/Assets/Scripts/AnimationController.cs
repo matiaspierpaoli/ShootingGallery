@@ -7,6 +7,7 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private string defaultStateName;
     [SerializeField] private string recoilName;
     [SerializeField] private string reloadName;
+    private Weapon weapon;
 
     private Animator animator;
     
@@ -15,8 +16,8 @@ public class AnimationController : MonoBehaviour
         //Gun.ReloadStartedEvent += OnReloadStarted;
         //Gun.ShootingStartedEvent += OnShootingStarted;
 
-        Weapon.ReloadStartedEvent += OnReloadStarted;
-        Weapon.ShootingStartedEvent += OnShootingStarted;
+        weapon.ReloadStartedEvent += OnReloadStarted;
+        weapon.ShootingStartedEvent += OnShootingStarted;
     }
 
     private void OnDisable()
@@ -24,13 +25,14 @@ public class AnimationController : MonoBehaviour
         //Gun.ReloadStartedEvent -= OnReloadStarted;
         //Gun.ShootingStartedEvent -= OnShootingStarted;
 
-        Weapon.ReloadStartedEvent -= OnReloadStarted;
-        Weapon.ShootingStartedEvent -= OnShootingStarted;
+        weapon.ReloadStartedEvent -= OnReloadStarted;
+        weapon.ShootingStartedEvent -= OnShootingStarted;
     }
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();        
+        animator = GetComponent<Animator>();
+        weapon= GetComponent<Weapon>();
     }
 
     private void OnReloadStarted()

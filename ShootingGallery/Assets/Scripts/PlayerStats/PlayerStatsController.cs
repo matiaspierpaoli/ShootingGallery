@@ -58,14 +58,13 @@ public class PlayerStatsController : MonoBehaviour, IPointsProvider, IDamageable
             {
                 StartCoroutine(TriggerRedScreen());
             }
-
-
-            if (_playerStats.health <= 0)
-            {
-                _playerStats.health = 0;
-                Debug.Log("Player Died");
-            }
         }      
+    }
+
+    public void KillPlayer()
+    {
+        _playerStats.health = 0;
+        Debug.Log("Player Died");
     }
 
     private IEnumerator TriggerRedScreen()

@@ -13,6 +13,8 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
     [SerializeField] private AK.Wwise.Event dieSFX;
     [SerializeField] private AK.Wwise.Event damageSFX;
 
+    public event System.Action DieEvent;
+
     private float currentHealth = 100f;
     private float timeToRespawn = 5f;
     
@@ -50,6 +52,7 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
         {
             if (hasPlayer && pointsProvider != null)
             {
+                DieEvent?.Invoke();
                 dynamicCrosshair.OnKill();
                 if (Time.time - playerStats.GetLastEliminationTime() <= eliminationCooldown)
                 {
@@ -65,10 +68,10 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
                 if (hasAudioManager)
                     audioManager.PlaySoundEvent(dieSFX, gameObject);
 
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
                 if (transform.parent)
                     Debug.Log(transform.parent.gameObject.name + " eliminated in " + transform.parent.gameObject.tag);
-                Invoke("Respawn", timeToRespawn);
+                //Invoke("Respawn", timeToRespawn);
 
 
                 if (hasGameManager)
@@ -77,11 +80,11 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
         }        
     }
 
-    private void Respawn()
+    public void Respawn()
     {
-        gameObject.SetActive(true);
-        if (transform.parent)
-            Debug.Log(transform.parent.gameObject.name + " respawned in " + transform.parent.gameObject.tag);
+        //gameObject.SetActive(true);
+        //if (transform.parent)
+        //    Debug.Log(transform.parent.gameObject.name + " respawned in " + transform.parent.gameObject.tag);
         currentHealth = maxHealth;
     }
 }

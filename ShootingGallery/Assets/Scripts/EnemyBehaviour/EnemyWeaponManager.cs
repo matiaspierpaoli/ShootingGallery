@@ -3,57 +3,22 @@ using UnityEngine;
 
 public class EnemyWeaponManager : MonoBehaviour
 {
-    [SerializeField] private GameObject pistolPrefab;
-    [SerializeField] private GameObject akPrefab;
-    [SerializeField] private GameObject sniperPrefab;
-
-    [SerializeField] private Transform pistolSpawn;
-    [SerializeField] private Transform akSpawn;
-    [SerializeField] private Transform sniperSpawn;
-
-    [SerializeField] private Transform weaponHolderTransform;
+    [SerializeField] private GameObject pistolObject;
+    [SerializeField] private GameObject akObject;
+    [SerializeField] private GameObject sniperObject;
 
     [SerializeField] private GameData gameData;
 
     private void Awake()
     {
-        GameObject weaponPrefab = ChooseWeaponPrefab();
-        GameObject weaponObject = Instantiate(weaponPrefab, weaponHolderTransform);
+        pistolObject.SetActive(false);
+        akObject.SetActive(false);
+        sniperObject.SetActive(false);
 
-        Transform spawnTransform = GetSpawnTransform(weaponPrefab);
-        if (spawnTransform != null)
-        {
-            weaponObject.transform.position = spawnTransform.position;
-            weaponObject.transform.rotation = spawnTransform.rotation;
-        }
-        else
-        {
-            Debug.LogError("Spawn transform not found for weapon: " + weaponPrefab.name);
-        }
+        ChooseWeapon();
     }
 
-    private Transform GetSpawnTransform(GameObject weaponPrefab)
-    {
-        if (weaponPrefab == pistolPrefab)
-        {
-            return pistolSpawn;
-        }
-        else if (weaponPrefab == akPrefab)
-        {
-            return akSpawn;
-        }
-        else if (weaponPrefab == sniperPrefab)
-        {
-            return sniperSpawn;
-        }
-        else
-        {
-            Debug.LogError("Unknown weapon prefab: " + weaponPrefab.name);
-            return null;
-        }
-    }
-
-    private GameObject ChooseWeaponPrefab()
+    private void ChooseWeapon()
     {
         DifficultyProbabilities probabilities;
 
@@ -78,15 +43,15 @@ public class EnemyWeaponManager : MonoBehaviour
 
         if (randomValue <= probabilities.pistolProbability)
         {
-            return pistolPrefab;
+            pistolObject.SetActive(true);
         }
         else if (randomValue <= probabilities.pistolProbability + probabilities.akProbability)
         {
-            return akPrefab;
+            akObject.SetActive(true);
         }
         else
         {
-            return sniperPrefab;
+            sniperObject.SetActive(true);
         }
     }
 }

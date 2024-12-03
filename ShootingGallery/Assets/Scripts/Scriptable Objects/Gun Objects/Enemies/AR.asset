@@ -16,12 +16,15 @@ MonoBehaviour:
   availiable: 0
   isInstanceType: 1
   isRaycastType: 0
-  damage: 10
+  isPlayerControlled: 0
+  normalDamage: 30
+  chestDamage: 40
+  headDamage: 50
   maxDistance: 150
   holdingShootingAction: 0
   currentAmmo: 30
   magSize: 30
-  shootCooldown: 0.1
+  shootCooldown: 0.15
   reloadTime: 3.2
   reloading: 0
   cost: 0

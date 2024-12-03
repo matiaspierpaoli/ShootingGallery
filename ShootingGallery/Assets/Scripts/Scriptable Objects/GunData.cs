@@ -13,7 +13,9 @@ public class GunData : ScriptableObject
     public bool isPlayerControlled;
 
     [Header("Shooting")]
-    public float damage;
+    public float normalDamage;
+    public float chestDamage;
+    public float headDamage;
     public float maxDistance;
     public bool holdingShootingAction;
 

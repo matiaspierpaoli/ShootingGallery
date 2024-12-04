@@ -1,4 +1,6 @@
 using System;
+using System.Globalization;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Playables;
@@ -26,23 +28,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Pause _pauseManager;
     [SerializeField] private GunData[] weapons;
     [SerializeField] private PlayerStats player;
+    [SerializeField] private VictoryTrigger victoryTrigger;
     //[SerializeField] private ShopManager _shopManager;
     [SerializeField] private GameObject pauseManager;
     [SerializeField] private GameObject challengeButtons;
     [SerializeField] private string pistolName;
 
-    [SerializeField] private float maxTime;
-    [SerializeField] private float maxEnemiesToDefeat;
-
     [SerializeField] private GameObject challengeEscapeCollider;
 
-    //[SerializeField] private DifficultyLevel currentDifficulty;
-    [SerializeField] private float easyDifficultyTime;
-    [SerializeField] private float mediumDifficultyTime;
-    [SerializeField] private float hardDifficultyTime;
-    [SerializeField] private float easyDifficultyEnemies;
-    [SerializeField] private float mediumDifficultyEnemies;
-    [SerializeField] private float hardDifficultyEnemies;
+    [SerializeField] private float easyDifficultyMultiplier = 1.0f;
+    [SerializeField] private float mediumDifficultyMultiplier = 1.5f;
+    [SerializeField] private float hardDifficultyMultiplier = 2.0f;
+
+    [SerializeField] private int maxBaseScore = 1000; 
+    [SerializeField] private int enemyPointValue = 10; 
+
+    private int currentScore;
+    private string highscoreKeyPrefix = "Highscore_";
+    private bool winConditionActive = false;
 
     private ChallengeState currentState = ChallengeState.Inactive;
 
@@ -52,12 +55,15 @@ public class GameManager : MonoBehaviour
     {
         if (_gameData.isNextLevelCheatAvailiable)
             InputManager.NextLevelEvent += NextLevelCheat;
+
+        victoryTrigger.VictoryTriggerEvent += OnVictoryTriggerEvent;
     }
 
     private void OnDisable()
     {
         if (_gameData.isNextLevelCheatAvailiable)
             InputManager.NextLevelEvent -= NextLevelCheat;
+        victoryTrigger.VictoryTriggerEvent -= OnVictoryTriggerEvent;
     }
 
     private void Start()
@@ -113,8 +119,6 @@ public class GameManager : MonoBehaviour
         _gameData.challengeStarted = true;
         SetState(ChallengeState.Active);
         _gameData.difficulty = difficulty;
-        SetTimeLimit(difficulty);
-        SetEnemiesAmmount(difficulty);
         _UIManager.EnableChallengeTexts();
         //UpdateShopState();
     }
@@ -124,9 +128,7 @@ public class GameManager : MonoBehaviour
         //_gameData.difficulty = DifficultyLevel.Easy;
 
         _gameData.currentTime = 0f;
-        SetTimeLimit(_gameData.difficulty);
         _gameData.currentEnemiesDefeated = 0f;
-        SetEnemiesAmmount(_gameData.difficulty);
         _gameData.victory = false;
         _gameData.defeat = false;
         _gameData.challengeStarted = false;
@@ -134,6 +136,8 @@ public class GameManager : MonoBehaviour
         _UIManager.IsDefeatTextEnabled = false;
         challengeButtons.SetActive(false);
         pauseManager.SetActive(true);
+
+        winConditionActive = false;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -154,19 +158,23 @@ public class GameManager : MonoBehaviour
         //UpdateShopState();
     }
 
+    private void OnVictoryTriggerEvent() => winConditionActive = true;
+
     private bool CheckWinCondition()
     {
-       if (_gameData.currentEnemiesDefeated >= _gameData.maxEnemiesToDefeat)
+       if (winConditionActive)
+       {
+            CalculateScore();
+            SaveHighscoreIfNeeded();
             return true;       
+       }
        else 
             return false;
     }
 
     private bool CheckDefeatCondition()
     {
-        if (_gameData.currentTime >= _gameData.maxTime)
-            return true;
-        else if (player.health == 0)
+        if (player.health == 0)
             return true;
         else
             return false;
@@ -181,9 +189,12 @@ public class GameManager : MonoBehaviour
         challengeButtons.SetActive(true);
         pauseManager.SetActive(false);
         _UIManager.GetReticle().gameObject.SetActive(false);
+        _UIManager.GetPointsText().enabled = true;
 
         _gameData.defeat = true;
         _gameData.challengeStarted = false;
+
+        _UIManager.DrawUI();
 
         currentState = ChallengeState.Inactive;
     }
@@ -220,44 +231,6 @@ public class GameManager : MonoBehaviour
     public void HandleChallengeEscapeCollider(bool active)
     {
         challengeEscapeCollider.SetActive(active);
-    }
-
-    private void SetTimeLimit(DifficultyLevel difficulty)
-    {
-        switch (difficulty)
-        {
-            case DifficultyLevel.Easy:
-                _gameData.maxTime = easyDifficultyTime;
-                break;
-            case DifficultyLevel.Medium:
-                _gameData.maxTime = mediumDifficultyTime;
-                break;
-            case DifficultyLevel.Hard:
-                _gameData.maxTime = hardDifficultyTime;
-                break;
-            default:
-                _gameData.maxTime = easyDifficultyTime; 
-                break;
-        }
-    }
-
-    private void SetEnemiesAmmount(DifficultyLevel difficulty)
-    {
-        switch (difficulty)
-        {
-            case DifficultyLevel.Easy:
-                _gameData.maxEnemiesToDefeat = easyDifficultyEnemies;
-                break;
-            case DifficultyLevel.Medium:
-                _gameData.maxEnemiesToDefeat = mediumDifficultyEnemies;
-                break;
-            case DifficultyLevel.Hard:
-                _gameData.maxEnemiesToDefeat = hardDifficultyEnemies;
-                break;
-            default:
-                _gameData.maxEnemiesToDefeat = easyDifficultyEnemies;
-                break;
-        }
     }
 
     public void OnEasyButtonClicked() => StartChallenge(DifficultyLevel.Easy);
@@ -298,5 +271,53 @@ public class GameManager : MonoBehaviour
         ReplayEvent?.Invoke();
         ResetGameData();
         HandleChallengeEscapeCollider(false);
+    }
+
+    private float GetDifficultyMultiplier(DifficultyLevel difficulty)
+    {
+        return difficulty switch
+        {
+            DifficultyLevel.Easy => easyDifficultyMultiplier,
+            DifficultyLevel.Medium => mediumDifficultyMultiplier,
+            DifficultyLevel.Hard => hardDifficultyMultiplier,
+            _ => 1.0f,
+        };
+    }
+
+    private void CalculateScore()
+    {
+        float timeFactor = Mathf.Clamp01(1 - (_gameData.currentTime / _gameData.maxTime));
+        int timeScore = Mathf.RoundToInt(maxBaseScore * timeFactor);
+
+        int enemyScore = Mathf.RoundToInt(_gameData.currentEnemiesDefeated * enemyPointValue);
+
+        float difficultyMultiplier = GetDifficultyMultiplier(_gameData.difficulty);
+
+        currentScore = Mathf.RoundToInt((timeScore + enemyScore) * difficultyMultiplier);
+        player.points = currentScore;
+    }
+
+    private void SaveHighscoreIfNeeded()
+    {
+        string scoreKey = GetHighscoreKey(_gameData.difficulty);
+
+        int highscore = PlayerPrefs.GetInt(scoreKey, 0);
+
+        if (currentScore > highscore)
+        {
+            PlayerPrefs.SetInt(scoreKey, currentScore);
+            PlayerPrefs.Save();
+        }
+    }
+
+    private string GetHighscoreKey(DifficultyLevel difficulty)
+    {
+        return $"{highscoreKeyPrefix}{difficulty}";
+    }
+
+    public int GetHighscore(DifficultyLevel difficulty)
+    {
+        string scoreKey = GetHighscoreKey(difficulty);
+        return PlayerPrefs.GetInt(scoreKey, 0);
     }
 }

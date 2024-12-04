@@ -22,7 +22,7 @@ MonoBehaviour:
   headDamage: 70
   maxDistance: 200
   holdingShootingAction: 0
-  currentAmmo: 15
+  currentAmmo: 18
   magSize: 18
   shootCooldown: 0.4
   reloadTime: 2

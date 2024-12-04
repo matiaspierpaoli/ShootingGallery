@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Pause _pauseManager;
     [SerializeField] private GunData[] weapons;
     [SerializeField] private PlayerStats player;
-    [SerializeField] private ShopManager _shopManager;
+    //[SerializeField] private ShopManager _shopManager;
     [SerializeField] private GameObject pauseManager;
     [SerializeField] private GameObject challengeButtons;
     [SerializeField] private string pistolName;
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
         SetTimeLimit(difficulty);
         SetEnemiesAmmount(difficulty);
         _UIManager.EnableChallengeTexts();
-        UpdateShopState();
+        //UpdateShopState();
     }
 
     private void ResetGameData()
@@ -139,19 +139,19 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         _pauseManager.UnfreezeTime();
 
-        for (int i = 0; i < weapons.Length; i++)
-        {
-            weapons[i].availiable = false;
+        //for (int i = 0; i < weapons.Length; i++)
+        //{
+        //    weapons[i].availiable = false;
 
-            if (weapons[i].name == pistolName)
-                weapons[i].availiable = true;
+        //    if (weapons[i].name == pistolName)
+        //        weapons[i].availiable = true;
             
-        }
+        //}
 
         player.points = 0;
         player.health = player.maxHealth;
 
-        UpdateShopState();
+        //UpdateShopState();
     }
 
     private bool CheckWinCondition()
@@ -209,13 +209,13 @@ public class GameManager : MonoBehaviour
         SetState(ChallengeState.Inactive);
     }
 
-    public void UpdateShopState()
-    {
-        if (_gameData.challengeStarted)
-            _shopManager.SetState(ShopState.Active);
-        else
-            _shopManager.SetState(ShopState.Inactive);
-    }
+    //public void UpdateShopState()
+    //{
+    //    if (_gameData.challengeStarted)
+    //        _shopManager.SetState(ShopState.Active);
+    //    else
+    //        _shopManager.SetState(ShopState.Inactive);
+    //}
 
     public void HandleChallengeEscapeCollider(bool active)
     {

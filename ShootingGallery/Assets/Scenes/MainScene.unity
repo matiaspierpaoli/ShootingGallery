@@ -1872,11 +1872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -2702,11 +2702,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -3840,6 +3840,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82276530}
   m_Mesh: {fileID: 9200281723969021693, guid: fede6182cbfc46c458a7195329ec5a5c, type: 3}
+--- !u!1 &84177216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2286963652687227834, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
+  m_PrefabInstance: {fileID: 1382844350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &86986947
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,6 +5615,12 @@ MonoBehaviour:
   - {fileID: 1127788674}
   - {fileID: 1622981869}
   - {fileID: 914893936}
+  - {fileID: 2070508316}
+  - {fileID: 84177216}
+  - {fileID: 1172906622}
+  - {fileID: 842986652}
+  - {fileID: 2139052604}
+  - {fileID: 1847101561}
   gameData: {fileID: 11400000, guid: a96de33adb21f744fa0da514211260d2, type: 2}
   easyDifficultyEnemies: 8
   mediumDifficultyEnemies: 10
@@ -11350,11 +11361,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -27454,11 +27465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -31788,6 +31799,11 @@ Transform:
   m_Father: {fileID: 496901163}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &842986652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2286963652687227834, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
+  m_PrefabInstance: {fileID: 2122265366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &846515227
 GameObject:
   m_ObjectHideFlags: 0
@@ -34400,11 +34416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -43672,11 +43688,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -45044,6 +45060,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171409450}
   m_Mesh: {fileID: 9200281723969021693, guid: fede6182cbfc46c458a7195329ec5a5c, type: 3}
+--- !u!1 &1172906622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2286963652687227834, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
+  m_PrefabInstance: {fileID: 1745354627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1173586413
 GameObject:
   m_ObjectHideFlags: 0
@@ -53110,11 +53131,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -54696,7 +54717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1423397461
 Transform:
   m_ObjectHideFlags: 0
@@ -57862,11 +57883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -61886,11 +61907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -66608,11 +66629,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -70329,6 +70350,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0}
   m_Center: {x: 0.000000014901161, y: 0, z: -0.0000000018626451}
+--- !u!1 &1847101561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2286963652687227834, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
+  m_PrefabInstance: {fileID: 40405142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1850246362
 GameObject:
   m_ObjectHideFlags: 0
@@ -77194,6 +77220,11 @@ Transform:
   m_Father: {fileID: 1824890241}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2070508316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2286963652687227834, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
+  m_PrefabInstance: {fileID: 284973522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2072012883
 GameObject:
   m_ObjectHideFlags: 0
@@ -79945,11 +79976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController
@@ -80359,6 +80390,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135788746}
   m_Mesh: {fileID: 9200281723969021693, guid: fede6182cbfc46c458a7195329ec5a5c, type: 3}
+--- !u!1 &2139052604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2286963652687227834, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
+  m_PrefabInstance: {fileID: 707741732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2140476659
 GameObject:
   m_ObjectHideFlags: 0
@@ -81343,11 +81379,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: shootAnimDuration
-      value: 0.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: reloadAnimDuration
-      value: 4
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7230030906782124708, guid: e509817cf2c83f44fbb00c7dfb8b8f59, type: 3}
       propertyPath: playerStatsController

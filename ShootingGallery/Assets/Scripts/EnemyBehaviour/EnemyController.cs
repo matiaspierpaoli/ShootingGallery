@@ -96,7 +96,8 @@ public class EnemyController : MonoBehaviour
             if (!isPatrolling)
                 isPatrolling = true;
 
-            Patrol();
+            if (!isDying)
+                Patrol();
         }
     }
 

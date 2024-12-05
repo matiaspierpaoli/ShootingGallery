@@ -235,6 +235,8 @@ public class EnemyController : MonoBehaviour
             }
         }
         target.Respawn();
+
+        yield return new WaitForSeconds(2.0f);
         isDying = false;
     }
 

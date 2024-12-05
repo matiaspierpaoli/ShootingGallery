@@ -147,7 +147,7 @@ namespace Inputs
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""NextLevelCheat"",
+                    ""name"": ""NearExitCheat"",
                     ""type"": ""Button"",
                     ""id"": ""4d8932be-cc76-46d4-b8db-98fa97e115a6"",
                     ""expectedControlType"": ""Button"",
@@ -544,12 +544,12 @@ namespace Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4783d9fa-a0a0-4c6f-972f-afcc7aebdaf1"",
-                    ""path"": ""<Keyboard>/f9"",
+                    ""id"": ""689bd233-b933-4cad-a2c1-9485afc25334"",
+                    ""path"": ""<Keyboard>/f12"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""NextLevelCheat"",
+                    ""action"": ""NearExitCheat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -601,7 +601,7 @@ namespace Inputs
             m_World_LookController = m_World.FindAction("LookController", throwIfNotFound: true);
             m_World_GodModeCheat = m_World.FindAction("GodModeCheat", throwIfNotFound: true);
             m_World_FlashCheat = m_World.FindAction("FlashCheat", throwIfNotFound: true);
-            m_World_NextLevelCheat = m_World.FindAction("NextLevelCheat", throwIfNotFound: true);
+            m_World_NearExitCheat = m_World.FindAction("NearExitCheat", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -677,7 +677,7 @@ namespace Inputs
         private readonly InputAction m_World_LookController;
         private readonly InputAction m_World_GodModeCheat;
         private readonly InputAction m_World_FlashCheat;
-        private readonly InputAction m_World_NextLevelCheat;
+        private readonly InputAction m_World_NearExitCheat;
         public struct WorldActions
         {
             private @PlayerInputs m_Wrapper;
@@ -695,7 +695,7 @@ namespace Inputs
             public InputAction @LookController => m_Wrapper.m_World_LookController;
             public InputAction @GodModeCheat => m_Wrapper.m_World_GodModeCheat;
             public InputAction @FlashCheat => m_Wrapper.m_World_FlashCheat;
-            public InputAction @NextLevelCheat => m_Wrapper.m_World_NextLevelCheat;
+            public InputAction @NearExitCheat => m_Wrapper.m_World_NearExitCheat;
             public InputActionMap Get() { return m_Wrapper.m_World; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -744,9 +744,9 @@ namespace Inputs
                     @FlashCheat.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnFlashCheat;
                     @FlashCheat.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnFlashCheat;
                     @FlashCheat.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnFlashCheat;
-                    @NextLevelCheat.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnNextLevelCheat;
-                    @NextLevelCheat.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnNextLevelCheat;
-                    @NextLevelCheat.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnNextLevelCheat;
+                    @NearExitCheat.started -= m_Wrapper.m_WorldActionsCallbackInterface.OnNearExitCheat;
+                    @NearExitCheat.performed -= m_Wrapper.m_WorldActionsCallbackInterface.OnNearExitCheat;
+                    @NearExitCheat.canceled -= m_Wrapper.m_WorldActionsCallbackInterface.OnNearExitCheat;
                 }
                 m_Wrapper.m_WorldActionsCallbackInterface = instance;
                 if (instance != null)
@@ -790,9 +790,9 @@ namespace Inputs
                     @FlashCheat.started += instance.OnFlashCheat;
                     @FlashCheat.performed += instance.OnFlashCheat;
                     @FlashCheat.canceled += instance.OnFlashCheat;
-                    @NextLevelCheat.started += instance.OnNextLevelCheat;
-                    @NextLevelCheat.performed += instance.OnNextLevelCheat;
-                    @NextLevelCheat.canceled += instance.OnNextLevelCheat;
+                    @NearExitCheat.started += instance.OnNearExitCheat;
+                    @NearExitCheat.performed += instance.OnNearExitCheat;
+                    @NearExitCheat.canceled += instance.OnNearExitCheat;
                 }
             }
         }
@@ -845,7 +845,7 @@ namespace Inputs
             void OnLookController(InputAction.CallbackContext context);
             void OnGodModeCheat(InputAction.CallbackContext context);
             void OnFlashCheat(InputAction.CallbackContext context);
-            void OnNextLevelCheat(InputAction.CallbackContext context);
+            void OnNearExitCheat(InputAction.CallbackContext context);
         }
         public interface IMenuActions
         {

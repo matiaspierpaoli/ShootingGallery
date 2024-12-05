@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerStats player;
     [SerializeField] private CharacterMovement characterMovement;
     [SerializeField] private VictoryTrigger victoryTrigger;
+    [SerializeField] private Transform nearExitTransform;
     [SerializeField] private GameObject weaponHolder;
     //[SerializeField] private ShopManager _shopManager;
     [SerializeField] private GameObject pauseManager;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
     private string highscoreKeyPrefix = "Highscore_";
     private bool winConditionActive = false;
 
-    private ChallengeState currentState = ChallengeState.Active;
+    private ChallengeState currentState = ChallengeState.Inactive;
 
     public static event System.Action ReplayEvent;
     public static event System.Action ChallengeStartedEvent;
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         if (_gameData.isNextLevelCheatAvailiable)
-            InputManager.NextLevelEvent += NextLevelCheat;
+            InputManager.NearExitCheat += HandleNearExitCheat;
 
         victoryTrigger.VictoryTriggerEvent += OnVictoryTriggerEvent;
     }
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         if (_gameData.isNextLevelCheatAvailiable)
-            InputManager.NextLevelEvent -= NextLevelCheat;
+            InputManager.NearExitCheat -= HandleNearExitCheat;
         victoryTrigger.VictoryTriggerEvent -= OnVictoryTriggerEvent;
     }
 
@@ -263,25 +264,13 @@ public class GameManager : MonoBehaviour
         _gameData.difficulty = DifficultyLevel.Hard;
     }
 
-    private void NextLevelCheat()
+    private void HandleNearExitCheat()
     {
-        switch(_gameData.difficulty)
+        if (currentState == ChallengeState.Active)
         {
-            case DifficultyLevel.Easy:
-                _gameData.difficulty = DifficultyLevel.Medium;
-                Debug.Log("Changed Difficulty to Medium");
-                break;
-            case DifficultyLevel.Medium:
-                _gameData.difficulty = DifficultyLevel.Hard;
-                Debug.Log("Changed Difficulty to Hard");
-                break;
-            default:
-                break;
+            characterMovement.transform.position = nearExitTransform.position;
+            characterMovement.transform.rotation = nearExitTransform.rotation;
         }
-
-        ReplayEvent?.Invoke();
-        ResetGameData();
-        HandleChallengeEscapeCollider(false);
     }
 
     private float GetDifficultyMultiplier(DifficultyLevel difficulty)

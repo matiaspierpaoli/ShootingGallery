@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     public static event System.Action<Vector2> MoveEvent;
     public static event System.Action<Vector2> LookEvent;
     public static event System.Action PauseEvent;
-    public static event System.Action NextLevelEvent;
+    public static event System.Action NearExitCheat;
     public static event System.Action GodModeEvent;
     public static event System.Action FlashEvent;
 
@@ -45,10 +45,10 @@ public class InputManager : MonoBehaviour
             PauseEvent?.Invoke();
     }
     
-    public void OnNextLevelCheat(InputValue context)
+    public void OnNearExitCheat(InputValue context)
     {
         if (context.Get<float>() > 0.0f)
-            NextLevelEvent?.Invoke();
+            NearExitCheat?.Invoke();
     }
 
     public void OnGodModeCheat(InputValue context)

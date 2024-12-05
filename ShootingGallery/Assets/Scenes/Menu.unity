@@ -149,7 +149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 423042640}
   - component: {fileID: 423042643}
-  - component: {fileID: 423042642}
   - component: {fileID: 423042641}
   m_Layer: 0
   m_Name: Instruction
@@ -271,14 +270,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 423042643}
   m_maskType: 0
---- !u!222 &423042642
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423042639}
-  m_CullTransparentMesh: 0
 --- !u!23 &423042643
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -342,7 +333,6 @@ GameObject:
   m_Component:
   - component: {fileID: 623655910}
   - component: {fileID: 623655913}
-  - component: {fileID: 623655912}
   - component: {fileID: 623655911}
   m_Layer: 0
   m_Name: Controls
@@ -473,14 +463,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 623655913}
   m_maskType: 0
---- !u!222 &623655912
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623655909}
-  m_CullTransparentMesh: 0
 --- !u!23 &623655913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -549,7 +531,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1039041543}
   - component: {fileID: 1039041546}
-  - component: {fileID: 1039041545}
   - component: {fileID: 1039041544}
   m_Layer: 0
   m_Name: TextTooltip
@@ -670,14 +651,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1039041546}
   m_maskType: 0
---- !u!222 &1039041545
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039041542}
-  m_CullTransparentMesh: 0
 --- !u!23 &1039041546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -730,6 +703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1151094811}
   - component: {fileID: 1151094810}
+  - component: {fileID: 1151094812}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -777,6 +751,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151094812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151094809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd579b359555a34087c4f96def2dedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3fb21b3f097ed4442b60131eebcca08b, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!114 &1155725419 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2803175271295838250, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
@@ -2691,6 +2689,9 @@ PrefabInstance:
     - {fileID: 2976980140577943263, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
     - {fileID: 4865684466354355568, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
     - {fileID: 4996774315459673024, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
+    - {fileID: 351642387682386968, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
+    - {fileID: 351642387760220684, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
+    - {fileID: 351642386389050801, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a68be1bd13d8694e8d8fe85574ac075, type: 3}
 --- !u!1 &351642386607453116 stripped
 GameObject:

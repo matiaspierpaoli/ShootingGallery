@@ -16,7 +16,7 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
     public event System.Action DieEvent;
 
     private float currentHealth = 100f;
-    private float timeToRespawn = 5f;
+    //private float timeToRespawn = 5f;
     
     private IPointsProvider pointsProvider;
 

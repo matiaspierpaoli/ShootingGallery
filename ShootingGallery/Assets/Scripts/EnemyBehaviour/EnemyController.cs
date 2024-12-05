@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 2f;
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private LayerMask structureLayer;
-    [SerializeField] private float detectionRange = 5f;
+    //[SerializeField] private float detectionRange = 5f;
     [SerializeField] private float timeToRespawn = 2f;
 
     [Header("Animations")]
@@ -121,8 +121,6 @@ public class EnemyController : MonoBehaviour
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
         }
 
-        float speed = step;
-        soldierAnimationController.SetFloat("Speed", speed);
     }
 
     private void ResetAnimatorParameters()

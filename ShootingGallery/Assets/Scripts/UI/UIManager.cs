@@ -60,9 +60,12 @@ public class UIManager : MonoBehaviour
         WeaponSwitching.SwitchWeaponEvent -= OnSwitchWeapon;
         foreach (var weapon in weapons)
         {
-            weapon.GetComponent<Weapon>().ReloadStartedEvent -= OnReload;
-            weapon.GetComponent<Weapon>().ReloadFinishedEvent -= OnReload;
-            weapon.GetComponent<Weapon>().ShootingStartedEvent -= OnShoot;
+            if (weapon)
+            {
+                weapon.GetComponent<Weapon>().ReloadStartedEvent -= OnReload;
+                weapon.GetComponent<Weapon>().ReloadFinishedEvent -= OnReload;
+                weapon.GetComponent<Weapon>().ShootingStartedEvent -= OnShoot;
+            }
         }
         LevelManager.ChangeAreaEvent -= OnChangeArea;
         PlayerStatsController.TakeDamageEvent += OnTakeDamage;

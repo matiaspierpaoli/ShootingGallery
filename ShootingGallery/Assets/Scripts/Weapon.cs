@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private BulletController bulletController;
+    [SerializeField] private ParticleSystem muzzleFlashParticleSystem;
 
     [Header("Body parts tags")]
     [SerializeField] private const string normalTag = "lowerBody";
@@ -167,6 +168,8 @@ public class Weapon : MonoBehaviour
             }
             return;
         }
+
+        muzzleFlashParticleSystem.Play();
 
         gunData.currentAmmo--;
         Debug.Log("Shot fired!");

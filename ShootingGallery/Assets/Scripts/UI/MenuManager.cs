@@ -1,12 +1,19 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private EventSystem eventSystem;
+    [SerializeField] private GameObject[] menuButtons;
+    [SerializeField] private GameObject returnNoButton;
     [SerializeField] private string[] difficultyPlayerPrefNames;
     [SerializeField] private string[] difficultyNames;
-    [SerializeField] private TextMeshProUGUI[] highScoreTexts;
+    [SerializeField] private TMP_Text[] highScoreTexts;
+    [SerializeField] private GameObject[] panels;
+
+    private bool isExitPanelActive = false;
 
     private void Awake()
     {
@@ -14,16 +21,48 @@ public class MenuManager : MonoBehaviour
         {
             int highScore = PlayerPrefs.GetInt(difficultyPlayerPrefNames[i], 0);
 
-            highScoreTexts[i].gameObject.SetActive(false);
             highScoreTexts[i].text = $"{difficultyNames[i]}: {highScore}";
         }
     }
 
-    public void ToggleTexts(bool active)
+    public void TogglePanelOn(GameObject panel)
     {
-        foreach (var text in highScoreTexts)
+        if (isExitPanelActive) return;
+        foreach (GameObject p in panels)
         {
-            text.gameObject.SetActive(active);
+            p.SetActive(false);
         }
+
+        panel.SetActive(true);
+    }
+
+    public void TogglePanelOff(GameObject panel)
+    {
+        if (isExitPanelActive) return;
+            panel.SetActive(false);
+    }
+
+    public void ToggleExitPanelBool(bool active)
+    {
+        isExitPanelActive = active;
+
+        if (active)
+        {
+            foreach (GameObject button in menuButtons)
+                button.GetComponent<Button>().interactable = false;
+
+            ControlEventSystem(returnNoButton);
+        }
+        else
+        {
+            foreach (GameObject button in menuButtons)
+                button.GetComponent<Button>().interactable = true;
+            ControlEventSystem(menuButtons[0]);
+        }
+    }
+
+    private void ControlEventSystem(GameObject defaultButton)
+    {
+        eventSystem.SetSelectedGameObject(defaultButton);
     }
 }

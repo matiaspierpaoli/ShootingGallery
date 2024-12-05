@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
 
     private bool CheckDefeatCondition()
     {
-        if (player.health == 0)
+        if (player.health <= 0)
             return true;
         else
             return false;

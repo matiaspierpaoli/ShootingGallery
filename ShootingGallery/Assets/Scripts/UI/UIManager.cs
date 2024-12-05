@@ -188,7 +188,7 @@ public class UIManager : MonoBehaviour
     private void GetCurrentHealth()
     {
         if (healthText)
-            healthText.text = playerData.health + "/" + playerData.maxHealth;
+            healthText.text = Mathf.Max(0,playerData.health) + "/" + playerData.maxHealth;
     }
 
     private void GetCurrentTimeText()

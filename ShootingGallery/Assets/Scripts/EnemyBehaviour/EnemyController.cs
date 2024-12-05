@@ -265,7 +265,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnBodyPartHit()
     {
-        if (!isMeleeAttacking)
+        if (!isMeleeAttacking && !isDying)
             StartCoroutine(MeleeCoroutine());
     }
 

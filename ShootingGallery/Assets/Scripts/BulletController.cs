@@ -50,8 +50,18 @@ public class BulletController : MonoBehaviour
 
                 Debug.Log("Button hit with bullet rigidbody");
             }
-            else if (collision.collider.TryGetComponent(out IDamageable damageable) && collision.collider.TryGetComponent(out IEnemy enemy))
+            else 
             {
+                if (collision.collider.TryGetComponent(out IDamageable damageable) == false)
+                {
+                    damageable = collision.collider.GetComponentInParent<IDamageable>();
+                }
+                
+                //if (collision.collider.TryGetComponent(out IEnemy enemy) == false)
+                //{
+                //    enemy = collision.collider.GetComponentInParent<IEnemy>();
+                //}
+
                 WeaponSwitching weaponActive = FindObjectOfType<WeaponSwitching>();
                 Weapon[] weapons = weaponActive.gameObject.GetComponentsInChildren<Weapon>();
                 GunData gunActive = new GunData();

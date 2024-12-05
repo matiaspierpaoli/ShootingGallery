@@ -51,6 +51,12 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
+    public void OnReload(InputValue context)
+    {
+        weapons[selectedWeapon].gameObject.GetComponent<Weapon>().StartReload();
+    }
+
+
     private void SetWeapon()
     {
         weapons = new Transform[transform.childCount];

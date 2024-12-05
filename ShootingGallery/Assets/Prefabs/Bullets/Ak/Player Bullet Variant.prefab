@@ -329,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   rb: {fileID: 1803796027765474654}
-  normalDamage: 10
+  normalDamage: 20
   playerBulletTag: PlayerBullet
   enemyBulletTag: EnemyBullet
   bulletPrefab: {fileID: 7224738747996949258}

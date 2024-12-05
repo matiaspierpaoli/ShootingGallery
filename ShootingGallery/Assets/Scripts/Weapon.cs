@@ -278,6 +278,11 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(firePeriod);
     }
 
+    public void StartReload()
+    {
+        StartCoroutine(Reload());
+    }
+
     private IEnumerator Reload()
     {
         Debug.Log(gunData.name + " started reloading");

@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     private string highscoreKeyPrefix = "Highscore_";
     private bool winConditionActive = false;
 
-    private ChallengeState currentState = ChallengeState.Inactive;
+    private ChallengeState currentState = ChallengeState.Active;
 
     public static event System.Action ReplayEvent;
 

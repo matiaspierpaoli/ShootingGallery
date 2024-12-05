@@ -13,20 +13,25 @@ public class EnemiesManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.ReplayEvent += TurnOnRandomEnemiesBasedOnDifficulty;
+        GameManager.ChallengeStartedEvent += TurnOnRandomEnemiesBasedOnDifficulty;
     }
 
     private void OnDisable()
     {
         GameManager.ReplayEvent -= TurnOnRandomEnemiesBasedOnDifficulty;
+        GameManager.ChallengeStartedEvent -= TurnOnRandomEnemiesBasedOnDifficulty;
     }
 
-    public void TurnOnRandomEnemiesBasedOnDifficulty()
+    private void Awake()
     {
         for (int i = 0; i < enemies.Count; i++)
         {
             enemies[i].SetActive(false);
         }
+    }
 
+    private void TurnOnRandomEnemiesBasedOnDifficulty()
+    {
         int numEnemiesToTurnOff = GetNumEnemiesToTurnOff();
 
         ShuffleEnemiesList();

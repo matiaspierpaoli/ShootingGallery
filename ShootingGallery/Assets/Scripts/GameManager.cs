@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Pause _pauseManager;
     [SerializeField] private GunData[] weapons;
     [SerializeField] private PlayerStats player;
+    [SerializeField] private CharacterMovement characterMovement;
     [SerializeField] private VictoryTrigger victoryTrigger;
+    [SerializeField] private GameObject weaponHolder;
     //[SerializeField] private ShopManager _shopManager;
     [SerializeField] private GameObject pauseManager;
     [SerializeField] private GameObject challengeButtons;
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
     private ChallengeState currentState = ChallengeState.Active;
 
     public static event System.Action ReplayEvent;
+    public static event System.Action ChallengeStartedEvent;
 
     private void OnEnable()
     {
@@ -120,6 +123,8 @@ public class GameManager : MonoBehaviour
         SetState(ChallengeState.Active);
         _gameData.difficulty = difficulty;
         _UIManager.EnableChallengeTexts();
+        characterMovement.canMove = true;
+        ChallengeStartedEvent?.Invoke();
         //UpdateShopState();
     }
 
@@ -127,6 +132,7 @@ public class GameManager : MonoBehaviour
     {
         //_gameData.difficulty = DifficultyLevel.Easy;
 
+        weaponHolder.SetActive(true);
         _gameData.currentTime = 0f;
         _gameData.currentEnemiesDefeated = 0f;
         _gameData.victory = false;
@@ -138,6 +144,8 @@ public class GameManager : MonoBehaviour
         pauseManager.SetActive(true);
 
         winConditionActive = false;
+
+        characterMovement.canMove = false;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -186,6 +194,8 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         _pauseManager.FreezeTime();
 
+        weaponHolder.SetActive(false);
+
         challengeButtons.SetActive(true);
         pauseManager.SetActive(false);
         _UIManager.GetReticle().gameObject.SetActive(false);
@@ -193,6 +203,7 @@ public class GameManager : MonoBehaviour
 
         _gameData.defeat = true;
         _gameData.challengeStarted = false;
+        characterMovement.canMove = false;
 
         _UIManager.DrawUI();
 

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,9 +13,15 @@ public class WeaponSwitching : MonoBehaviour
     [SerializeField] private GunData sniper;
 
     private Transform[] weapons;
+    private Weapon[] weaponsComponent;
     private int selectedWeapon;
 
     public static event System.Action<int> SwitchWeaponEvent;
+
+    private void Awake()
+    {
+        weaponsComponent = gameObject.GetComponentsInChildren<Weapon>();
+    }
 
     private void Start()
     {
@@ -53,9 +60,18 @@ public class WeaponSwitching : MonoBehaviour
 
     public void OnReload(InputValue context)
     {
-        weapons[selectedWeapon].gameObject.GetComponent<Weapon>().StartReload();
+        HandleReload();
     }
 
+    private void HandleReload()
+    {
+        Weapon weapon = weapons[selectedWeapon].GetComponent<Weapon>();
+        if (weapon != null)
+        {
+            if (weapon.gunData.currentAmmo < weapon.gunData.magSize)
+                weapon.StartReload();
+        }
+    }
 
     private void SetWeapon()
     {

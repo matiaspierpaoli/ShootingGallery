@@ -285,6 +285,8 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        if (gameObject.GetComponent<AnimationController>() != null)
+            gameObject.GetComponent<AnimationController>().OnReloadStarted();
         Debug.Log(gunData.name + " started reloading");
             ReloadStartedEvent?.Invoke();
         gunData.reloading = true;

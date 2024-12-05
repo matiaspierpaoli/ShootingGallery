@@ -5,8 +5,8 @@ public class AnimationController : MonoBehaviour
 {
     [Header("Animation")]
     [SerializeField] private string defaultStateName;
-    [SerializeField] private string recoilName;
-    [SerializeField] private string reloadName;
+    [SerializeField] private string recoilTriggerName = "Recoil";
+    [SerializeField] private string reloadTriggerName = "Reload";
     private Weapon weapon;
 
     private Animator animator;
@@ -35,18 +35,20 @@ public class AnimationController : MonoBehaviour
         weapon= GetComponent<Weapon>();
     }
 
-    private void OnReloadStarted()
+    public void OnReloadStarted()
     {
-        animator.Play(reloadName);
+        animator.SetTrigger(reloadTriggerName);
+        //animator.Play(reloadTriggerName);
 
-        StartCoroutine(CheckAnimationState());
+        //StartCoroutine(CheckAnimationState());
     }
 
     private void OnShootingStarted()
     {
-        animator.Play(recoilName);
+        animator.SetTrigger(recoilTriggerName);
+        //animator.Play(recoilTriggerName);
 
-        StartCoroutine(CheckAnimationState());
+        //StartCoroutine(CheckAnimationState());
     }
 
     private IEnumerator CheckAnimationState()

@@ -19,8 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
 
-    [SerializeField] private TMP_Text pointsForAKText;
-    [SerializeField] private TMP_Text pointsForSniperText;
+    //[SerializeField] private TMP_Text pointsForAKText;
+    //[SerializeField] private TMP_Text pointsForSniperText;
     [SerializeField] private TMP_Text currentTimeText;
     //[SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
@@ -87,8 +87,8 @@ public class UIManager : MonoBehaviour
         GetCurrentAmmoText();
         GetCurrentHealth();
 
-        GetCurrentPointsForAkText();
-        GetCurrentPointsForSniperText();
+        //GetCurrentPointsForAkText();
+        //GetCurrentPointsForSniperText();
 
         DisableChallengeTexts();
 
@@ -125,8 +125,8 @@ public class UIManager : MonoBehaviour
         if (healthText)
             healthText.enabled = false;
 
-        pointsForAKText.enabled = false;
-        pointsForSniperText.enabled = false;
+        //pointsForAKText.enabled = false;
+        //pointsForSniperText.enabled = false;
     }
 
     private void GetCurrentPointsText()
@@ -139,15 +139,15 @@ public class UIManager : MonoBehaviour
     //    enemiesDefeatedText.text = "Enemies Defeated: " + _gameData.currentEnemiesDefeated.ToString() + "/" + _gameData.maxEnemiesToDefeat.ToString();
     //}
 
-    private void GetCurrentPointsForAkText()
-    {
-        pointsForAKText.text = "AK: " + akData.cost.ToString() + " Points";
-    }
+    //private void GetCurrentPointsForAkText()
+    //{
+    //    pointsForAKText.text = "AK: " + akData.cost.ToString() + " Points";
+    //}
 
-    private void GetCurrentPointsForSniperText()
-    {
-        pointsForSniperText.text = "Sniper: " + sniperData.cost.ToString() + " Points";
-    }
+    //private void GetCurrentPointsForSniperText()
+    //{
+    //    pointsForSniperText.text = "Sniper: " + sniperData.cost.ToString() + " Points";
+    //}
 
     public void GetCurrentAmmoText()
     {

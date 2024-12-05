@@ -18,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] GameData gameData;
 
+    public bool canMove = false;
+
     private Vector3 moveDir;
     private Vector3 originalPos;
     private Quaternion originalRot;
@@ -57,11 +59,15 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!canMove) return;
+
         LimitSpeed();
     }
 
     private void FixedUpdate()
     {
+        if (!canMove) return;
+
         moveDir = orientation.forward * _movementDirection.y + orientation.right * _movementDirection.x;
 
         Vector3 gravityVector = Vector3.down * gravity;

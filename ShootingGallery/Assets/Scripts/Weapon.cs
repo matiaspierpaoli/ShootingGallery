@@ -1,4 +1,3 @@
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,6 +16,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private const string normalTag = "lowerBody";
     [SerializeField] private const string chestTag = "chest";
     [SerializeField] private const string headTag = "head";
+    [SerializeField] private const string playerTag = "Player";
 
     [Header("Audio")]
     [SerializeField] private AudioManager audioManager;
@@ -25,6 +25,8 @@ public class Weapon : MonoBehaviour
 
     [Header("Shooting")]
     public InputActionReference holdShootingActionReference;
+    [SerializeField] private LayerMask playerRaycastLayer;
+    [SerializeField] private LayerMask enemiesRaycastLayer;
 
     public event System.Action ReloadStartedEvent;
     public event System.Action ReloadFinishedEvent;
@@ -207,14 +209,16 @@ public class Weapon : MonoBehaviour
 
     private void RaycastShoot(Transform transform)
     {
+        LayerMask newRaycastLayers;
+        newRaycastLayers = gunData.isPlayerControlled ?  enemiesRaycastLayer : playerRaycastLayer;
+
         RaycastHit hit;
         Vector3 shootDir = GetShotDir(transform);
-        if (Physics.Raycast(transform.position, shootDir, out hit, gunData.maxDistance))
+        if (Physics.Raycast(transform.position, shootDir, out hit, gunData.maxDistance, newRaycastLayers))
         {
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable == null) damageable = hit.collider.GetComponentInParent<IDamageable>();
             IPlayer player = hit.collider.GetComponent<IPlayer>();
-            IEnemy enemy = hit.collider.gameObject.GetComponentInParent<IEnemy>();
 
             if (gunData.isPlayerControlled)
             {
@@ -225,7 +229,7 @@ public class Weapon : MonoBehaviour
                     Debug.Log("Button hit with raycast shot");
                     Debug.DrawRay(transform.position, shootDir * gunData.maxDistance, Color.green, 0.1f);
                 }                              
-                else if (enemy != null && damageable != null)
+                else if (damageable != null)
                 {
                     switch (hit.collider.gameObject.tag)
                     {

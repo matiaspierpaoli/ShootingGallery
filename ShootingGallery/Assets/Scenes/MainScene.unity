@@ -3167,7 +3167,7 @@ GameObject:
   - component: {fileID: 436209415}
   - component: {fileID: 436209414}
   - component: {fileID: 436209413}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Easy Challenge Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13659,7 +13659,7 @@ GameObject:
   - component: {fileID: 1991290126}
   - component: {fileID: 1991290125}
   - component: {fileID: 1991290124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Medium Challenge Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14289,7 +14289,7 @@ GameObject:
   - component: {fileID: 2114330789}
   - component: {fileID: 2114330788}
   - component: {fileID: 2114330787}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hard Challenge Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}

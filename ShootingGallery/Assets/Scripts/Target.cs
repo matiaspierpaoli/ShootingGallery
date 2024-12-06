@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Target : MonoBehaviour, IDamageable, IEnemy
+public class Target : MonoBehaviour, IDamageable
 {
     [SerializeField] private GameObject player;
     [SerializeField] private PlayerStatsController playerStats;
@@ -16,11 +16,9 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
     public event System.Action DieEvent;
 
     private float currentHealth = 100f;
-    //private float timeToRespawn = 5f;
     
     private IPointsProvider pointsProvider;
 
-    // Since there is a scene called tutorial where points and enemiesDefeated are not needed, check if both of these are referenced
     private bool hasPlayer;
     private bool hasGameManager;
     private bool hasAudioManager;
@@ -68,10 +66,8 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
                 if (hasAudioManager)
                     audioManager.PlaySoundEvent(dieSFX, gameObject);
 
-                //gameObject.SetActive(false);
                 if (transform.parent)
                     Debug.Log(transform.parent.gameObject.name + " eliminated in " + transform.parent.gameObject.tag);
-                //Invoke("Respawn", timeToRespawn);
 
 
                 if (hasGameManager)
@@ -82,9 +78,6 @@ public class Target : MonoBehaviour, IDamageable, IEnemy
 
     public void Respawn()
     {
-        //gameObject.SetActive(true);
-        //if (transform.parent)
-        //    Debug.Log(transform.parent.gameObject.name + " respawned in " + transform.parent.gameObject.tag);
         currentHealth = maxHealth;
     }
 }

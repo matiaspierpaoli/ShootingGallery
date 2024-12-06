@@ -5365,6 +5365,12 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: eb7f32c520c0a8b4fa224976f467af04, type: 2}
   holdShootingActionReference: {fileID: -4915399935359964848, guid: c8bc0bc16e5787d4ebdf3b6b9dba08ca, type: 3}
+  playerRaycastLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  enemiesRaycastLayer:
+    serializedVersion: 2
+    m_Bits: 8704
   canShoot: 1
 --- !u!1 &3499708717404862633
 GameObject:

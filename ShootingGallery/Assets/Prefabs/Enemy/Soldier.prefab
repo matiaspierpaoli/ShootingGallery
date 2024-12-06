@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6687729879750976007}
   - component: {fileID: 1514589522349972883}
   - component: {fileID: 6254249976730778756}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: mixamorig:Spine
   m_TagString: chest
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 6388196862991061396}
   - component: {fileID: 3579019271349181607}
   - component: {fileID: 8376145626895422841}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: mixamorig:Hips
   m_TagString: lowerBody
   m_Icon: {fileID: 0}
@@ -2293,7 +2293,7 @@ GameObject:
   - component: {fileID: 4799622280228610947}
   - component: {fileID: 8213303384093442714}
   - component: {fileID: 8939179149837400556}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: mixamorig:Head
   m_TagString: head
   m_Icon: {fileID: 0}

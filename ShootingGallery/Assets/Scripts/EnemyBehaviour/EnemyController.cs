@@ -13,7 +13,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 2f;
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private LayerMask structureLayer;
-    //[SerializeField] private float detectionRange = 5f;
     [SerializeField] private float timeToRespawn = 2f;
 
     [Header("Animations")]
@@ -72,7 +71,7 @@ public class EnemyController : MonoBehaviour
 
         if (patrolPoints.Length > 0)
         {
-            transform.position = patrolPoints[patrolPoints.Length - 1].position; // Inicia en el primer punto
+            transform.position = patrolPoints[patrolPoints.Length - 1].position; // Start in first position
         }
     }
 

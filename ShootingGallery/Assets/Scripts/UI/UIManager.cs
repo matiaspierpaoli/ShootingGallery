@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,10 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
 
-    //[SerializeField] private TMP_Text pointsForAKText;
-    //[SerializeField] private TMP_Text pointsForSniperText;
     [SerializeField] private TMP_Text currentTimeText;
-    //[SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private GameData _gameData;
 
     [SerializeField] private GameManager gameManager;
@@ -90,9 +86,6 @@ public class UIManager : MonoBehaviour
         GetCurrentAmmoText();
         GetCurrentHealth();
 
-        //GetCurrentPointsForAkText();
-        //GetCurrentPointsForSniperText();
-
         DisableChallengeTexts();
 
     }
@@ -101,35 +94,25 @@ public class UIManager : MonoBehaviour
     {
         GetCurrentPointsText();                         
         GetCurrentTimeText();          
-        //GetCurrentEnemiesDefeatedText();                
         GetCurrentAmmoText();
         GetCurrentHealth();
     }
 
     public void EnableChallengeTexts()
     {
-        //pointsText.enabled = true;
         currentTimeText.enabled = true;
-        //enemiesDefeatedText.enabled = true;
 
         if (healthText)
             healthText.enabled = true;
-
-        //pointsForAKText.enabled = true;
-        //pointsForSniperText.enabled = true;
     }
 
     public void DisableChallengeTexts()
     {
         pointsText.enabled = false;
         currentTimeText.enabled = false;
-        //enemiesDefeatedText.enabled = false;
 
         if (healthText)
             healthText.enabled = false;
-
-        //pointsForAKText.enabled = false;
-        //pointsForSniperText.enabled = false;
     }
 
     private void GetCurrentPointsText()
@@ -137,24 +120,9 @@ public class UIManager : MonoBehaviour
         pointsText.text = "Points: " + playerData.points.ToString();
     }
 
-    //private void GetCurrentEnemiesDefeatedText()
-    //{
-    //    enemiesDefeatedText.text = "Enemies Defeated: " + _gameData.currentEnemiesDefeated.ToString() + "/" + _gameData.maxEnemiesToDefeat.ToString();
-    //}
-
-    //private void GetCurrentPointsForAkText()
-    //{
-    //    pointsForAKText.text = "AK: " + akData.cost.ToString() + " Points";
-    //}
-
-    //private void GetCurrentPointsForSniperText()
-    //{
-    //    pointsForSniperText.text = "Sniper: " + sniperData.cost.ToString() + " Points";
-    //}
-
     public void GetCurrentAmmoText()
     {
-        bulletsText.text = ""; // Reset ammo text to avoid wrong gun ammo in other area before switching
+        bulletsText.text = "";
          
         for (int i = 0; i < weapons.Length; i++) 
         {
@@ -194,7 +162,7 @@ public class UIManager : MonoBehaviour
     private void GetCurrentTimeText()
     {
         int currentTime = (int)_gameData.currentTime;
-        currentTimeText.text = "Current Time: " + currentTime.ToString() /*+ "/" + _gameData.maxTime*/;        
+        currentTimeText.text = "Current Time: " + currentTime.ToString();        
     }
 
     private void OnReload()

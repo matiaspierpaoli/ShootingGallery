@@ -1,9 +1,4 @@
-using Mono.Cecil;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
 
 public class BulletController : MonoBehaviour
@@ -55,12 +50,7 @@ public class BulletController : MonoBehaviour
                 if (collision.collider.TryGetComponent(out IDamageable damageable) == false)
                 {
                     damageable = collision.collider.GetComponentInParent<IDamageable>();
-                }
-                
-                //if (collision.collider.TryGetComponent(out IEnemy enemy) == false)
-                //{
-                //    enemy = collision.collider.GetComponentInParent<IEnemy>();
-                //}
+                }              
 
                 WeaponSwitching weaponActive = FindObjectOfType<WeaponSwitching>();
                 Weapon[] weapons = weaponActive.gameObject.GetComponentsInChildren<Weapon>();

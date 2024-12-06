@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
@@ -13,18 +12,12 @@ public class AnimationController : MonoBehaviour
     
     private void OnEnable()
     {
-        //Gun.ReloadStartedEvent += OnReloadStarted;
-        //Gun.ShootingStartedEvent += OnShootingStarted;
-
         weapon.ReloadStartedEvent += OnReloadStarted;
         weapon.ShootingStartedEvent += OnShootingStarted;
     }
 
     private void OnDisable()
     {
-        //Gun.ReloadStartedEvent -= OnReloadStarted;
-        //Gun.ShootingStartedEvent -= OnShootingStarted;
-
         weapon.ReloadStartedEvent -= OnReloadStarted;
         weapon.ShootingStartedEvent -= OnShootingStarted;
     }
@@ -38,27 +31,11 @@ public class AnimationController : MonoBehaviour
     public void OnReloadStarted()
     {
         animator.SetTrigger(reloadTriggerName);
-        //animator.Play(reloadTriggerName);
-
-        //StartCoroutine(CheckAnimationState());
     }
 
     private void OnShootingStarted()
     {
         animator.SetTrigger(recoilTriggerName);
-        //animator.Play(recoilTriggerName);
-
-        //StartCoroutine(CheckAnimationState());
-    }
-
-    private IEnumerator CheckAnimationState()
-    {
-        yield return new WaitForEndOfFrame();
-
-        while (animator.GetCurrentAnimatorStateInfo(0).IsName(defaultStateName) == false)
-        {
-            yield return null;
-        }
     }
 
     public void SetDefaultAnimationState()

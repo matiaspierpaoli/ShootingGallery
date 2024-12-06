@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Config")]
     [SerializeField] private PlayerStats playerStats;
 
     [Header("Scriptable Objects")]

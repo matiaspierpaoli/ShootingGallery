@@ -1,20 +1,20 @@
+using System;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [Header("SetUp")]
+    [Header("Config")]
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private Transform orientation;
     [SerializeField] private float gravity;
+    [SerializeField] GameData gameData;
 
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float flashSpeed;
     [SerializeField] private bool isflashSpeedEnabled;
 
-    [SerializeField] GameData gameData;
-
-    public bool canMove = false;
+    [NonSerialized] public bool canMove = false;
 
     private Vector3 moveDir;
     private Vector3 originalPos;

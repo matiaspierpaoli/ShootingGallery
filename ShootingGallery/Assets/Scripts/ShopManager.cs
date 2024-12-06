@@ -9,6 +9,7 @@ public enum ShopState
 
 public class ShopManager : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private GameData _gameData;
     [SerializeField] private Button[] _shopButtons;
 

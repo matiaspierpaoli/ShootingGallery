@@ -5,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerLookController : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private Transform orientation;
     [SerializeField] private string playerPrefHorSensitivityString;
     [SerializeField] private string playerPrefVerSensitivityString;

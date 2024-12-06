@@ -6,8 +6,8 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private string defaultStateName;
     [SerializeField] private string recoilTriggerName = "Recoil";
     [SerializeField] private string reloadTriggerName = "Reload";
+    
     private Weapon weapon;
-
     private Animator animator;
     
     private void OnEnable()

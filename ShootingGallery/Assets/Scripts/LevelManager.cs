@@ -7,19 +7,23 @@ using UnityEngine.UI;
 /// </summary>
 public class LevelManager : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private GameData gameData;
+
+    [SerializeField] private TMP_Text currentTimeText;
+    [SerializeField] private TMP_Text currentAmmoText;
+
+    [Header("Weapons")]
+    [SerializeField] private Image[] selectedWeapons;
+    [SerializeField] private Image[] unselectedWeapons;
+    [SerializeField] private GameObject[] weapons;
+
+    [Header("Scriptable Objects")]
     [SerializeField] private GunData pistolData;
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
     [SerializeField] private PlayerStats playerData;
 
-    [SerializeField] private TMP_Text currentTimeText;
-    [SerializeField] private TMP_Text currentAmmoText;
-
-    [SerializeField] private Image[] selectedWeapons;
-    [SerializeField] private Image[] unselectedWeapons;
-
-    [SerializeField] private GameObject[] weapons;
 
     public static event System.Action ChangeAreaEvent;
 

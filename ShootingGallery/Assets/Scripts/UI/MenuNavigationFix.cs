@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class MenuNavigationFix : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private GameObject defaultSelectedButton;
     private EventSystem eventSystem;
     private GameObject lastSelectedButton;

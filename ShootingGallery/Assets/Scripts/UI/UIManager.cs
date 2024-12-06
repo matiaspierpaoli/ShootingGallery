@@ -4,27 +4,29 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Config")]
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private PlayerStats playerData;
+    
+    [Header("Game Data")]
+    [SerializeField] private GameData _gameData;
     [SerializeField] private TMP_Text pointsText;
     [SerializeField] private TMP_Text bulletsText;
     [SerializeField] private TMP_Text victoryText;
     [SerializeField] private TMP_Text defeatText;
     [SerializeField] private TMP_Text healthText;
-    [SerializeField] private PlayerStats playerData;
+    [SerializeField] private TMP_Text currentTimeText;
     [SerializeField] private Image reticle;
 
+    [Header("Weapons")]
     [SerializeField] private GameObject[] weapons;
 
     [SerializeField] private GunData pistolData;
     [SerializeField] private GunData akData;
     [SerializeField] private GunData sniperData;
-
-    [SerializeField] private TMP_Text currentTimeText;
-    [SerializeField] private GameData _gameData;
-
-    [SerializeField] private GameManager gameManager;
-
     [SerializeField] private Image[] selectedWeapons;
     [SerializeField] private Image[] unselectedWeapons;
+
 
     public bool IsVictoryTextEnabled
     {

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BodyPartCollider : MonoBehaviour
 {
+    [Header("Config")]
     private EnemyController enemyController;
 
     private void Awake()

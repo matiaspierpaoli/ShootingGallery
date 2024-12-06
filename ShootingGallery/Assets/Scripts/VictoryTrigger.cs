@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class VictoryTrigger : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private string playerTag;
     public event System.Action VictoryTriggerEvent;
 

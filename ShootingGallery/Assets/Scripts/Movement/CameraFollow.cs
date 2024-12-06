@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private Transform playerCameraPosition;
 
     private void LateUpdate()

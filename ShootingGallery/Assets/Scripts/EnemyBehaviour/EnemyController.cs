@@ -31,14 +31,15 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float stopDistance = 0.5f;
 
-    private int currentPatrolIndex = 0;
-    private bool isPatrolling = true;
 
     [Header("Gizmos")]
     [SerializeField] private float viewRadius;
     [SerializeField] private float angleThreshold;
     [SerializeField] private Color fovColor;
 
+    private int currentPatrolIndex = 0;
+    private bool isPatrolling = true;
+    
     private Weapon[] weapons;
     private Weapon weapon;
     private Target target;

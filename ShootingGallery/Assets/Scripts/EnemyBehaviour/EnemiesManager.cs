@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private List<GameObject> enemies; // List of enemies in the scene
     [SerializeField] private GameData gameData;
+
+    [Header("Enemies Ammount")]
     [SerializeField] private int easyDifficultyEnemies;
     [SerializeField] private int mediumDifficultyEnemies;
     [SerializeField] private int hardDifficultyEnemies;

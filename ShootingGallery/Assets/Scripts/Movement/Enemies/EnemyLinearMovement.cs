@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class EnemyLinearMovement : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private Transform pointA;
     [SerializeField] private Transform pointB;
     [SerializeField] private float speed = 1f;

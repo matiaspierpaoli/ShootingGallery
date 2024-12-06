@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CameraSensitivity : MonoBehaviour
 {
+    [Header("Sensitivity Config")]
     [SerializeField] private TMP_Text horizontalSensitivityText;
     [SerializeField] private TMP_Text verticalSensitivityText;
     [SerializeField] private SensitivitySlider horizontalSensitivitySlider;

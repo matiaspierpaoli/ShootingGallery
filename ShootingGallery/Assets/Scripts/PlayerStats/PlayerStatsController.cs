@@ -4,8 +4,11 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerStatsController : MonoBehaviour, IPointsProvider, IDamageable, IPlayer
 {
+    [Header("Config")]
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private Animator postProcessingAnimator;
+
+    [Header("Post-Processing")]
     [SerializeField] private string redScreenBoolName;
     [SerializeField] private float redScreenTime;
     [SerializeField] private PostProcessVolume yellowScreenVignette;

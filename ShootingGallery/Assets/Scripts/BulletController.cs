@@ -3,9 +3,10 @@ using UnityEngine.UI;
 
 public class BulletController : MonoBehaviour
 {
+    [Header("Bullet Config")]
     [SerializeField] float speed = 10;
     [SerializeField] Rigidbody rb;
-    [SerializeField] private float normalDamage;
+    [SerializeField] private float normalDamage; // Single damage to player
     [SerializeField] private string playerBulletTag;
     [SerializeField] private string enemyBulletTag;
 

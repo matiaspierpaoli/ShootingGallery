@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private string _sceneName;
 

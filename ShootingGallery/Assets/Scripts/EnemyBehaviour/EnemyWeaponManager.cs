@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class EnemyWeaponManager : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private GameObject pistolObject;
     [SerializeField] private GameObject akObject;
     [SerializeField] private GameObject sniperObject;
-
     [SerializeField] private GameData gameData;
 
     private void Awake()

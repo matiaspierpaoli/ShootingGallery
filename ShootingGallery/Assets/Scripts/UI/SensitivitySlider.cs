@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class SensitivitySlider : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private Slider slider;
     [SerializeField] private string playerPrefSensitivityString;
     public event System.Action<float> OnValueChanged;

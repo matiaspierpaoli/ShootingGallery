@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour, IDamageable
 {
+    [Header("Config")]
     [SerializeField] private GameObject player;
     [SerializeField] private PlayerStatsController playerStats;
     [SerializeField] private DynamicCrosshair dynamicCrosshair;
@@ -9,6 +10,7 @@ public class Target : MonoBehaviour, IDamageable
     [SerializeField] private float maxHealth;
     [SerializeField] private float eliminationCooldown = 5f;
 
+    [Header("Audio")]
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private AK.Wwise.Event dieSFX;
     [SerializeField] private AK.Wwise.Event damageSFX;

@@ -18,6 +18,7 @@ public enum DifficultyLevel
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private GameData _gameData;
     [SerializeField] private UIManager _UIManager;
     [SerializeField] private Pause _pauseManager;
@@ -31,14 +32,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject challengeButtons;
     [SerializeField] private string pistolName;
 
-    [SerializeField] private GameObject challengeEscapeCollider;
-
+    [Header("Points")]
     [SerializeField] private float easyDifficultyMultiplier = 1.0f;
     [SerializeField] private float mediumDifficultyMultiplier = 1.5f;
     [SerializeField] private float hardDifficultyMultiplier = 2.0f;
-
     [SerializeField] private int maxBaseScore = 1000; 
     [SerializeField] private int enemyPointValue = 10; 
+
 
     private int currentScore;
     private string highscoreKeyPrefix = "Highscore_";
@@ -202,7 +202,6 @@ public class GameManager : MonoBehaviour
         ResetGameData();
         _gameData.challengeStarted = true;
         SetState(ChallengeState.Active);
-        HandleChallengeEscapeCollider(true);
     }
 
     public void ExitChallenge()
@@ -210,11 +209,6 @@ public class GameManager : MonoBehaviour
         ResetGameData();
         _UIManager.DisableChallengeTexts();
         SetState(ChallengeState.Inactive);
-    }
-
-    public void HandleChallengeEscapeCollider(bool active)
-    {
-        challengeEscapeCollider.SetActive(active);
     }
 
     public void OnEasyButtonClicked() => StartChallenge(DifficultyLevel.Easy);

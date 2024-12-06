@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private EventSystem eventSystem;
     [SerializeField] private GameObject[] menuButtons;
     [SerializeField] private GameObject returnNoButton;

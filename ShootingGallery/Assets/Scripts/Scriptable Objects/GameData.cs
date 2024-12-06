@@ -19,16 +19,25 @@ public class DifficultyProbabilities
 [CreateAssetMenu(fileName = "GameData", menuName = "GameData")]
 public class GameData : ScriptableObject
 {
+    [Header("Time")]
     public float currentTime;
-    public float currentEnemiesDefeated;
     public float maxTime;
+
+    [Header("Enemies")]
+    public float currentEnemiesDefeated;
     public float maxEnemiesToDefeat;
+
+    [Header("Core loop")]
     public bool victory;
     public bool defeat;
     public bool challengeStarted;
     public DifficultyLevel difficulty;
-    public WeaponProbabilities weaponProbabilities;
+
+    [Header("Cheats")]
     public bool isNextLevelCheatAvailiable;
+
+    [Header("Probabilities")]
+    public WeaponProbabilities weaponProbabilities;
 
     public float easyLevelAimingProbability;
     public float mediumLevelAimingProbability;

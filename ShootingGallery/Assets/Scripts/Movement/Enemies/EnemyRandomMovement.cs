@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class EnemyRandomMovement : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private List<Transform> points = new List<Transform>();
     [SerializeField] private float speed = 1f;
 

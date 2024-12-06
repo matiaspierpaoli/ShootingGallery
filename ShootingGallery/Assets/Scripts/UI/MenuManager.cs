@@ -20,7 +20,14 @@ public class MenuManager : MonoBehaviour
     {
         for (int i = 0; i < difficultyPlayerPrefNames.Length; i++)
         {
-            int highScore = PlayerPrefs.GetInt(difficultyPlayerPrefNames[i], 0);
+            int highScore = PlayerPrefs.GetInt(difficultyPlayerPrefNames[i], -1);
+
+            if (highScore == -1)
+            {
+                highScore = 0;
+                PlayerPrefs.SetInt(difficultyPlayerPrefNames[i], highScore);
+                PlayerPrefs.Save();
+            }
 
             highScoreTexts[i].text = $"{difficultyNames[i]}: {highScore}";
         }
